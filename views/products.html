@@ -43,7 +43,141 @@
 
       <aside></aside>
 
-      <main></main>
+      <main>
+        <button
+          type="button"
+          class="btn btn-primary main-bg m-3"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+          id="add-product"
+        >
+          Add product
+        </button>
+      </main>
+      <div>
+        <div
+          class="modal fade"
+          id="exampleModal"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <h5 class="modal-title" id="exampleModalLabel">Product Info</h5>
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+              <div class="modal-body">
+                <form>
+                  <!-- SKU input -->
+                  <label for="SKU" class="form-label my-2">SKU *</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="SKU"
+                    placeholder="e.g, MED-001"
+                    required
+                  />
+                  <!-- product input -->
+                  <label for="p-name" class="form-label my-2"
+                    >Product Name *</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="p-name"
+                    placeholder="e.g, Paracetamol 500mg Tablets"
+                    required
+                  />
+                  <!-- supplier input -->
+                  <label for="supplier" class="form-label my-2"
+                    >Supplier *</label
+                  >
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="supplier"
+                    placeholder="e.g, Horizon Pharma"
+                    required
+                  />
+                  <!-- Current quantity input -->
+                  <label for="quantity" class="form-label my-2"
+                    >Current Quantity *</label
+                  >
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="quantity"
+                    min="0"
+                    placeholder="0"
+                    required
+                  />
+                  <!-- category Price -->
+                  <label for="price" class="form-label my-2"
+                    >category Price *</label
+                  >
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="price"
+                    min="0"
+                    placeholder="0"
+                    required
+                  />
+                  <!-- categories  -->
+                  <label for="category-type" class="form-label my-2"
+                    >Categories *</label
+                  >
+                  <select
+                    name="category-type"
+                    id="category"
+                    class="form-select"
+                    aria-label="Default select"
+                    required
+                  >
+                    <option value="pain-relief">Pain Relief</option>
+                    <option value="anti-inflammatory">Anti-inflammatory</option>
+                    <option value="antibiotics">Antibiotics</option>
+                    <option value="allergy">Allergy</option>
+                    <option value="vitamins">Vitamins</option>
+                  </select>
+                  <label for="expire-date" class="form-label my-2"
+                    >Expire Date *</label
+                  >
+                  <input
+                    type="date"
+                    class="form-control"
+                    id="expire-date"
+                    required
+                  />
+                </form>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-primary main-bg"
+                  id="save-product"
+                >
+                  Save Product
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
   </body>
 </html>
