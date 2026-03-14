@@ -6,13 +6,16 @@
   --bg-light: #f3f4f6;
   --bg-white: #ffffff;
 
-  --success: #10b981; /* In Stock */
+  --success: #10b981;
+  /* In Stock */
   --success-light: #d1fae5;
 
-  --warning: #f59e0b; /* Low Stock  */
+  --warning: #f59e0b;
+  /* Low Stock  */
   --warning-light: #fef3c7;
 
-  --danger: #ef4444; /* Out of Stock */
+  --danger: #ef4444;
+  /* Out of Stock */
   --danger-light: #fee2e2;
 
   --info: #3b82f6;
@@ -44,10 +47,26 @@
   --font-Size-1: 16px;
   --font-Size-1: 14px;
 }
+
 body {
   font-family: "Inter", sans-serif;
 }
 
 .main-bg {
   background-color: var(--primary);
+}
+
+aside {
+  height: 100vh;
+  background-color: var(--primary) !important;
+}
+
+.aside-hover {
+  padding: 10px 15px;
+  border-radius: 6px;
+  transition: 0.3s;
+}
+
+.aside-hover:hover {
+  background-color: var(--text-secondary) !important;
 }
