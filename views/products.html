@@ -43,197 +43,216 @@
     ></script>
   </head>
 
-<body>
-  <div>
-    <!-- Navbar -->
-    <header class="border border-bottom-5">
-      <nav class="navbar bg-body-tertiary">
-        <div class="container-fluid">
-          <a class="navbar-brand"># PharmaFlow</a>
-          <div class="d-flex">
-            <div class="d-flex flex-column">
-              <h5>Admin User</h5>
-              <h6>Inventory Manager
-              </h6>
-            </div>
-            <span>#</span>
-          </div>
-        </div>
-      </nav>
-    </header>
-    <div class="container-fluid">
-      <div class="row">
-        <!-- Aside -->
-        <aside class="col-md-3 " id="main">
-          <div class="d-flex flex-column gap-3 m-4">
-            <a href="../index.html" class="text-white text-decoration-none aside-hover">
-              <i class="fa-solid fa-table-cells-large me-3"></i>Dashboard</a>
-            <a href="products.html" class="text-white text-decoration-none aside-hover"><i
-                class="fa-solid fa-cube me-3"></i>Products</a>
-            <a href="categories.html" class="text-white text-decoration-none aside-hover"><i
-                class="fa-solid fa-layer-group me-3"></i>Categories
-            </a>
-            <a href="suppliers.html" class="text-white text-decoration-none aside-hover"><i
-                class="fa-solid fa-users me-3"></i>Suppliers
-            </a>
-            <a href="orders.html" class="text-white text-decoration-none aside-hover"><i
-                class="fa-solid fa-cart-shopping me-3"></i>Purchase Orders</a>
-            <a href="stock-adjustments.html" class="text-white text-decoration-none aside-hover"><i
-                class="fa-solid fa-rotate me-3"></i>Stock Adjustments</a>
-            <a href="reports.html" class="text-white text-decoration-none aside-hover"><i
-                class="fa-solid fa-file-lines me-3"></i>Reports</a>
-            <a href="activity-log.html" class="text-white text-decoration-none aside-hover"><i
-                class="fa-solid fa-wave-square me-3"></i>Activity Log</a>
-          </div>
-        </aside>
-        <!-- Main page -->
-        <main class="col-9">
-          <button
-          type="button"
-          class="btn btn-primary main-bg m-3"
-          data-bs-toggle="modal"
-          data-bs-target="#exampleModal"
-          id="add-product"
-        >
-          Add product
-        </button>
-      </main>
-      <div>
-        <div
-          class="modal fade"
-          id="exampleModal"
-          tabindex="-1"
-          aria-labelledby="exampleModalLabel"
-          aria-hidden="true"
-        >
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Product Info</h5>
-                <button
-                  type="button"
-                  class="btn-close"
-                  data-bs-dismiss="modal"
-                  aria-label="Close"
-                ></button>
+  <body>
+    <div>
+      <!-- Navbar -->
+      <header class="border border-bottom-5">
+        <nav class="navbar bg-body-tertiary">
+          <div class="container-fluid">
+            <a class="navbar-brand"># PharmaFlow</a>
+            <div class="d-flex">
+              <div class="d-flex flex-column">
+                <h5>Admin User</h5>
+                <h6>Inventory Manager</h6>
               </div>
-              <div class="modal-body">
-                <form>
-                  <!-- SKU input -->
-                  <label for="SKU" class="form-label my-2">SKU *</label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="SKU"
-                    placeholder="e.g, MED-001"
-                    required
-                  />
-                  <!-- product input -->
-                  <label for="p-name" class="form-label my-2"
-                    >Product Name *</label
-                  >
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="p-name"
-                    placeholder="e.g, Paracetamol 500mg Tablets"
-                    required
-                  />
-                  <!-- supplier input -->
-                  <label for="supplier" class="form-label my-2"
-                    >Supplier *</label
-                  >
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="supplier"
-                    placeholder="e.g, Horizon Pharma"
-                    required
-                  />
-                  <!-- Current quantity input -->
-                  <label for="quantity" class="form-label my-2"
-                    >Current Quantity *</label
-                  >
-                  <input
-                    type="number"
-                    class="form-control"
-                    id="quantity"
-                    min="0"
-                    placeholder="0"
-                    required
-                  />
-                  <!-- category Price -->
-                  <label for="price" class="form-label my-2"
-                    >category Price *</label
-                  >
-                  <input
-                    type="number"
-                    class="form-control"
-                    id="price"
-                    min="0"
-                    placeholder="0"
-                    required
-                  />
-                  <!-- categories  -->
-                  <label for="category-type" class="form-label my-2"
-                    >Categories *</label
-                  >
-                  <select
-                    name="category-type"
-                    id="category"
-                    class="form-select"
-                    aria-label="Default select"
-                    required
-                  >
-                    <option value="pain-relief">Pain Relief</option>
-                    <option value="anti-inflammatory">Anti-inflammatory</option>
-                    <option value="antibiotics">Antibiotics</option>
-                    <option value="allergy">Allergy</option>
-                    <option value="vitamins">Vitamins</option>
-                  </select>
-                  <label for="expire-date" class="form-label my-2"
-                    >Expire Date *</label
-                  >
-                  <input
-                    type="date"
-                    class="form-control"
-                    id="expire-date"
-                    required
-                  />
-                </form>
-              </div>
-              <div class="modal-footer">
-                <button
-                  type="button"
-                  class="btn btn-secondary"
-                  data-bs-dismiss="modal"
-                >
-                  Close
-                </button>
-                <button
-                  type="button"
-                  class="btn btn-primary main-bg"
-                  id="save-product"
-                >
-                  Save Product
-                </button>
-              </div>
+              <span>#</span>
             </div>
           </div>
+        </nav>
+      </header>
+      <div class="container-fluid">
+        <div class="row">
+          <!-- Aside -->
+          <aside class="col-md-3" id="main">
+            <div class="d-flex flex-column gap-3 m-4">
+              <a
+                href="../index.html"
+                class="text-white text-decoration-none aside-hover"
+              >
+                <i class="fa-solid fa-table-cells-large me-3"></i>Dashboard</a
+              >
+              <a
+                href="products.html"
+                class="text-white text-decoration-none aside-hover"
+                ><i class="fa-solid fa-cube me-3"></i>Products</a
+              >
+              <a
+                href="categories.html"
+                class="text-white text-decoration-none aside-hover"
+                ><i class="fa-solid fa-layer-group me-3"></i>Categories
+              </a>
+              <a
+                href="suppliers.html"
+                class="text-white text-decoration-none aside-hover"
+                ><i class="fa-solid fa-users me-3"></i>Suppliers
+              </a>
+              <a
+                href="orders.html"
+                class="text-white text-decoration-none aside-hover"
+                ><i class="fa-solid fa-cart-shopping me-3"></i>Purchase
+                Orders</a
+              >
+              <a
+                href="stock-adjustments.html"
+                class="text-white text-decoration-none aside-hover"
+                ><i class="fa-solid fa-rotate me-3"></i>Stock Adjustments</a
+              >
+              <a
+                href="reports.html"
+                class="text-white text-decoration-none aside-hover"
+                ><i class="fa-solid fa-file-lines me-3"></i>Reports</a
+              >
+              <a
+                href="activity-log.html"
+                class="text-white text-decoration-none aside-hover"
+                ><i class="fa-solid fa-wave-square me-3"></i>Activity Log</a
+              >
+            </div>
+          </aside>
+          <!-- Main page -->
+          <main class="col-9">
+            <button
+              type="button"
+              class="btn btn-primary main-bg m-3"
+              data-bs-toggle="modal"
+              data-bs-target="#exampleModal"
+              id="add-product"
+            >
+              Add product
+            </button>
+
+            <div>
+              <div
+                class="modal fade"
+                id="exampleModal"
+                tabindex="-1"
+                aria-labelledby="exampleModalLabel"
+                aria-hidden="true"
+              >
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title" id="exampleModalLabel">
+                        Product Info
+                      </h5>
+                      <button
+                        type="button"
+                        class="btn-close"
+                        data-bs-dismiss="modal"
+                        aria-label="Close"
+                      ></button>
+                    </div>
+                    <div class="modal-body">
+                      <form>
+                        <!-- SKU input -->
+                        <label for="SKU" class="form-label my-2">SKU *</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="SKU"
+                          placeholder="e.g, MED-001"
+                          required
+                        />
+                        <!-- product input -->
+                        <label for="p-name" class="form-label my-2"
+                          >Product Name *</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="p-name"
+                          placeholder="e.g, Paracetamol 500mg Tablets"
+                          required
+                        />
+                        <!-- supplier input -->
+                        <label for="supplier" class="form-label my-2"
+                          >Supplier *</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="supplier"
+                          placeholder="e.g, Horizon Pharma"
+                          required
+                        />
+                        <!-- Current quantity input -->
+                        <label for="quantity" class="form-label my-2"
+                          >Current Quantity *</label
+                        >
+                        <input
+                          type="number"
+                          class="form-control"
+                          id="quantity"
+                          min="0"
+                          placeholder="0"
+                          required
+                        />
+                        <!-- category Price -->
+                        <label for="price" class="form-label my-2"
+                          >category Price *</label
+                        >
+                        <input
+                          type="number"
+                          class="form-control"
+                          id="price"
+                          min="0"
+                          placeholder="0"
+                          required
+                        />
+                        <!-- categories  -->
+                        <label for="category-type" class="form-label my-2"
+                          >Categories *</label
+                        >
+                        <select
+                          name="category-type"
+                          id="category"
+                          class="form-select"
+                          aria-label="Default select"
+                          required
+                        >
+                          <option value="pain-relief">Pain Relief</option>
+                          <option value="anti-inflammatory">
+                            Anti-inflammatory
+                          </option>
+                          <option value="antibiotics">Antibiotics</option>
+                          <option value="allergy">Allergy</option>
+                          <option value="vitamins">Vitamins</option>
+                        </select>
+                        <label for="expire-date" class="form-label my-2"
+                          >Expire Date *</label
+                        >
+                        <input
+                          type="date"
+                          class="form-control"
+                          id="expire-date"
+                          required
+                        />
+                      </form>
+                    </div>
+                    <div class="modal-footer">
+                      <button
+                        type="button"
+                        class="btn btn-secondary"
+                        data-bs-dismiss="modal"
+                      >
+                        Close
+                      </button>
+                      <button
+                        type="button"
+                        class="btn btn-primary main-bg"
+                        id="save-product"
+                      >
+                        Save Product
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </main>
         </div>
-      </div>
-        </main>
       </div>
     </div>
-
-
-
-
-  </div>
-
-
-
-  </div>
-</body>
-
+    <script src=""></script>
+  </body>
 </html>
