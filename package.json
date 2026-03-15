@@ -18,8 +18,7 @@
   "homepage": "https://github.com/mohamedkamelmetwally23/inventory-system-group-8-#readme",
   "description": "Inventory Management System for small business",
   "dependencies": {
-    "json-server": "^0.17.4",
-    "uuid": "^13.0.0"
+    "json-server": "^0.17.4"
   },
   "devDependencies": {
     "live-server": "^1.2.2",
