@@ -1,34 +1,34 @@
 {
   "categories": [
     {
-      "category_id": "CAT-001",
+      "_id": "CAT-001",
       "name": "cream",
       "description": "Category for cream products"
     },
     {
-      "category_id": "CAT-002",
+      "_id": "CAT-002",
       "name": "tablets",
       "description": "Category for tablets products"
     },
     {
-      "category_id": "CAT-003",
+      "_id": "CAT-003",
       "name": "eye drops",
       "description": "Category for eye drops products"
     },
     {
-      "category_id": "CAT-004",
+      "_id": "CAT-004",
       "name": "gel",
       "description": "Category for gel products"
     },
     {
-      "category_id": "CAT-005",
+      "_id": "CAT-005",
       "name": "ointment",
       "description": "Category for ointment products"
     }
   ],
   "suppliers": [
     {
-      "supplier_id": "SUP-001",
+      "_id": "SUP-001",
       "supplier_name": "Cleopatra Pharma",
       "contact_name": "Ahmed Fouad",
       "contact_email": "ahmed.fouad@cleopatrapharma.com",
@@ -36,7 +36,7 @@
       "address": "284 Tahrir St, New Cairo, Luxor, Egypt"
     },
     {
-      "supplier_id": "SUP-002",
+      "_id": "SUP-002",
       "supplier_name": "DeltaMed",
       "contact_name": "Rana Fathy",
       "contact_email": "rana.fathy@deltamed.com",
@@ -44,7 +44,7 @@
       "address": "224 Tahrir St, Mohandessin, Giza, Egypt"
     },
     {
-      "supplier_id": "SUP-003",
+      "_id": "SUP-003",
       "supplier_name": "RedSea Pharma",
       "contact_name": "Heba El-Sayed",
       "contact_email": "heba.el-sayed@redseapharma.com",
@@ -52,7 +52,7 @@
       "address": "124 El-Horreya Ave, Nasr City, Luxor, Egypt"
     },
     {
-      "supplier_id": "SUP-004",
+      "_id": "SUP-004",
       "supplier_name": "Shorouk Health",
       "contact_name": "Mona El-Sayed",
       "contact_email": "mona.el-sayed@shoroukhealth.com",
@@ -60,7 +60,7 @@
       "address": "158 Abbas El Akkad St, Dokki, Aswan, Egypt"
     },
     {
-      "supplier_id": "SUP-005",
+      "_id": "SUP-005",
       "supplier_name": "CairoCare",
       "contact_name": "Hagar Saad",
       "contact_email": "hagar.saad@cairocare.com",
@@ -68,7 +68,7 @@
       "address": "62 El-Horreya Ave, Mansoura, Mansoura, Egypt"
     },
     {
-      "supplier_id": "SUP-006",
+      "_id": "SUP-006",
       "supplier_name": "Lotfy Medical",
       "contact_name": "Khaled Aziz",
       "contact_email": "khaled.aziz@lotfymedical.com",
@@ -76,7 +76,7 @@
       "address": "115 El-Thawra St, Alexandria, Tanta, Egypt"
     },
     {
-      "supplier_id": "SUP-007",
+      "_id": "SUP-007",
       "supplier_name": "Cleopatra Pharma",
       "contact_name": "Aya Samir",
       "contact_email": "aya.samir@cleopatrapharma.com",
@@ -84,7 +84,7 @@
       "address": "163 Makram Ebeid St, Dokki, Mansoura, Egypt"
     },
     {
-      "supplier_id": "SUP-008",
+      "_id": "SUP-008",
       "supplier_name": "Pyramid Health",
       "contact_name": "Hagar Saad",
       "contact_email": "hagar.saad@pyramidhealth.com",
@@ -92,7 +92,7 @@
       "address": "239 Mostafa El-Nahas St, Mansoura, Giza, Egypt"
     },
     {
-      "supplier_id": "SUP-009",
+      "_id": "SUP-009",
       "supplier_name": "CairoCare",
       "contact_name": "Rana Saeed",
       "contact_email": "rana.saeed@cairocare.com",
@@ -100,7 +100,7 @@
       "address": "87 El-Thawra St, Zayed, Cairo, Egypt"
     },
     {
-      "supplier_id": "SUP-010",
+      "_id": "SUP-010",
       "supplier_name": "Pyramid Health",
       "contact_name": "Dina Samir",
       "contact_email": "dina.samir@pyramidhealth.com",
@@ -108,7 +108,7 @@
       "address": "184 Salah Salem Rd, Mansoura, Zagazig, Egypt"
     },
     {
-      "supplier_id": "SUP-011",
+      "_id": "SUP-011",
       "supplier_name": "Shorouk Health",
       "contact_name": "Aya Abdelrahman",
       "contact_email": "aya.abdelrahman@shoroukhealth.com",
@@ -116,7 +116,7 @@
       "address": "252 Tahrir St, Nasr City, Ismailia, Egypt"
     },
     {
-      "supplier_id": "SUP-012",
+      "_id": "SUP-012",
       "supplier_name": "Shorouk Health",
       "contact_name": "Aya Saad",
       "contact_email": "aya.saad@shoroukhealth.com",
@@ -124,7 +124,7 @@
       "address": "21 El-Thawra St, New Cairo, Alexandria, Egypt"
     },
     {
-      "supplier_id": "SUP-013",
+      "_id": "SUP-013",
       "supplier_name": "Obour Med",
       "contact_name": "Khaled Naguib",
       "contact_email": "khaled.naguib@obourmed.com",
@@ -132,7 +132,7 @@
       "address": "76 Makram Ebeid St, Zayed, Tanta, Egypt"
     },
     {
-      "supplier_id": "SUP-014",
+      "_id": "SUP-014",
       "supplier_name": "Upper Egypt Med",
       "contact_name": "Hossam Ali",
       "contact_email": "hossam.ali@upperegyptmed.com",
@@ -140,7 +140,7 @@
       "address": "80 Abbas El Akkad St, Alexandria, Ismailia, Egypt"
     },
     {
-      "supplier_id": "SUP-015",
+      "_id": "SUP-015",
       "supplier_name": "GizaPharm",
       "contact_name": "Salma Fouad",
       "contact_email": "salma.fouad@gizapharm.com",
@@ -148,7 +148,7 @@
       "address": "100 October Rd, Mohandessin, Mansoura, Egypt"
     },
     {
-      "supplier_id": "SUP-016",
+      "_id": "SUP-016",
       "supplier_name": "NilePharma",
       "contact_name": "Nadine Samir",
       "contact_email": "nadine.samir@nilepharma.com",
@@ -156,7 +156,7 @@
       "address": "12 October Rd, Zayed, Aswan, Egypt"
     },
     {
-      "supplier_id": "SUP-017",
+      "_id": "SUP-017",
       "supplier_name": "Lotfy Medical",
       "contact_name": "Nourhan Samir",
       "contact_email": "nourhan.samir@lotfymedical.com",
@@ -164,7 +164,7 @@
       "address": "37 El-Thawra St, Alexandria, Tanta, Egypt"
     },
     {
-      "supplier_id": "SUP-018",
+      "_id": "SUP-018",
       "supplier_name": "Heliopolis Med",
       "contact_name": "Mona Fouad",
       "contact_email": "mona.fouad@heliopolismed.com",
@@ -172,7 +172,7 @@
       "address": "41 Makram Ebeid St, Heliopolis, Mansoura, Egypt"
     },
     {
-      "supplier_id": "SUP-019",
+      "_id": "SUP-019",
       "supplier_name": "El Nasr Pharma",
       "contact_name": "Youssef Ibrahim",
       "contact_email": "youssef.ibrahim@elnasrpharma.com",
@@ -180,7 +180,7 @@
       "address": "62 Corniche Rd, Mansoura, Alexandria, Egypt"
     },
     {
-      "supplier_id": "SUP-020",
+      "_id": "SUP-020",
       "supplier_name": "RedSea Pharma",
       "contact_name": "Khaled Lotfy",
       "contact_email": "khaled.lotfy@redseapharma.com",
@@ -188,7 +188,7 @@
       "address": "116 El-Horreya Ave, Zayed, Alexandria, Egypt"
     },
     {
-      "supplier_id": "SUP-021",
+      "_id": "SUP-021",
       "supplier_name": "Horus Labs",
       "contact_name": "Salma Ragab",
       "contact_email": "salma.ragab@horuslabs.com",
@@ -196,7 +196,7 @@
       "address": "69 El-Thawra St, 6th of October, Zagazig, Egypt"
     },
     {
-      "supplier_id": "SUP-022",
+      "_id": "SUP-022",
       "supplier_name": "Upper Egypt Med",
       "contact_name": "Mahmoud Abdelrahman",
       "contact_email": "mahmoud.abdelrahman@upperegyptmed.com",
@@ -204,7 +204,7 @@
       "address": "145 El-Thawra St, Dokki, Aswan, Egypt"
     },
     {
-      "supplier_id": "SUP-023",
+      "_id": "SUP-023",
       "supplier_name": "NilePharma",
       "contact_name": "Mostafa Hafez",
       "contact_email": "mostafa.hafez@nilepharma.com",
@@ -212,7 +212,7 @@
       "address": "23 Gamal Abdel Nasser St, Maadi, Giza, Egypt"
     },
     {
-      "supplier_id": "SUP-024",
+      "_id": "SUP-024",
       "supplier_name": "Horus Labs",
       "contact_name": "Rana Lotfy",
       "contact_email": "rana.lotfy@horuslabs.com",
@@ -220,7 +220,7 @@
       "address": "124 Gamal Abdel Nasser St, Alexandria, Aswan, Egypt"
     },
     {
-      "supplier_id": "SUP-025",
+      "_id": "SUP-025",
       "supplier_name": "Cleopatra Pharma",
       "contact_name": "Walid Ragab",
       "contact_email": "walid.ragab@cleopatrapharma.com",
@@ -228,7 +228,7 @@
       "address": "132 Abbas El Akkad St, Mohandessin, Mansoura, Egypt"
     },
     {
-      "supplier_id": "SUP-026",
+      "_id": "SUP-026",
       "supplier_name": "Canal Med",
       "contact_name": "Nadine Lotfy",
       "contact_email": "nadine.lotfy@canalmed.com",
@@ -236,7 +236,7 @@
       "address": "153 El-Thawra St, Maadi, Mansoura, Egypt"
     },
     {
-      "supplier_id": "SUP-027",
+      "_id": "SUP-027",
       "supplier_name": "Obour Med",
       "contact_name": "Salma Elbaz",
       "contact_email": "salma.elbaz@obourmed.com",
@@ -244,7 +244,7 @@
       "address": "196 Tahrir St, Mohandessin, Giza, Egypt"
     },
     {
-      "supplier_id": "SUP-028",
+      "_id": "SUP-028",
       "supplier_name": "Sinai Pharma",
       "contact_name": "Nadine Fathy",
       "contact_email": "nadine.fathy@sinaipharma.com",
@@ -252,7 +252,7 @@
       "address": "10 El-Thawra St, New Cairo, Giza, Egypt"
     },
     {
-      "supplier_id": "SUP-029",
+      "_id": "SUP-029",
       "supplier_name": "CairoCare",
       "contact_name": "Mona Fathy",
       "contact_email": "mona.fathy@cairocare.com",
@@ -260,7 +260,7 @@
       "address": "180 Tahrir St, Zayed, Zagazig, Egypt"
     },
     {
-      "supplier_id": "SUP-030",
+      "_id": "SUP-030",
       "supplier_name": "Heliopolis Med",
       "contact_name": "Hossam Ali",
       "contact_email": "hossam.ali@heliopolismed.com",
@@ -268,7 +268,7 @@
       "address": "87 El-Horreya Ave, 6th of October, Alexandria, Egypt"
     },
     {
-      "supplier_id": "SUP-031",
+      "_id": "SUP-031",
       "supplier_name": "Obour Med",
       "contact_name": "Nourhan Naguib",
       "contact_email": "nourhan.naguib@obourmed.com",
@@ -276,7 +276,7 @@
       "address": "290 Gamal Abdel Nasser St, Dokki, Cairo, Egypt"
     },
     {
-      "supplier_id": "SUP-032",
+      "_id": "SUP-032",
       "supplier_name": "NilePharma",
       "contact_name": "Khaled Hafez",
       "contact_email": "khaled.hafez@nilepharma.com",
@@ -284,7 +284,7 @@
       "address": "109 Makram Ebeid St, Nasr City, Ismailia, Egypt"
     },
     {
-      "supplier_id": "SUP-033",
+      "_id": "SUP-033",
       "supplier_name": "LotusMed",
       "contact_name": "Mahmoud Hafez",
       "contact_email": "mahmoud.hafez@lotusmed.com",
@@ -292,7 +292,7 @@
       "address": "142 Gamal Abdel Nasser St, Zayed, Alexandria, Egypt"
     },
     {
-      "supplier_id": "SUP-034",
+      "_id": "SUP-034",
       "supplier_name": "DeltaMed",
       "contact_name": "Salma Elbaz",
       "contact_email": "salma.elbaz@deltamed.com",
@@ -300,7 +300,7 @@
       "address": "225 Gamal Abdel Nasser St, Dokki, Aswan, Egypt"
     },
     {
-      "supplier_id": "SUP-035",
+      "_id": "SUP-035",
       "supplier_name": "AlexBio",
       "contact_name": "Rana Hafez",
       "contact_email": "rana.hafez@alexbio.com",
@@ -308,7 +308,7 @@
       "address": "103 El-Horreya Ave, Nasr City, Alexandria, Egypt"
     },
     {
-      "supplier_id": "SUP-036",
+      "_id": "SUP-036",
       "supplier_name": "MedSahara",
       "contact_name": "Ahmed Naguib",
       "contact_email": "ahmed.naguib@medsahara.com",
@@ -316,7 +316,7 @@
       "address": "294 Corniche Rd, New Cairo, Aswan, Egypt"
     },
     {
-      "supplier_id": "SUP-037",
+      "_id": "SUP-037",
       "supplier_name": "Canal Med",
       "contact_name": "Dina Naguib",
       "contact_email": "dina.naguib@canalmed.com",
@@ -324,7 +324,7 @@
       "address": "296 Corniche Rd, Mohandessin, Mansoura, Egypt"
     },
     {
-      "supplier_id": "SUP-038",
+      "_id": "SUP-038",
       "supplier_name": "Horus Labs",
       "contact_name": "Omar Ibrahim",
       "contact_email": "omar.ibrahim@horuslabs.com",
@@ -332,7 +332,7 @@
       "address": "42 El-Thawra St, New Cairo, Luxor, Egypt"
     },
     {
-      "supplier_id": "SUP-039",
+      "_id": "SUP-039",
       "supplier_name": "Canal Med",
       "contact_name": "Nourhan Hafez",
       "contact_email": "nourhan.hafez@canalmed.com",
@@ -340,7 +340,7 @@
       "address": "241 Gamal Abdel Nasser St, Alexandria, Zagazig, Egypt"
     },
     {
-      "supplier_id": "SUP-040",
+      "_id": "SUP-040",
       "supplier_name": "Canal Med",
       "contact_name": "Walid Hafez",
       "contact_email": "walid.hafez@canalmed.com",
@@ -348,7 +348,7 @@
       "address": "296 Makram Ebeid St, 6th of October, Alexandria, Egypt"
     },
     {
-      "supplier_id": "SUP-041",
+      "_id": "SUP-041",
       "supplier_name": "GizaPharm",
       "contact_name": "Khaled Fouad",
       "contact_email": "khaled.fouad@gizapharm.com",
@@ -356,7 +356,7 @@
       "address": "133 Abbas El Akkad St, Heliopolis, Mansoura, Egypt"
     },
     {
-      "supplier_id": "SUP-042",
+      "_id": "SUP-042",
       "supplier_name": "EverGreen Med",
       "contact_name": "Khaled Hassan",
       "contact_email": "khaled.hassan@evergreenmed.com",
@@ -364,7 +364,7 @@
       "address": "83 Mostafa El-Nahas St, Dokki, Zagazig, Egypt"
     },
     {
-      "supplier_id": "SUP-043",
+      "_id": "SUP-043",
       "supplier_name": "Sinai Pharma",
       "contact_name": "Khaled Fouad",
       "contact_email": "khaled.fouad@sinaipharma.com",
@@ -372,7 +372,7 @@
       "address": "124 October Rd, Zayed, Aswan, Egypt"
     },
     {
-      "supplier_id": "SUP-044",
+      "_id": "SUP-044",
       "supplier_name": "Heliopolis Med",
       "contact_name": "Nour Saeed",
       "contact_email": "nour.saeed@heliopolismed.com",
@@ -380,7 +380,7 @@
       "address": "57 Salah Salem Rd, Nasr City, Suez, Egypt"
     },
     {
-      "supplier_id": "SUP-045",
+      "_id": "SUP-045",
       "supplier_name": "RedSea Pharma",
       "contact_name": "Aya Elbaz",
       "contact_email": "aya.elbaz@redseapharma.com",
@@ -388,7 +388,7 @@
       "address": "179 Gamal Abdel Nasser St, Mansoura, Ismailia, Egypt"
     },
     {
-      "supplier_id": "SUP-046",
+      "_id": "SUP-046",
       "supplier_name": "Canal Med",
       "contact_name": "Hossam Ibrahim",
       "contact_email": "hossam.ibrahim@canalmed.com",
@@ -396,7 +396,7 @@
       "address": "63 Tahrir St, Maadi, Ismailia, Egypt"
     },
     {
-      "supplier_id": "SUP-047",
+      "_id": "SUP-047",
       "supplier_name": "DeltaMed",
       "contact_name": "Youssef Farouk",
       "contact_email": "youssef.farouk@deltamed.com",
@@ -404,7 +404,7 @@
       "address": "142 Abbas El Akkad St, Dokki, Aswan, Egypt"
     },
     {
-      "supplier_id": "SUP-048",
+      "_id": "SUP-048",
       "supplier_name": "Canal Med",
       "contact_name": "Hagar Naguib",
       "contact_email": "hagar.naguib@canalmed.com",
@@ -412,7 +412,7 @@
       "address": "152 Corniche Rd, Dokki, Tanta, Egypt"
     },
     {
-      "supplier_id": "SUP-049",
+      "_id": "SUP-049",
       "supplier_name": "Pyramid Health",
       "contact_name": "Hany Khaled",
       "contact_email": "hany.khaled@pyramidhealth.com",
@@ -420,7 +420,7 @@
       "address": "52 El-Horreya Ave, Mohandessin, Giza, Egypt"
     },
     {
-      "supplier_id": "SUP-050",
+      "_id": "SUP-050",
       "supplier_name": "Horus Labs",
       "contact_name": "Khaled Elbaz",
       "contact_email": "khaled.elbaz@horuslabs.com",
@@ -433,550 +433,550 @@
       "product_id": "PROD-001",
       "sku": "MED-001",
       "product_name": "Artificial Tears 0.5% Eye Drops",
-      "category_id": "CAT-003",
+      "_id": "CAT-003",
       "quantity": 28,
       "price": 291.07,
       "expire_date": "2028-09-01",
-      "supplier_id": "SUP-004",
+      "_id": "SUP-004",
       "status": "in stock"
     },
     {
       "product_id": "PROD-002",
       "sku": "MED-002",
       "product_name": "Hydrocortisone 1% Cream",
-      "category_id": "CAT-001",
+      "_id": "CAT-001",
       "quantity": 160,
       "price": 98.45,
       "expire_date": "2028-05-09",
-      "supplier_id": "SUP-019",
+      "_id": "SUP-019",
       "status": "low stock"
     },
     {
       "product_id": "PROD-003",
       "sku": "MED-003",
       "product_name": "Artificial Tears 0.5% Eye Drops",
-      "category_id": "CAT-003",
+      "_id": "CAT-003",
       "quantity": 69,
       "price": 110.63,
       "expire_date": "2027-04-21",
-      "supplier_id": "SUP-017",
+      "_id": "SUP-017",
       "status": "in stock"
     },
     {
       "product_id": "PROD-004",
       "sku": "MED-004",
       "product_name": "Paracetamol 500mg Tablets",
-      "category_id": "CAT-002",
+      "_id": "CAT-002",
       "quantity": 187,
       "price": 156.64,
       "expire_date": "2028-04-06",
-      "supplier_id": "SUP-033",
+      "_id": "SUP-033",
       "status": "low stock"
     },
     {
       "product_id": "PROD-005",
       "sku": "MED-005",
       "product_name": "Hydrocortisone 1% Cream",
-      "category_id": "CAT-001",
+      "_id": "CAT-001",
       "quantity": 27,
       "price": 200.91,
       "expire_date": "2030-11-05",
-      "supplier_id": "SUP-028",
+      "_id": "SUP-028",
       "status": "out of stock"
     },
     {
       "product_id": "PROD-006",
       "sku": "MED-006",
       "product_name": "Zinc 25mg Tablets",
-      "category_id": "CAT-002",
+      "_id": "CAT-002",
       "quantity": 129,
       "price": 99.26,
       "expire_date": "2028-05-28",
-      "supplier_id": "SUP-015",
+      "_id": "SUP-015",
       "status": "low stock"
     },
     {
       "product_id": "PROD-007",
       "sku": "MED-007",
       "product_name": "Hydrocortisone 1% Cream",
-      "category_id": "CAT-001",
+      "_id": "CAT-001",
       "quantity": 103,
       "price": 296.94,
       "expire_date": "2027-07-04",
-      "supplier_id": "SUP-009",
+      "_id": "SUP-009",
       "status": "in stock"
     },
     {
       "product_id": "PROD-008",
       "sku": "MED-008",
       "product_name": "Ibuprofen 400mg Tablets",
-      "category_id": "CAT-002",
+      "_id": "CAT-002",
       "quantity": 110,
       "price": 57.34,
       "expire_date": "2027-09-04",
-      "supplier_id": "SUP-043",
+      "_id": "SUP-043",
       "status": "low stock"
     },
     {
       "product_id": "PROD-009",
       "sku": "MED-009",
       "product_name": "Artificial Tears 0.5% Eye Drops",
-      "category_id": "CAT-003",
+      "_id": "CAT-003",
       "quantity": 153,
       "price": 80.24,
       "expire_date": "2028-11-04",
-      "supplier_id": "SUP-003",
+      "_id": "SUP-003",
       "status": "low stock"
     },
     {
       "product_id": "PROD-010",
       "sku": "MED-010",
       "product_name": "Amoxicillin 250mg Tablets",
-      "category_id": "CAT-002",
+      "_id": "CAT-002",
       "quantity": 68,
       "price": 139.29,
       "expire_date": "2028-09-04",
-      "supplier_id": "SUP-024",
+      "_id": "SUP-024",
       "status": "low stock"
     },
     {
       "product_id": "PROD-011",
       "sku": "MED-011",
       "product_name": "Artificial Tears 0.5% Eye Drops",
-      "category_id": "CAT-003",
+      "_id": "CAT-003",
       "quantity": 62,
       "price": 19.99,
       "expire_date": "2028-12-07",
-      "supplier_id": "SUP-014",
+      "_id": "SUP-014",
       "status": "low stock"
     },
     {
       "product_id": "PROD-012",
       "sku": "MED-012",
       "product_name": "Amoxicillin 250mg Tablets",
-      "category_id": "CAT-002",
+      "_id": "CAT-002",
       "quantity": 85,
       "price": 120.67,
       "expire_date": "2029-11-11",
-      "supplier_id": "SUP-018",
+      "_id": "SUP-018",
       "status": "out of stock"
     },
     {
       "product_id": "PROD-013",
       "sku": "MED-013",
       "product_name": "Clotrimazole 1% Ointment",
-      "category_id": "CAT-005",
+      "_id": "CAT-005",
       "quantity": 63,
       "price": 156.37,
       "expire_date": "2027-03-25",
-      "supplier_id": "SUP-006",
+      "_id": "SUP-006",
       "status": "low stock"
     },
     {
       "product_id": "PROD-014",
       "sku": "MED-014",
       "product_name": "Ibuprofen 200mg Tablets",
-      "category_id": "CAT-002",
+      "_id": "CAT-002",
       "quantity": 102,
       "price": 180.17,
       "expire_date": "2029-05-29",
-      "supplier_id": "SUP-002",
+      "_id": "SUP-002",
       "status": "low stock"
     },
     {
       "product_id": "PROD-015",
       "sku": "MED-015",
       "product_name": "Miconazole 2% Cream",
-      "category_id": "CAT-001",
+      "_id": "CAT-001",
       "quantity": 21,
       "price": 179.82,
       "expire_date": "2030-03-02",
-      "supplier_id": "SUP-049",
+      "_id": "SUP-049",
       "status": "in stock"
     },
     {
       "product_id": "PROD-016",
       "sku": "MED-016",
       "product_name": "Clotrimazole 1% Ointment",
-      "category_id": "CAT-005",
+      "_id": "CAT-005",
       "quantity": 195,
       "price": 104.58,
       "expire_date": "2029-12-21",
-      "supplier_id": "SUP-010",
+      "_id": "SUP-010",
       "status": "low stock"
     },
     {
       "product_id": "PROD-017",
       "sku": "MED-017",
       "product_name": "Gentamicin 0.1% Ointment",
-      "category_id": "CAT-005",
+      "_id": "CAT-005",
       "quantity": 11,
       "price": 249.21,
       "expire_date": "2030-01-28",
-      "supplier_id": "SUP-041",
+      "_id": "SUP-041",
       "status": "low stock"
     },
     {
       "product_id": "PROD-018",
       "sku": "MED-018",
       "product_name": "Gentamicin 0.1% Ointment",
-      "category_id": "CAT-005",
+      "_id": "CAT-005",
       "quantity": 134,
       "price": 228.33,
       "expire_date": "2030-05-22",
-      "supplier_id": "SUP-002",
+      "_id": "SUP-002",
       "status": "out of stock"
     },
     {
       "product_id": "PROD-019",
       "sku": "MED-019",
       "product_name": "Timolol 0.5% Eye Drops",
-      "category_id": "CAT-003",
+      "_id": "CAT-003",
       "quantity": 21,
       "price": 19.04,
       "expire_date": "2027-12-12",
-      "supplier_id": "SUP-041",
+      "_id": "SUP-041",
       "status": "low stock"
     },
     {
       "product_id": "PROD-020",
       "sku": "MED-020",
       "product_name": "Ibuprofen 400mg Tablets",
-      "category_id": "CAT-002",
+      "_id": "CAT-002",
       "quantity": 115,
       "price": 171.97,
       "expire_date": "2030-09-20",
-      "supplier_id": "SUP-002",
+      "_id": "SUP-002",
       "status": "out of stock"
     },
     {
       "product_id": "PROD-021",
       "sku": "MED-021",
       "product_name": "Artificial Tears 0.5% Eye Drops",
-      "category_id": "CAT-003",
+      "_id": "CAT-003",
       "quantity": 125,
       "price": 86.5,
       "expire_date": "2029-10-05",
-      "supplier_id": "SUP-005",
+      "_id": "SUP-005",
       "status": "out of stock"
     },
     {
       "product_id": "PROD-022",
       "sku": "MED-022",
       "product_name": "Artificial Tears 0.5% Eye Drops",
-      "category_id": "CAT-003",
+      "_id": "CAT-003",
       "quantity": 168,
       "price": 162.54,
       "expire_date": "2029-11-09",
-      "supplier_id": "SUP-017",
+      "_id": "SUP-017",
       "status": "in stock"
     },
     {
       "product_id": "PROD-023",
       "sku": "MED-023",
       "product_name": "Miconazole 2% Cream",
-      "category_id": "CAT-001",
+      "_id": "CAT-001",
       "quantity": 186,
       "price": 229.37,
       "expire_date": "2028-06-29",
-      "supplier_id": "SUP-048",
+      "_id": "SUP-048",
       "status": "out of stock"
     },
     {
       "product_id": "PROD-024",
       "sku": "MED-024",
       "product_name": "Zinc 25mg Tablets",
-      "category_id": "CAT-002",
+      "_id": "CAT-002",
       "quantity": 97,
       "price": 32.25,
       "expire_date": "2031-01-13",
-      "supplier_id": "SUP-019",
+      "_id": "SUP-019",
       "status": "in stock"
     },
     {
       "product_id": "PROD-025",
       "sku": "MED-025",
       "product_name": "Timolol 0.5% Eye Drops",
-      "category_id": "CAT-003",
+      "_id": "CAT-003",
       "quantity": 19,
       "price": 183.91,
       "expire_date": "2029-01-22",
-      "supplier_id": "SUP-017",
+      "_id": "SUP-017",
       "status": "out of stock"
     },
     {
       "product_id": "PROD-026",
       "sku": "MED-026",
       "product_name": "Gentamicin 0.1% Ointment",
-      "category_id": "CAT-005",
+      "_id": "CAT-005",
       "quantity": 159,
       "price": 174.65,
       "expire_date": "2027-04-09",
-      "supplier_id": "SUP-031",
+      "_id": "SUP-031",
       "status": "in stock"
     },
     {
       "product_id": "PROD-027",
       "sku": "MED-027",
       "product_name": "Zinc 25mg Tablets",
-      "category_id": "CAT-002",
+      "_id": "CAT-002",
       "quantity": 172,
       "price": 38.86,
       "expire_date": "2028-06-02",
-      "supplier_id": "SUP-044",
+      "_id": "SUP-044",
       "status": "low stock"
     },
     {
       "product_id": "PROD-028",
       "sku": "MED-028",
       "product_name": "Miconazole 2% Cream",
-      "category_id": "CAT-001",
+      "_id": "CAT-001",
       "quantity": 118,
       "price": 145.11,
       "expire_date": "2027-11-12",
-      "supplier_id": "SUP-036",
+      "_id": "SUP-036",
       "status": "in stock"
     },
     {
       "product_id": "PROD-029",
       "sku": "MED-029",
       "product_name": "Miconazole 2% Cream",
-      "category_id": "CAT-001",
+      "_id": "CAT-001",
       "quantity": 121,
       "price": 15.08,
       "expire_date": "2029-10-09",
-      "supplier_id": "SUP-005",
+      "_id": "SUP-005",
       "status": "out of stock"
     },
     {
       "product_id": "PROD-030",
       "sku": "MED-030",
       "product_name": "Zinc 25mg Tablets",
-      "category_id": "CAT-002",
+      "_id": "CAT-002",
       "quantity": 99,
       "price": 70.85,
       "expire_date": "2028-05-19",
-      "supplier_id": "SUP-005",
+      "_id": "SUP-005",
       "status": "out of stock"
     },
     {
       "product_id": "PROD-031",
       "sku": "MED-031",
       "product_name": "Ibuprofen 200mg Tablets",
-      "category_id": "CAT-002",
+      "_id": "CAT-002",
       "quantity": 191,
       "price": 161.98,
       "expire_date": "2029-03-20",
-      "supplier_id": "SUP-009",
+      "_id": "SUP-009",
       "status": "out of stock"
     },
     {
       "product_id": "PROD-032",
       "sku": "MED-032",
       "product_name": "Clotrimazole 1% Ointment",
-      "category_id": "CAT-005",
+      "_id": "CAT-005",
       "quantity": 28,
       "price": 213.97,
       "expire_date": "2028-06-30",
-      "supplier_id": "SUP-032",
+      "_id": "SUP-032",
       "status": "low stock"
     },
     {
       "product_id": "PROD-033",
       "sku": "MED-033",
       "product_name": "Diclofenac 1% Gel",
-      "category_id": "CAT-004",
+      "_id": "CAT-004",
       "quantity": 40,
       "price": 11.04,
       "expire_date": "2029-12-15",
-      "supplier_id": "SUP-044",
+      "_id": "SUP-044",
       "status": "low stock"
     },
     {
       "product_id": "PROD-034",
       "sku": "MED-034",
       "product_name": "Diclofenac 1% Gel",
-      "category_id": "CAT-004",
+      "_id": "CAT-004",
       "quantity": 186,
       "price": 50.81,
       "expire_date": "2029-02-16",
-      "supplier_id": "SUP-025",
+      "_id": "SUP-025",
       "status": "low stock"
     },
     {
       "product_id": "PROD-035",
       "sku": "MED-035",
       "product_name": "Ibuprofen 400mg Tablets",
-      "category_id": "CAT-002",
+      "_id": "CAT-002",
       "quantity": 0,
       "price": 104.12,
       "expire_date": "2029-02-04",
-      "supplier_id": "SUP-026",
+      "_id": "SUP-026",
       "status": "in stock"
     },
     {
       "product_id": "PROD-036",
       "sku": "MED-036",
       "product_name": "Hydrocortisone 1% Cream",
-      "category_id": "CAT-001",
+      "_id": "CAT-001",
       "quantity": 189,
       "price": 94.05,
       "expire_date": "2029-04-15",
-      "supplier_id": "SUP-005",
+      "_id": "SUP-005",
       "status": "low stock"
     },
     {
       "product_id": "PROD-037",
       "sku": "MED-037",
       "product_name": "Diclofenac 1% Gel",
-      "category_id": "CAT-004",
+      "_id": "CAT-004",
       "quantity": 92,
       "price": 278.37,
       "expire_date": "2028-09-28",
-      "supplier_id": "SUP-004",
+      "_id": "SUP-004",
       "status": "low stock"
     },
     {
       "product_id": "PROD-038",
       "sku": "MED-038",
       "product_name": "Ibuprofen 200mg Tablets",
-      "category_id": "CAT-002",
+      "_id": "CAT-002",
       "quantity": 169,
       "price": 92.83,
       "expire_date": "2028-01-13",
-      "supplier_id": "SUP-016",
+      "_id": "SUP-016",
       "status": "low stock"
     },
     {
       "product_id": "PROD-039",
       "sku": "MED-039",
       "product_name": "Diclofenac 1% Gel",
-      "category_id": "CAT-004",
+      "_id": "CAT-004",
       "quantity": 48,
       "price": 234.22,
       "expire_date": "2029-08-07",
-      "supplier_id": "SUP-002",
+      "_id": "SUP-002",
       "status": "out of stock"
     },
     {
       "product_id": "PROD-040",
       "sku": "MED-040",
       "product_name": "Diclofenac 1% Gel",
-      "category_id": "CAT-004",
+      "_id": "CAT-004",
       "quantity": 184,
       "price": 33.37,
       "expire_date": "2029-07-03",
-      "supplier_id": "SUP-029",
+      "_id": "SUP-029",
       "status": "out of stock"
     },
     {
       "product_id": "PROD-041",
       "sku": "MED-041",
       "product_name": "Amoxicillin 500mg Tablets",
-      "category_id": "CAT-002",
+      "_id": "CAT-002",
       "quantity": 124,
       "price": 24.2,
       "expire_date": "2030-04-14",
-      "supplier_id": "SUP-009",
+      "_id": "SUP-009",
       "status": "in stock"
     },
     {
       "product_id": "PROD-042",
       "sku": "MED-042",
       "product_name": "Zinc 25mg Tablets",
-      "category_id": "CAT-002",
+      "_id": "CAT-002",
       "quantity": 87,
       "price": 91.71,
       "expire_date": "2028-08-19",
-      "supplier_id": "SUP-048",
+      "_id": "SUP-048",
       "status": "out of stock"
     },
     {
       "product_id": "PROD-043",
       "sku": "MED-043",
       "product_name": "Clotrimazole 1% Ointment",
-      "category_id": "CAT-005",
+      "_id": "CAT-005",
       "quantity": 103,
       "price": 200.24,
       "expire_date": "2028-11-20",
-      "supplier_id": "SUP-031",
+      "_id": "SUP-031",
       "status": "out of stock"
     },
     {
       "product_id": "PROD-044",
       "sku": "MED-044",
       "product_name": "Clotrimazole 1% Ointment",
-      "category_id": "CAT-005",
+      "_id": "CAT-005",
       "quantity": 30,
       "price": 58.53,
       "expire_date": "2028-02-09",
-      "supplier_id": "SUP-005",
+      "_id": "SUP-005",
       "status": "in stock"
     },
     {
       "product_id": "PROD-045",
       "sku": "MED-045",
       "product_name": "Artificial Tears 0.5% Eye Drops",
-      "category_id": "CAT-003",
+      "_id": "CAT-003",
       "quantity": 140,
       "price": 73.81,
       "expire_date": "2029-01-24",
-      "supplier_id": "SUP-049",
+      "_id": "SUP-049",
       "status": "low stock"
     },
     {
       "product_id": "PROD-046",
       "sku": "MED-046",
       "product_name": "Diclofenac 1% Gel",
-      "category_id": "CAT-004",
+      "_id": "CAT-004",
       "quantity": 140,
       "price": 65.8,
       "expire_date": "2027-09-16",
-      "supplier_id": "SUP-012",
+      "_id": "SUP-012",
       "status": "low stock"
     },
     {
       "product_id": "PROD-047",
       "sku": "MED-047",
       "product_name": "Artificial Tears 0.5% Eye Drops",
-      "category_id": "CAT-003",
+      "_id": "CAT-003",
       "quantity": 81,
       "price": 79.35,
       "expire_date": "2028-08-25",
-      "supplier_id": "SUP-037",
+      "_id": "SUP-037",
       "status": "in stock"
     },
     {
       "product_id": "PROD-048",
       "sku": "MED-048",
       "product_name": "Paracetamol 650mg Tablets",
-      "category_id": "CAT-002",
+      "_id": "CAT-002",
       "quantity": 98,
       "price": 130.03,
       "expire_date": "2030-02-20",
-      "supplier_id": "SUP-014",
+      "_id": "SUP-014",
       "status": "low stock"
     },
     {
       "product_id": "PROD-049",
       "sku": "MED-049",
       "product_name": "Miconazole 2% Cream",
-      "category_id": "CAT-001",
+      "_id": "CAT-001",
       "quantity": 192,
       "price": 28.0,
       "expire_date": "2028-10-03",
-      "supplier_id": "SUP-037",
+      "_id": "SUP-037",
       "status": "low stock"
     },
     {
       "product_id": "PROD-050",
       "sku": "MED-050",
       "product_name": "Amoxicillin 250mg Tablets",
-      "category_id": "CAT-002",
+      "_id": "CAT-002",
       "quantity": 23,
       "price": 88.6,
       "expire_date": "2028-08-04",
-      "supplier_id": "SUP-025",
+      "_id": "SUP-025",
       "status": "low stock"
     }
   ],
@@ -1435,7 +1435,7 @@
   "purchase_orders": [
     {
       "order_number": "PO-001",
-      "supplier_id": "SUP-050",
+      "_id": "SUP-050",
       "creation_date": "2025-10-16",
       "status": "Received",
       "total_quantity": 163,
@@ -1443,7 +1443,7 @@
     },
     {
       "order_number": "PO-002",
-      "supplier_id": "SUP-024",
+      "_id": "SUP-024",
       "creation_date": "2025-11-05",
       "status": "Received",
       "total_quantity": 121,
@@ -1451,7 +1451,7 @@
     },
     {
       "order_number": "PO-003",
-      "supplier_id": "SUP-012",
+      "_id": "SUP-012",
       "creation_date": "2025-11-10",
       "status": "Pending",
       "total_quantity": 98,
@@ -1459,7 +1459,7 @@
     },
     {
       "order_number": "PO-004",
-      "supplier_id": "SUP-038",
+      "_id": "SUP-038",
       "creation_date": "2025-12-09",
       "status": "Received",
       "total_quantity": 53,
@@ -1467,7 +1467,7 @@
     },
     {
       "order_number": "PO-005",
-      "supplier_id": "SUP-016",
+      "_id": "SUP-016",
       "creation_date": "2025-06-29",
       "status": "Pending",
       "total_quantity": 352,
@@ -1475,7 +1475,7 @@
     },
     {
       "order_number": "PO-006",
-      "supplier_id": "SUP-042",
+      "_id": "SUP-042",
       "creation_date": "2025-07-21",
       "status": "Pending",
       "total_quantity": 72,
@@ -1483,7 +1483,7 @@
     },
     {
       "order_number": "PO-007",
-      "supplier_id": "SUP-015",
+      "_id": "SUP-015",
       "creation_date": "2025-07-29",
       "status": "Received",
       "total_quantity": 40,
@@ -1491,7 +1491,7 @@
     },
     {
       "order_number": "PO-008",
-      "supplier_id": "SUP-015",
+      "_id": "SUP-015",
       "creation_date": "2026-01-13",
       "status": "Pending",
       "total_quantity": 117,
@@ -1499,7 +1499,7 @@
     },
     {
       "order_number": "PO-009",
-      "supplier_id": "SUP-038",
+      "_id": "SUP-038",
       "creation_date": "2025-12-06",
       "status": "Pending",
       "total_quantity": 210,
@@ -1507,7 +1507,7 @@
     },
     {
       "order_number": "PO-010",
-      "supplier_id": "SUP-012",
+      "_id": "SUP-012",
       "creation_date": "2025-07-29",
       "status": "Received",
       "total_quantity": 416,
@@ -1515,7 +1515,7 @@
     },
     {
       "order_number": "PO-011",
-      "supplier_id": "SUP-001",
+      "_id": "SUP-001",
       "creation_date": "2026-01-20",
       "status": "Received",
       "total_quantity": 131,
@@ -1523,7 +1523,7 @@
     },
     {
       "order_number": "PO-012",
-      "supplier_id": "SUP-022",
+      "_id": "SUP-022",
       "creation_date": "2026-01-02",
       "status": "Pending",
       "total_quantity": 124,
@@ -1531,7 +1531,7 @@
     },
     {
       "order_number": "PO-013",
-      "supplier_id": "SUP-003",
+      "_id": "SUP-003",
       "creation_date": "2025-05-13",
       "status": "Pending",
       "total_quantity": 437,
@@ -1539,7 +1539,7 @@
     },
     {
       "order_number": "PO-014",
-      "supplier_id": "SUP-021",
+      "_id": "SUP-021",
       "creation_date": "2025-08-18",
       "status": "Received",
       "total_quantity": 114,
@@ -1547,7 +1547,7 @@
     },
     {
       "order_number": "PO-015",
-      "supplier_id": "SUP-005",
+      "_id": "SUP-005",
       "creation_date": "2025-12-01",
       "status": "Pending",
       "total_quantity": 427,
@@ -1555,7 +1555,7 @@
     },
     {
       "order_number": "PO-016",
-      "supplier_id": "SUP-031",
+      "_id": "SUP-031",
       "creation_date": "2026-02-11",
       "status": "Received",
       "total_quantity": 71,
@@ -1563,7 +1563,7 @@
     },
     {
       "order_number": "PO-017",
-      "supplier_id": "SUP-043",
+      "_id": "SUP-043",
       "creation_date": "2025-06-07",
       "status": "Pending",
       "total_quantity": 347,
@@ -1571,7 +1571,7 @@
     },
     {
       "order_number": "PO-018",
-      "supplier_id": "SUP-042",
+      "_id": "SUP-042",
       "creation_date": "2025-12-22",
       "status": "Received",
       "total_quantity": 376,
@@ -1579,7 +1579,7 @@
     },
     {
       "order_number": "PO-019",
-      "supplier_id": "SUP-019",
+      "_id": "SUP-019",
       "creation_date": "2025-04-08",
       "status": "Received",
       "total_quantity": 233,
@@ -1587,7 +1587,7 @@
     },
     {
       "order_number": "PO-020",
-      "supplier_id": "SUP-020",
+      "_id": "SUP-020",
       "creation_date": "2025-05-29",
       "status": "Received",
       "total_quantity": 232,
@@ -1595,7 +1595,7 @@
     },
     {
       "order_number": "PO-021",
-      "supplier_id": "SUP-050",
+      "_id": "SUP-050",
       "creation_date": "2025-09-10",
       "status": "Pending",
       "total_quantity": 220,
@@ -1603,7 +1603,7 @@
     },
     {
       "order_number": "PO-022",
-      "supplier_id": "SUP-014",
+      "_id": "SUP-014",
       "creation_date": "2026-03-12",
       "status": "Received",
       "total_quantity": 481,
@@ -1611,7 +1611,7 @@
     },
     {
       "order_number": "PO-023",
-      "supplier_id": "SUP-008",
+      "_id": "SUP-008",
       "creation_date": "2026-01-28",
       "status": "Received",
       "total_quantity": 315,
@@ -1619,7 +1619,7 @@
     },
     {
       "order_number": "PO-024",
-      "supplier_id": "SUP-030",
+      "_id": "SUP-030",
       "creation_date": "2025-12-22",
       "status": "Pending",
       "total_quantity": 27,
@@ -1627,7 +1627,7 @@
     },
     {
       "order_number": "PO-025",
-      "supplier_id": "SUP-010",
+      "_id": "SUP-010",
       "creation_date": "2025-04-21",
       "status": "Received",
       "total_quantity": 65,
@@ -1635,7 +1635,7 @@
     },
     {
       "order_number": "PO-026",
-      "supplier_id": "SUP-024",
+      "_id": "SUP-024",
       "creation_date": "2025-06-30",
       "status": "Pending",
       "total_quantity": 94,
@@ -1643,7 +1643,7 @@
     },
     {
       "order_number": "PO-027",
-      "supplier_id": "SUP-011",
+      "_id": "SUP-011",
       "creation_date": "2025-06-22",
       "status": "Pending",
       "total_quantity": 493,
@@ -1651,7 +1651,7 @@
     },
     {
       "order_number": "PO-028",
-      "supplier_id": "SUP-025",
+      "_id": "SUP-025",
       "creation_date": "2025-07-07",
       "status": "Pending",
       "total_quantity": 174,
@@ -1659,7 +1659,7 @@
     },
     {
       "order_number": "PO-029",
-      "supplier_id": "SUP-003",
+      "_id": "SUP-003",
       "creation_date": "2025-07-11",
       "status": "Received",
       "total_quantity": 47,
@@ -1667,7 +1667,7 @@
     },
     {
       "order_number": "PO-030",
-      "supplier_id": "SUP-041",
+      "_id": "SUP-041",
       "creation_date": "2025-08-29",
       "status": "Pending",
       "total_quantity": 482,
@@ -1675,7 +1675,7 @@
     },
     {
       "order_number": "PO-031",
-      "supplier_id": "SUP-045",
+      "_id": "SUP-045",
       "creation_date": "2025-12-23",
       "status": "Pending",
       "total_quantity": 337,
@@ -1683,7 +1683,7 @@
     },
     {
       "order_number": "PO-032",
-      "supplier_id": "SUP-013",
+      "_id": "SUP-013",
       "creation_date": "2025-07-16",
       "status": "Pending",
       "total_quantity": 309,
@@ -1691,7 +1691,7 @@
     },
     {
       "order_number": "PO-033",
-      "supplier_id": "SUP-026",
+      "_id": "SUP-026",
       "creation_date": "2025-06-23",
       "status": "Pending",
       "total_quantity": 216,
@@ -1699,7 +1699,7 @@
     },
     {
       "order_number": "PO-034",
-      "supplier_id": "SUP-010",
+      "_id": "SUP-010",
       "creation_date": "2025-11-09",
       "status": "Pending",
       "total_quantity": 41,
@@ -1707,7 +1707,7 @@
     },
     {
       "order_number": "PO-035",
-      "supplier_id": "SUP-049",
+      "_id": "SUP-049",
       "creation_date": "2025-04-05",
       "status": "Pending",
       "total_quantity": 361,
@@ -1715,7 +1715,7 @@
     },
     {
       "order_number": "PO-036",
-      "supplier_id": "SUP-008",
+      "_id": "SUP-008",
       "creation_date": "2025-08-28",
       "status": "Received",
       "total_quantity": 301,
@@ -1723,7 +1723,7 @@
     },
     {
       "order_number": "PO-037",
-      "supplier_id": "SUP-050",
+      "_id": "SUP-050",
       "creation_date": "2025-10-10",
       "status": "Received",
       "total_quantity": 177,
@@ -1731,7 +1731,7 @@
     },
     {
       "order_number": "PO-038",
-      "supplier_id": "SUP-028",
+      "_id": "SUP-028",
       "creation_date": "2025-08-28",
       "status": "Received",
       "total_quantity": 248,
@@ -1739,7 +1739,7 @@
     },
     {
       "order_number": "PO-039",
-      "supplier_id": "SUP-012",
+      "_id": "SUP-012",
       "creation_date": "2026-03-04",
       "status": "Pending",
       "total_quantity": 336,
@@ -1747,7 +1747,7 @@
     },
     {
       "order_number": "PO-040",
-      "supplier_id": "SUP-030",
+      "_id": "SUP-030",
       "creation_date": "2025-11-15",
       "status": "Received",
       "total_quantity": 410,
@@ -1755,7 +1755,7 @@
     },
     {
       "order_number": "PO-041",
-      "supplier_id": "SUP-030",
+      "_id": "SUP-030",
       "creation_date": "2025-12-14",
       "status": "Received",
       "total_quantity": 224,
@@ -1763,7 +1763,7 @@
     },
     {
       "order_number": "PO-042",
-      "supplier_id": "SUP-009",
+      "_id": "SUP-009",
       "creation_date": "2025-09-13",
       "status": "Received",
       "total_quantity": 207,
@@ -1771,7 +1771,7 @@
     },
     {
       "order_number": "PO-043",
-      "supplier_id": "SUP-029",
+      "_id": "SUP-029",
       "creation_date": "2025-06-30",
       "status": "Pending",
       "total_quantity": 40,
@@ -1779,7 +1779,7 @@
     },
     {
       "order_number": "PO-044",
-      "supplier_id": "SUP-006",
+      "_id": "SUP-006",
       "creation_date": "2025-10-06",
       "status": "Pending",
       "total_quantity": 47,
@@ -1787,7 +1787,7 @@
     },
     {
       "order_number": "PO-045",
-      "supplier_id": "SUP-025",
+      "_id": "SUP-025",
       "creation_date": "2025-04-15",
       "status": "Pending",
       "total_quantity": 33,
@@ -1795,7 +1795,7 @@
     },
     {
       "order_number": "PO-046",
-      "supplier_id": "SUP-040",
+      "_id": "SUP-040",
       "creation_date": "2025-03-26",
       "status": "Pending",
       "total_quantity": 119,
@@ -1803,7 +1803,7 @@
     },
     {
       "order_number": "PO-047",
-      "supplier_id": "SUP-032",
+      "_id": "SUP-032",
       "creation_date": "2025-10-19",
       "status": "Pending",
       "total_quantity": 371,
@@ -1811,7 +1811,7 @@
     },
     {
       "order_number": "PO-048",
-      "supplier_id": "SUP-015",
+      "_id": "SUP-015",
       "creation_date": "2026-02-10",
       "status": "Received",
       "total_quantity": 332,
@@ -1819,7 +1819,7 @@
     },
     {
       "order_number": "PO-049",
-      "supplier_id": "SUP-011",
+      "_id": "SUP-011",
       "creation_date": "2025-10-01",
       "status": "Received",
       "total_quantity": 483,
@@ -1827,7 +1827,7 @@
     },
     {
       "order_number": "PO-050",
-      "supplier_id": "SUP-010",
+      "_id": "SUP-010",
       "creation_date": "2025-11-05",
       "status": "Received",
       "total_quantity": 126,
