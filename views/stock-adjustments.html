@@ -109,7 +109,197 @@
         </aside>
 
         <!-- Main page -->
-        <main class="col-9">Change Stock Adjustments</main>
+        <main class="col-12 col-md-9">
+
+          <!-- header -->
+          <nav class="navbar">
+            <div class="container-fluid flex-wrap gap-2">
+              <div>
+                <h4 class="navbar-brand mb-0">Stock Adjustments</h4>
+                <p class="text-muted mb-0">Record and track inventory adjustments</p>
+              </div>
+
+              <!-- Add button -->
+              <button type="button" class="btn main-btn" data-bs-toggle="modal" data-bs-target="#exampleModal"
+                data-bs-whatever="@mdo"><i class="fa fa-plus-circle me-1"></i> Add Adjustments </button>
+
+              <!-- Modal -->
+              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                aria-hidden="true">
+                <div class="modal-dialog">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h1 class="modal-title fs-5 text-primary" id="exampleModalLabel">Add Adjustments</h1>
+                      <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                    </div>
+
+                    <div class="modal-body">
+                      <form>
+                        <div class="mb-3">
+
+                          <label class="col-form-label">Product:</label>
+
+                          <div class="input-group mb-3">
+                            <label class="input-group-text btn btn-primary">Options</label>
+                            <select class="form-select">
+                              <option selected>Choose...</option>
+                              <option>Wireless Mouse</option>
+                              <option>USB-C Cable</option>
+                              <option>Laptop Stand</option>
+                              <option>Mechanical Keyboard</option>
+                              <option>Webcam HD</option>
+                            </select>
+                          </div>
+
+                          <div class="row mb-3">
+
+                            <div class="col-12 col-md-6">
+                              <label class="col-form-label">Adjustment Type:</label>
+                              <div class="input-group mb-3">
+                                <label class="input-group-text btn btn-primary">Options</label>
+                                <select class="form-select">
+                                  <option selected>Choose...</option>
+                                  <option>Increase</option>
+                                  <option>Decrease</option>
+                                </select>
+                              </div>
+                            </div>
+
+                            <div class="col-12 col-md-6">
+                              <label class="col-form-label">Quantity:</label>
+                              <input type="number" class="form-control" placeholder="Quantity">
+                            </div>
+
+                          </div>
+
+                          <label>Reasons:</label>
+
+                          <div class="form-floating">
+                            <textarea class="form-control" style="height:100px"></textarea>
+                            <label class="text-muted"> Enter Reasons For Adjustments</label>
+                          </div>
+
+                        </div>
+                      </form>
+                    </div>
+
+                    <div class="modal-footer">
+                      <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                      <button class="btn btn-primary">Add Adjustments</button>
+                    </div>
+
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </nav>
+
+          <!-- cards -->
+          <div class="row justify-content-center mt-3">
+
+            <div class="col-lg-3 col-md-6 col-12 mb-3">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title text-muted">Total Adjustments</h5>
+                  <p class="card-text p-4">5</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-12 mb-3">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title text-muted">Total Increases</h5>
+                  <p class="card-text text-success p-4"><i class="fa-solid fa-arrow-trend-up"></i> 90</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-12 mb-3">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title text-muted">Total Decreases</h5>
+                  <p class="card-text text-danger p-4"><i class="fa-solid fa-arrow-trend-down"></i> 15</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="col-lg-3 col-md-6 col-12 mb-3">
+              <div class="card">
+                <div class="card-body">
+                  <h5 class="card-title text-muted">Net Change</h5>
+                  <p class="card-text text-success p-4">+75</p>
+                </div>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- search -->
+          <div class="input-group mb-3">
+            <label class="input-group-text btn btn-primary">Options</label>
+            <select class="form-select">
+              <option selected>Choose...</option>
+              <option>Wireless Mouse</option>
+              <option>USB-C Cable</option>
+              <option>Laptop Stand</option>
+              <option>Mechanical Keyboard</option>
+              <option>Webcam HD</option>
+            </select>
+          </div>
+
+          <!-- table -->
+          <div class="table-responsive">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Product</th>
+                  <th>Type</th>
+                  <th>Quantity</th>
+                  <th>Reason</th>
+                  <th>Date & Time</th>
+                  <th>Action</th>
+                </tr>
+              </thead>
+
+              <tbody>
+
+                <tr>
+                  <td class="text-muted">Wireless Mouse</td>
+                  <td class="text-success"><i class="fa-solid fa-arrow-trend-up"></i> Increase</td>
+                  <td class="text-muted">+50</td>
+                  <td class="text-muted">New stock received</td>
+                  <td class="text-muted">2026-03-13 10:30</td>
+                  <td>
+                    <div class="d-flex gap-3">
+                      <button class="text-secondary bg-body border border-0"><i
+                          class="fa-solid fa-pen-to-square"></i></button>
+                      <button class="text-danger bg-body border border-0"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                  </td>
+                </tr>
+
+                <tr>
+                  <td class="text-muted">USB-C Cable</td>
+                  <td class="text-danger"><i class="fa-solid fa-arrow-trend-down"></i> Decrease</td>
+                  <td class="text-muted">-10</td>
+                  <td class="text-muted">Damaged items</td>
+                  <td class="text-muted">2026-03-12 14:15</td>
+                  <td>
+                    <div class="d-flex gap-3">
+                      <button class="text-secondary bg-body border border-0"><i
+                          class="fa-solid fa-pen-to-square"></i></button>
+                      <button class="text-danger bg-body border border-0"><i class="fa-solid fa-trash"></i></button>
+                    </div>
+                  </td>
+                </tr>
+
+              </tbody>
+            </table>
+          </div>
+
+        </main>
       </div>
     </div>
   </div>
