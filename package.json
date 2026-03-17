@@ -2,7 +2,7 @@
   "name": "inventory-system",
   "version": "1.0.0",
   "scripts": {
-    "server:db": "json-server --watch server/KamelDb.json --port 3000",
+    "server:db": "json-server --watch server/mahmoud.json --port 3000",
     "devserver": "live-server --port=2210",
     "dev": "npm-run-all --parallel server:db devserver"
   },
