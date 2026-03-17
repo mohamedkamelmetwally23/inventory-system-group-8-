@@ -32,8 +32,32 @@ function generateModal(headername) {
   mainDiv.appendChild(modalDiv);
 }
 
-function generateModalBody() {
+function generateModalBody(data) {
+  fetchData(data);
   let form = document.createElement("form");
+  for (const [key, value] of Object.entries(data[0])) {
+    let inputLabel = document.createElement("label");
+    inputLabel.setAttribute("for", `${key}`);
+    inputLabel.setAttribute("class", "form-label my-2");
+    inputLabel.textContent = `${key}`;
+
+    let input = document.createElement("input");
+    input.setAttribute("type", "text");
+    input.setAttribute("class", "form-control");
+    input.setAttribute("id", `${key}`);
+    input.setAttribute("placeholder", `e.g, ${value}`);
+    input.required = true;
+  }
+}
+
+async function fetchfirstElement(dataname) {
+  return await fetch(`http://localhost:3000/${dataname}/id`)
+    .then((response) => {
+      return response.json;
+    })
+    .then((data) => {
+      return data;
+    });
 }
 
 // let addProductBtn = document.getElementById("add-product");

@@ -51,7 +51,7 @@
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 .text-primary {
   color: var(--primary) !important;
@@ -156,5 +156,9 @@ aside {
 
 main {
   width: 80% !important;
+  background-color: var(--bg-light);
+}
+
+.search {
   background-color: var(--bg-light);
 }
