@@ -18,18 +18,25 @@ export const getCategoriesWithProductCount = async () => {
     apiRequest('products'),
   ]);
 
+  if (!categoriesRes.success) {
+    return { success: false, error: categoriesRes.error };
+  }
+  if (!productsRes.success) {
+    return { success: false, error: productsRes.error };
+  }
+
   const categories = categoriesRes.data;
   const products = productsRes.data;
 
-  categories.map((category) => {
+  const categoriesWithProductCount = categories.map((category) => {
     const productCount = products.filter(
-      (prd) => prd.categoryId == category.id,
+      (prd) => prd.category_id == category.id,
     ).length;
 
     return { ...category, productCount };
   });
 
-  return { success: true, data: categories };
+  return { success: true, data: categoriesWithProductCount };
 };
 
 //---------------------------------
@@ -37,19 +44,52 @@ export const getCategoriesWithProductCount = async () => {
 export const createCategory = async (data) => {
   const categoryId = generateId('CAT');
 
-  const newCategory = Category({
+  const newCategory = new Category({
     id: categoryId,
     category_name: data.name,
     category_description: data.description,
   });
 
-  const category = await apiRequest('categories', {
+  return await apiRequest('categories', {
     method: 'POST',
     headers: {
       'content-type': 'application/json',
     },
     body: JSON.stringify(newCategory),
   });
+};
 
-  return { success: true, data: category };
+//---------------------------------
+// Update category by id
+export const updateCategory = async (id, data) => {
+  const updatedCategory = {
+    category_name: data.name,
+    category_description: data.description,
+  };
+
+  return await apiRequest(`categories/${id}`, {
+    method: 'PUT',
+    headers: { 'Content-type': 'application/json' },
+    body: JSON.stringify(updatedCategory),
+  });
+};
+
+//---------------------------------
+// Delete category by id and delete all products related to that category
+export const deleteCategory = async (id) => {
+  const productsRes = await getProducts();
+  if (!productsRes.success) {
+    return { success: false, error: productsRes.error };
+  }
+
+  const hasProducts = productsRes.data.some((prd) => prd.category_id == id);
+
+  if (!hasProducts) {
+    return {
+      success: false,
+      error: 'Cannot delete category with products',
+    };
+  }
+
+  return await apiRequest(`categories/${id}`, { method: 'DELETE' });
 };
