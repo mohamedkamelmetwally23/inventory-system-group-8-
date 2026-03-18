@@ -72,14 +72,14 @@ export const updateCategory = async (id, updatedData) => {
 //---------------------------------
 // Delete category by id and delete all products related to that category
 export const deleteCategory = async (id) => {
-  const productsRes = await getProducts();
+  const productsRes = await apiRequest('products');
   if (!productsRes.success) {
     return { success: false, error: productsRes.error };
   }
 
   const hasProducts = productsRes.data.some((prd) => prd.category_id == id);
 
-  if (!hasProducts) {
+  if (hasProducts) {
     return {
       success: false,
       error: 'Cannot delete category with products',

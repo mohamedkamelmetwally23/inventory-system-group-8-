@@ -83,8 +83,9 @@ categoryModalForm.addEventListener('submit', async (e) => {
 
     //
   } else {
-    showNotification('error', result.error);
+    showNotification('error', `Error ${result.error}`);
   }
+
   btnSubmit.disabled = false;
   btnSubmit.textContent = originalBtnSubmitText;
 });
