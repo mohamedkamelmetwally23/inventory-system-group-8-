@@ -23,7 +23,7 @@ export const getAllStockAdjustmentsByProductName = async () => {
       productName: product ? product.product_name : "Unknown",
     };
   });
-  return result;
+  return { success: true, data: result };
 };
 
 // create stock
