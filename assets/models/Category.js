@@ -6,4 +6,4 @@ class Category {
   }
 }
 
-export default new Category();
+export default Category;
