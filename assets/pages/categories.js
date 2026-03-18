@@ -1,8 +1,17 @@
 // Imports
-import { getCategoriesWithProductCount } from '../api/categoriesApi.js';
+import {
+  deleteCategory,
+  getCategoriesWithProductCount,
+} from '../api/categoriesApi.js';
+import showNotification from '../utils/notification.js';
 
 // Selectors
 const categoriesContainer = document.querySelector('.categories-container');
+const deleteModal = document.getElementById('deleteCategoryModal');
+const deleteCategoryConfirm = document.getElementById('deleteCategoryConfirm');
+
+// State
+let deleteCategoryId = null;
 
 // Display one category in DOM
 const displayCategory = (category) => {
@@ -44,6 +53,11 @@ const displayCategory = (category) => {
               </button>
               <button
                 class="btn btn-outline-danger-custom w-50 rounded-3 py-2 fw-medium"
+                data-bs-toggle="modal"
+                data-bs-target="#deleteCategoryModal"
+                data-action="delete"
+                data-id="${category.id}"
+                data-name="${category.name}"
                 ${category.productCount > 0 ? 'disabled' : ''}
               >
                 <i
@@ -78,6 +92,36 @@ const renderCategories = (categories) => {
     categories.forEach(displayCategory);
   }
 };
+
+// Modal Delete event listener
+deleteModal.addEventListener('show.bs.modal', (e) => {
+  const categoryData = e.relatedTarget.dataset;
+  deleteCategoryId = categoryData.id;
+
+  deleteModal.querySelector('.category-name').textContent = categoryData.name;
+});
+//
+deleteCategoryConfirm.addEventListener('click', async (e) => {
+  if (!deleteCategoryId) return;
+
+  deleteCategoryConfirm.disabled = true;
+  deleteCategoryConfirm.textContent = 'Deleting...';
+
+  const result = await deleteCategory(deleteCategoryId);
+
+  if (result.success) {
+    showNotification('success', 'Deleted category successfully');
+    const modal = bootstrap.Modal.getInstance(deleteModal);
+    modal.hide();
+
+    //
+  } else {
+    showNotification('error', `Error ${result.error}`);
+  }
+
+  deleteCategoryConfirm.disabled = false;
+  deleteCategoryConfirm.textContent = 'Delete Category';
+});
 
 // Initialize  Category Page
 const init = async () => {

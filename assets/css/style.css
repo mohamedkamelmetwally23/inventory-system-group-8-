@@ -51,7 +51,7 @@
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 .text-primary {
@@ -114,12 +114,14 @@ body {
   background-color: #e2e8f0;
 }
 
+.modal .btn-outline-danger-custom:hover,
 .btn-outline-danger-custom {
   background-color: #fffbfb;
   border-color: #fee2e2;
   color: #ef4444;
 }
 
+.modal .btn-outline-danger-custom,
 .btn-outline-danger-custom:hover {
   background-color: #fee2e2;
   color: #ef4444;
@@ -175,4 +177,7 @@ main {
   max-height: 25rem;
   overflow-y: auto;
   display: block;
+}
+.main-btn:disabled {
+  background-color: #0f2b5c;
 }

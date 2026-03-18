@@ -1,6 +1,6 @@
-import Supplier from "../models/Supplier.js";
-import { apiRequest } from "./apiClient.js";
-import { generateId } from "../utils/helpers.js"
+import Supplier from '../models/Supplier.js';
+import { apiRequest } from './apiClient.js';
+import { generateId } from '../utils/helpers.js';
 
 //------------------------------------------
 // Get all suppliers
@@ -63,7 +63,6 @@ export const createSupplier = async (data) => {
 //----------------------------------------------
 // Updata suppliers
 export const updataSupplier = async (supplierId, data) => {
-
   const updatedSupplier = new Supplier({
     id: supplierId,
     supplierName: data.supplier_name,
@@ -86,11 +85,10 @@ export const updataSupplier = async (supplierId, data) => {
 
 // ---------------------------------------------
 // Delete suppliers
-export const deleteSupplier = async (supplierId) => { 
+export const deleteSupplier = async (supplierId) => {
+  const supplier = await apiRequest(`suppliers/${supplierId}`, {
+    method: 'DELETE',
+  });
 
-    const supplier = await apiRequest(`suppliers/${supplierId}`, {
-        method: 'DELETE',
-    });
-
-    return { success: true, data: supplier };
+  return { success: true, data: supplier };
 };
