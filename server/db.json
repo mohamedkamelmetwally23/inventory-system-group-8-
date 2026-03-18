@@ -26,6 +26,7 @@
       "description": "Category for ointment products"
     }
   ],
+
   "suppliers": [
     {
       "id": "SUP-001",
@@ -428,6 +429,7 @@
       "address": "147 El-Horreya Ave, Dokki, Cairo, Egypt"
     }
   ],
+
   "products": [
     {
       "id": "PRD-001",
@@ -963,7 +965,7 @@
       "product_name": "Miconazole 2% Cream",
       "category_id": "CAT-001",
       "quantity": 192,
-      "price": 28,
+      "price": 28.0,
       "expire_date": "2028-10-03",
       "supplier_id": "SUP-037",
       "status": "low stock"
@@ -980,6 +982,7 @@
       "status": "low stock"
     }
   ],
+
   "stock_adjustments": [
     {
       "id": "STK-001",
@@ -1432,6 +1435,7 @@
       "note": "Inventory correction"
     }
   ],
+
   "purchase_orders": [
     {
       "id": "ORD-001",
@@ -1782,7 +1786,7 @@
       "creation_date": "2026-03-04",
       "status": "Pending",
       "total_quantity": 336,
-      "total_amount": 14799
+      "total_amount": 14799.0
     },
     {
       "id": "ORD-040",
