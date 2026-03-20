@@ -29,14 +29,15 @@ export const getAllStockAdjustmentsByProductName = async () => {
 // create stock
 export const createStockAdjustments = async (data) => {
   const generateStockId = generateId("STK");
+
   const newStockAdjustments = new StockAdjustments({
     id: generateStockId,
     product_id: data.product_id,
     type: data.type,
     quantity: data.quantity,
-    date: data.date,
     status: data.status,
     note: data.note,
+    date: data.date,
   });
   const stockAdjustment = await apiRequest("stock_adjustments", {
     method: "POST",

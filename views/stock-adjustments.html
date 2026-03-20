@@ -116,81 +116,101 @@
             <div class="container-fluid flex-wrap gap-2">
               <div>
                 <h4 class="navbar-brand mb-0">Stock Adjustments</h4>
-                <p class="text-muted mb-0">Record and track inventory adjustments</p>
+                <p class=" text-muted mb-0">Record and track inventory adjustments</p>
               </div>
 
               <!-- Add button -->
-              <button type="button" class="btn main-btn" data-bs-toggle="modal" data-bs-target="#exampleModal"
-                data-bs-whatever="@mdo"><i class="fa fa-plus-circle me-1"></i> Add Adjustments </button>
-
-              <!-- Modal -->
-              <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+              <button class="btn main-btn" data-bs-toggle="modal" data-bs-target="#addStockModal" data-action="add"><i
+                  class="fa fa-plus-circle me-1"></i> Add Adjustments </button>
+              <!-- Modal Add / Edit Category -->
+              <div class="modal fade" id="addStockModal" tabindex="-1" aria-labelledby="addStockModalLabel"
                 aria-hidden="true">
-                <div class="modal-dialog">
-                  <div class="modal-content">
-                    <div class="modal-header">
-                      <h1 class="modal-title fs-5 text-primary" id="exampleModalLabel">Add Adjustments</h1>
-                      <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                <div class="modal-dialog modal-dialog-centered">
+                  <div class="modal-content border-0 shadow rounded-4">
+                    <div class="modal-header border-bottom-0 pb-0 pt-4 px-4">
+                      <div>
+                        <h5 class="modal-title fw-bold text-primary mb-1" id="addStockModalLabel">
+                          Add New Stock Adjustments
+                        </h5>
+                        <p class="text-secondary font-12 mb-0">
+                          Enter the details for the new Stock Adjustments
+                        </p>
+                      </div>
+                      <button type="button" class="btn-close mb-auto mt-1" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
                     </div>
 
-                    <div class="modal-body">
-                      <form>
+                    <div class="modal-body px-4 pt-4 pb-2">
+                      <form id="addStockForm">
+                        <input type="hidden" id="stockId" />
                         <div class="mb-3">
-
-                          <label class="col-form-label">Product:</label>
-
-                          <div class="input-group mb-3">
-                            <label class="input-group-text btn main-btn">Options</label>
-                            <select class="form-select">
-                              <option selected>Choose...</option>
-                              <option>Wireless Mouse</option>
-                              <option>USB-C Cable</option>
-                              <option>Laptop Stand</option>
-                              <option>Mechanical Keyboard</option>
-                              <option>Webcam HD</option>
-                            </select>
-                          </div>
-
-                          <div class="row mb-3">
-
-                            <div class="col-12 col-md-6">
-                              <label class="col-form-label">Adjustment Type:</label>
-                              <div class="input-group mb-3">
-                                <label class="input-group-text btn main-btn">Options</label>
-                                <select class="form-select">
-                                  <option selected>Choose...</option>
-                                  <option>Increase</option>
-                                  <option>Decrease</option>
-                                </select>
-                              </div>
-                            </div>
-
-                            <div class="col-12 col-md-6">
-                              <label class="col-form-label">Quantity:</label>
-                              <input type="number" class="form-control" placeholder="Quantity">
-                            </div>
-
-                          </div>
-
-                          <label>Reasons:</label>
-
-                          <div class="form-floating">
-                            <textarea class="form-control" style="height:100px"></textarea>
-                            <label class="text-muted"> Enter Reasons For Adjustments</label>
-                          </div>
-
+                          <label for="productName" class="form-label fw-medium text-dark-blue" style="font-size: 14px">
+                            Product Name <span class="text-danger">*</span>
+                          </label>
+                          <select id="productSelect" class="form-select">
+                            <option value="">Select Product</option>
+                          </select>
+                        </div>
+                        <div class="mb-3">
+                          <label for="Type" class="form-label fw-medium text-dark-blue" style="font-size: 14px">
+                            Type <span class="text-danger">*</span>
+                          </label>
+                          <select class="form-select py-2 rounded-3" id="Type">
+                            <option value="">Select Type</option>
+                            <option value="correction"> Correction</option>
+                            <option value="initial_stock"> Initial Stock</option>
+                            <option value="stock_in"> Stock In</option>
+                            <option value="stock_out"> Stock Out</option>
+                            <option value="expiry_writeoff"> Expiry Writeoff</option>
+                          </select>
+                        </div>
+                        <div class="mb-3">
+                          <label for="Quantity" class="form-label fw-medium text-dark-blue" style="font-size: 14px">
+                            Quantity <span class="text-danger">*</span>
+                          </label>
+                          <input type="number" class="form-control py-2 rounded-3" id="Quantity" name="Quantity"
+                            placeholder="e.g., 111" />
+                        </div>
+                        <div class="mb-3">
+                          <label for="Status" class="form-label fw-medium text-dark-blue" style="font-size: 14px">
+                            Status <span class="text-danger">*</span>
+                          </label>
+                          <select class="form-select py-2 rounded-3" id="Status">
+                            <option value="">Select Status</option>
+                            <option value="pending"> Pending</option>
+                            <option value="received"> received</option>
+                          </select>
+                        </div>
+                        <div class="mb-3">
+                          <label for="Note" class="form-label fw-medium text-dark-blue" style="font-size: 14px">
+                            Note <span class="text-danger">*</span>
+                          </label>
+                          <input type="text" class="form-control py-2 rounded-3" id="Note" name="Note"
+                            placeholder="e.g., New stock received" />
+                        </div>
+                        <div class="mb-3">
+                          <label for="Date" class="form-label fw-medium text-dark-blue" style="font-size: 14px">
+                            Date <span class="text-danger">*</span>
+                          </label>
+                          <input type="date" class="form-control py-2 rounded-3" id="Date" name="Date"
+                            placeholder="e.g., 2026-03-13 " />
                         </div>
                       </form>
                     </div>
 
-                    <div class="modal-footer">
-                      <button class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                      <button class="btn main-btn">Add Adjustments</button>
+                    <div class="modal-footer border-top-0 px-4 pb-4 pt-0 d-flex gap-3">
+                      <button type="button" class="btn btn-outline-custom px-4 py-2 rounded-3 fw-medium m-0"
+                        data-bs-dismiss="modal">
+                        Cancel
+                      </button>
+                      <button type="submit" form="addStockForm" class="btn btn-add main-btn m-0">
+                        Save 
+                      </button>
                     </div>
-
                   </div>
                 </div>
               </div>
+
 
             </div>
           </nav>
@@ -205,9 +225,8 @@
                     style="background: linear-gradient(135deg, #a5b9ff 0%, #b19cd9 100%); width: 45px; height: 45px;">
                     <i class="fa fa-chart-pie text-white" style="font-size: 20px;"></i>
                   </div>
-                  <h6 class="card-title mb-2 text-muted small">Total Adjustments</h6>
-                  <p id="totalAdjustments" class="card-text fw-bold fs-6 mb-0"
-                    style="background: linear-gradient(135deg, #a5b9ff 0%, #b19cd9 100%); background-clip: text; -webkit-text-fill-color: transparent;">
+                  <h6 class="card-title mb-2 small">Total Adjustments</h6>
+                  <p id="totalAdjustments" class="card-text fw-bold fs-6 mb-0" style="color: #6a79ad;">
                     0
                   </p>
                 </div>
@@ -222,9 +241,8 @@
                     style="background: linear-gradient(135deg, #9fc5ff 0%, #99ffff 100%); width: 45px; height: 45px;">
                     <i class="fa fa-check-circle text-white" style="font-size: 20px;"></i>
                   </div>
-                  <h6 class="card-title mb-2 text-muted small">Total Correction</h6>
-                  <p id="totalCorrection" class="card-text fw-bold fs-6 mb-0"
-                    style="background: linear-gradient(135deg, #9fc5ff 0%, #99ffff 100%); background-clip: text; -webkit-text-fill-color: transparent;">
+                  <h6 class="card-title mb-2 small">Total Correction</h6>
+                  <p id="totalCorrection" class="card-text fw-bold fs-6 mb-0" style="color: #7b9fd6;">
                     0
                   </p>
                 </div>
@@ -239,9 +257,8 @@
                     style="background: linear-gradient(135deg, #a3e6b9 0%, #a5f0e0 100%); width: 45px; height: 45px;">
                     <i class="fa fa-warehouse text-white" style="font-size: 20px;"></i>
                   </div>
-                  <h6 class="card-title mb-2 text-muted small">Total Initial Stock</h6>
-                  <p id="totalinItial_stock" class="card-text fw-bold fs-6 mb-0"
-                    style="background: linear-gradient(135deg, #a3e6b9 0%, #a5f0e0 100%); background-clip: text; -webkit-text-fill-color: transparent;">
+                  <h6 class="card-title mb-2 small">Total Initial Stock</h6>
+                  <p id="totalinItial_stock" class="card-text fw-bold fs-6 mb-0" style="color: #53ed86;">
                     0
                   </p>
                 </div>
@@ -256,10 +273,9 @@
                     style="background: linear-gradient(135deg, #b8e0b8 0%, #c8e6c9 100%); width: 45px; height: 45px;">
                     <i class="fa fa-sign-in-alt text-white" style="font-size: 20px;"></i>
                   </div>
-                  <h6 class="card-title mb-2 text-muted small">Total Stock In</h6>
-                  <p id="totalStock_in" class="card-text fw-bold fs-6 mb-0"
-                    style="background: linear-gradient(135deg, #b8e0b8 0%, #c8e6c9 100%); background-clip: text; -webkit-text-fill-color: transparent;">
-                    528
+                  <h6 class="card-title mb-2  small">Total Stock In</h6>
+                  <p id="totalStock_in" class="card-text fw-bold fs-6 mb-0" style="color: #60e960;">
+                    0
                   </p>
                 </div>
               </div>
@@ -273,9 +289,8 @@
                     style="background: linear-gradient(135deg, #ffcdd2 0%, #ffccbc 100%); width: 45px; height: 45px;">
                     <i class="fa fa-sign-out-alt text-white" style="font-size: 20px;"></i>
                   </div>
-                  <h6 class="card-title mb-2 text-muted small">Total Stock Out</h6>
-                  <p id="totalStock_out" class="card-text fw-bold fs-6 mb-0"
-                    style="background: linear-gradient(135deg, #ffcdd2 0%, #ffccbc 100%); background-clip: text; -webkit-text-fill-color: transparent;">
+                  <h6 class="card-title mb-2  small">Total Stock Out</h6>
+                  <p id="totalStock_out" class="card-text fw-bold fs-6 mb-0" style="color: #fe6978;">
                     0
                   </p>
                 </div>
@@ -290,9 +305,8 @@
                     style="background: linear-gradient(135deg, #f7c0f0 0%, #f9b0b9 100%); width: 45px; height: 45px;">
                     <i class="fa fa-calendar-times text-white" style="font-size: 20px;"></i>
                   </div>
-                  <h6 class="card-title mb-2 text-muted small">Total Expiry Writeoff</h6>
-                  <p id="totslExpiry_writeoff" class="card-text fw-bold fs-6 mb-0"
-                    style="background: linear-gradient(135deg, #f7c0f0 0%, #f9b0b9 100%); background-clip: text; -webkit-text-fill-color: transparent;">
+                  <h6 class="card-title mb-2  small">Total Expiry Writeoff</h6>
+                  <p id="totslExpiry_writeoff" class="card-text fw-bold fs-6 mb-0" style="color: #f868e5;">
                     0
                   </p>
                 </div>
@@ -302,13 +316,13 @@
           <!-- search -->
           <div class="input-group mb-3">
             <label class="input-group-text btn main-btn">Options</label>
-            <select class="form-select">
-              <option selected>Choose...</option>
-              <option>Wireless Mouse</option>
-              <option>USB-C Cable</option>
-              <option>Laptop Stand</option>
-              <option>Mechanical Keyboard</option>
-              <option>Webcam HD</option>
+            <select class="form-select" id="filterSelect">
+              <option value="">All</option>
+              <option value="correction"> Correction</option>
+              <option value="initial_stock"> Initial Stock</option>
+              <option value="stock_in"> Stock In</option>
+              <option value="stock_out"> Stock Out</option>
+              <option value="expiry_writeoff"> Expiry Writeoff</option>
             </select>
           </div>
 
@@ -322,7 +336,7 @@
                   <th>Quantity</th>
                   <th>Status</th>
                   <th>Note</th>
-                  <th>Date & Time</th>
+                  <th>Date</th>
                   <th colspan="2">Action</th>
                   <th></th>
 
