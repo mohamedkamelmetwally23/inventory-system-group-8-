@@ -2,7 +2,7 @@ import Supplier from '../models/Supplier.js';
 import { apiRequest } from './apiClient.js';
 import { generateId } from '../utils/helpers.js';
 
-//------------------------------------------
+//-------------------------------------------
 // Get all suppliers
 export const getSuppliers = async () => apiRequest('suppliers');
 
@@ -11,7 +11,7 @@ export const getSuppliers = async () => apiRequest('suppliers');
 export const getSupplierById = async (id) => apiRequest(`suppliers/${id}`);
 
 //--------------------------------------------
-// Get suppliers with product Supplied
+// Get suppliers with count of product Supplied
 export const getSuppliersWithProductSupplied = async () => {
   const [suppliersRes, productsRes] = await Promise.all([
     apiRequest('suppliers'),
@@ -26,7 +26,7 @@ export const getSuppliersWithProductSupplied = async () => {
       (pro) => pro.supplier_id == supplier.id,
     ).length;
 
-    return { ...supplier, product_supplied };
+    return { ...supplier, product_supplied};
   });
 
   return { success: true, data: suppliersWithProductSupplied };

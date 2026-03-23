@@ -1,45 +1,73 @@
+:root {
+  --success: #10b981;
+  --warning: #f59e0b;
+}
+
 .suppliers-section {
-    background-color: #F3F4F6;
+  background-color: #f3f4f6;
 }
 .section-header h1 {
-    color: #1F2937;
+  color: #1f2937;
 }
 .section-header p {
-    color: #6B7280;
-    font-size: 18px;
+  color: #6b7280;
+  font-size: 18px;
 }
-.class-name {
-    background-color: #fff;
+.table-container {
+  background-color: #fff;
 }
 #addSupplier {
-    background-color: #1e3a8a;
-    color: #fff;
+  background-color: #1e3a8a;
+  color: #fff;
 }
 .delete-icon {
-    color: red;
+  color: red;
 }
 button.disabled i {
-    opacity: 0.5;
-    pointer-events: none;
-    cursor: not-allowed;
-    color: #6B7280;
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: not-allowed;
+  color: #6b7280;
+}
+
+table td {
+  max-width: 150px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .table-footer #tableInfo {
-    color: #6b7280;
+  color: #6b7280;
 }
 
-.pagination #prevBtn ,
+.pagination #prevBtn,
 .pagination #nextBtn {
-    width: 30px;
-    height: 30px;
-    background-color: #F3F4F6;
-    border: 1px solid #F3F4F6;
-    color: #6B7280;
-} 
+  width: 30px;
+  height: 30px;
+  background-color: #f3f4f6;
+  border: 1px solid #f3f4f6;
+  color: #6b7280;
+}
 .pagination #pageNumber {
-    width: 30px;
-    height: 30px;
-    background-color: #1e3a8a;
-    color: #fff;
+  width: 30px;
+  height: 30px;
+  background-color: #1e3a8a;
+  color: #fff;
+}
+
+.status-recieved {
+  border-radius: 10px;
+  padding-left: 8px;
+  width: 85px;
+  color: white;
+  background-color: var(--success);
+}
+
+.status-pending {
+  border-radius: 10px;
+  padding-left: 8px;
+  width: 85px;
+  color: white;
+  background-color: var(--warning);
 }

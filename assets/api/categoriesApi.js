@@ -4,11 +4,12 @@ import { apiRequest } from './apiClient.js';
 
 //---------------------------------
 // Get all categories
-export const getCategories = async () => apiRequest('categories');
+export const getCategories = async () => await apiRequest('categories');
 
 //---------------------------------
 // Get category by id
-export const getCategoryById = async (id) => apiRequest(`categories/${id}`);
+export const getCategoryById = async (id) =>
+  await apiRequest(`categories/${id}`);
 
 //---------------------------------
 // Get categories with product count

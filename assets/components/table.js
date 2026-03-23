@@ -73,7 +73,7 @@ function renderTablePage(
   document.getElementById('pageNumber').textContent = page;
 
   // disable/enable buttons
-  document.getElementById('prevBtn').disabled = page === 1;
-  document.getElementById('nextBtn').disabled =
+  document.getElementById("prevBtn").disabled = page === 1;
+  document.getElementById("nextBtn").disabled =
     page === Math.ceil(data.length / rowsPerPage);
 }
