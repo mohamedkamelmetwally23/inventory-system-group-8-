@@ -18,6 +18,7 @@ getPurchaseOrders().then((data) => {
   renderTablePage(orders, actionsHTML(), currentPage, rowsPerPage, "Orders");
   setStatusStyle();
   ChangeStatus();
+  updateCards(orders);
 });
 
 function actionsHTML() {
@@ -62,12 +63,12 @@ function ChangeStatus() {
     showOrder[i].addEventListener("click", async function (e) {
       const row = e.target.closest("tr");
       if (row.children[4].children[0].textContent == "Pending") {
-        row.children[4].children[0].textContent = "Recieved";
+        row.children[4].children[0].textContent = "Received";
         row.children[4].children[0].classList.remove("status-pending");
         row.children[4].children[0].classList.add("status-recieved");
         let rowData = await getData(row.children[0].textContent);
         console.log(rowData);
-        rowData[status] = "Recieved";
+        rowData.status = "Received";
         editStatus(row.children[0].textContent, rowData);
 
         e.target.remove();
@@ -100,3 +101,27 @@ nextButton.addEventListener("click", () => {
 
 let addOrder = document.getElementsByClassName("create-order")[0];
 addOrder.addEventListener("click", function () {});
+
+function updateCards(orders) {
+  let totalOrders = document.getElementsByClassName("total-order")[0];
+  let recieved = document.getElementsByClassName("recieved")[0];
+  let pending = document.getElementsByClassName("pending")[0];
+  let approved = document.getElementsByClassName("approved")[0];
+  let ordersCount = orders.length;
+  let recievedcount = 0,
+    pendingcount = 0,
+    approvedcount = 0;
+  orders.forEach((elm) => {
+    if (elm.status == "Pending") {
+      pendingcount += 1;
+    } else if (elm.status == "Received") {
+      recievedcount += 1;
+    } else if (elm.status == "Approved") {
+      approvedcount += 1;
+    }
+  });
+  totalOrders.textContent = ordersCount;
+  recieved.textContent = recievedcount;
+  pending.textContent = pendingcount;
+  approved.textContent = approvedcount;
+}
