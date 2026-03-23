@@ -3,6 +3,7 @@ import {
   deleteCategory,
   getCategoriesWithProductCount,
 } from '../api/categoriesApi.js';
+import loadLayout from '../ui/layout.js';
 import showNotification from '../utils/notification.js';
 
 // Selectors
@@ -125,6 +126,7 @@ deleteCategoryConfirm.addEventListener('click', async (e) => {
 
 // Initialize  Category Page
 const init = async () => {
+  await loadLayout('Categories');
   const categories = await getCategoriesWithProductCount();
 
   if (categories.success) {
@@ -133,4 +135,5 @@ const init = async () => {
     categoriesContainer.innerHTML = `<p class="text-center text-danger">Error loading categories: ${categories.error}</p>`;
   }
 };
+
 init();

@@ -4,6 +4,10 @@ import {
   getSuppliersWithProductSupplied,
   updataSupplier,
 } from '../api/suppliersApi.js';
+import loadLayout from '../ui/layout.js';
+
+//
+loadLayout('Suppliers');
 
 // =======================
 // Variables

@@ -55,6 +55,10 @@ body {
   font-family: 'Inter', sans-serif;
 }
 
+header {
+  min-height: 66.8px;
+}
+
 .text-primary {
   color: var(--primary) !important;
 }

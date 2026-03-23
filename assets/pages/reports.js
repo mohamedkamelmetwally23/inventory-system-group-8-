@@ -7,6 +7,7 @@ import {
   showTableLoader,
   stringToColor,
 } from '../utils/helpers.js';
+import loadLayout from '../ui/layout.js';
 
 // Elements
 const totalValueEl = document.querySelector('.stat-value');
@@ -193,4 +194,5 @@ const init = async () => {
   }
 };
 
+loadLayout('Reports');
 init();
