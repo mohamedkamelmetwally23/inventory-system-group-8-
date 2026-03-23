@@ -47,6 +47,7 @@
   --font-Size-1: 24px;
   --font-Size-1: 16px;
   --font-14: 14px;
+  --font-13: 13px;
   --font-12: 12px;
 }
 
@@ -90,6 +91,10 @@ header {
   font-size: var(--font-12);
 }
 
+.fs-13 {
+  font-size: var(--font-13);
+}
+
 .fs-14 {
   font-size: var(--font-14);
 }
@@ -109,11 +114,12 @@ header {
 }
 
 .btn-outline-custom {
-  background-color: #f8fafc;
+  background-color: #f8fafc !important;
   border-color: #e2e8f0;
   color: #475569;
 }
 
+.btn-outline-custom:active,
 .btn-outline-custom:hover {
   background-color: #e2e8f0;
 }
@@ -183,4 +189,25 @@ main {
 }
 .main-btn:disabled {
   background-color: #0f2b5c;
+}
+
+.filter-opt--active,
+.filter-opt:hover,
+.filter-opt:active {
+  background-color: var(--primary-light) !important;
+  color: inherit;
+}
+
+h2,
+h3 {
+  color: var(--primary-dark) !important;
+}
+
+.string-to-color {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  /* background-color: hsl(218, 70%, 50%); */
+  margin-right: 8px;
 }

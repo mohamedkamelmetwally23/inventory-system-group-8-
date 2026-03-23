@@ -67,10 +67,13 @@
       defer
       src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
     ></script>
-    <!-- Notification -->
-    <!-- <script src="../assets/utils/notification.js" type="module"></script> -->
-    <!-- -->
-    <script src="../assets/pages/reports.js" type="module"></script>
+    <!-- Chart JS -->
+    <script
+      type="module"
+      src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/4.5.0/chart.umd.min.js"
+    ></script>
+    <!--  -->
+    <script type="module" src="../assets/pages/reports.js"></script>
   </head>
 
   <body>
@@ -86,7 +89,250 @@
           <aside class="col-12 col-md-3" id="main"></aside>
 
           <!-- Main page -->
-          <main class="col-9">Change Reports</main>
+          <main class="col-12 col-md-9 pt-4">
+            <div class="container">
+              <section class="content-header mb-4">
+                <div
+                  class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-3"
+                >
+                  <div>
+                    <h2 class="fw-bold text-dark-blue mb-1">
+                      Reports & Analytics
+                    </h2>
+                    <p class="text-secondary mb-0">
+                      Insights and statistics about your inventory
+                    </p>
+                  </div>
+                  <div class="d-flex align-items-center gap-2">
+                    <div class="dropdown">
+                      <button
+                        class="btn btn-custom-outline bg-white dropdown-toggle px-4 py-2 rounded-3 d-flex align-items-center gap-2"
+                        type="button"
+                        data-bs-toggle="dropdown"
+                        aria-expanded="false"
+                      >
+                        <i class="fa-regular fa-calendar me-1"></i>
+                        <span id="selectedDateText">Last 30 days</span>
+                      </button>
+                      <ul
+                        class="dropdown-menu shadow border-0 rounded-3 w-100 mt-2"
+                      >
+                        <li
+                          class="dropdown-item py-1 filter-opt"
+                          data-value="7-days"
+                        >
+                          Last 7 days
+                        </li>
+                        <li
+                          class="dropdown-item py-1 filter-opt filter-opt--active"
+                          data-value="30-days"
+                        >
+                          Last 30 days
+                        </li>
+                        <li
+                          class="dropdown-item py-1 filter-opt"
+                          data-value="90-days"
+                        >
+                          Last 90 days
+                        </li>
+                        <li
+                          class="dropdown-item py-1 filter-opt"
+                          data-value="last-year"
+                        >
+                          Last year
+                        </li>
+                      </ul>
+                    </div>
+                    <button
+                      class="btn btn-outline-secondary border px-4 py-2 rounded-3 d-flex align-items-center gap-2"
+                    >
+                      <i class="fa fa-download"></i>
+                      <span>Export Report</span>
+                    </button>
+                  </div>
+                </div>
+              </section>
+
+              <section class="stats-cards pt-2 mb-4">
+                <div class="row g-3">
+                  <div class="col-md-3">
+                    <div class="p-4 bg-white rounded-3 border">
+                      <div
+                        class="d-flex justify-content-between align-items-center mb-4"
+                      >
+                        <h6 class="text-muted mb-0">Total Products</h6>
+                        <i class="fa fa-cube text-primary fs-5"></i>
+                      </div>
+                      <p class="fw-bolder fs-4 mb-1 pt-1 stat-products">0</p>
+                      <p class="text-secondary fs-12 mb-0">
+                        Active items in inventory
+                      </p>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="p-4 bg-white rounded-3 border">
+                      <div
+                        class="d-flex justify-content-between align-items-center mb-4"
+                      >
+                        <h6 class="text-muted mb-0">Total Value</h6>
+                        <i class="fa fa-dollar text-success fs-5"></i>
+                      </div>
+                      <p class="fw-bolder fs-4 mb-1 pt-1 stat-value">$0.00</p>
+                      <p class="text-secondary fs-12 mb-0">
+                        Current inventory worth
+                      </p>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="p-4 bg-white rounded-3 border">
+                      <div
+                        class="d-flex justify-content-between align-items-center mb-4"
+                      >
+                        <h6 class="text-muted mb-0">Low Stock</h6>
+                        <i
+                          class="fa-solid fa-arrow-trend-up text-warning fs-5"
+                        ></i>
+                      </div>
+                      <p
+                        class="fw-bolder fs-4 mb-1 text-warning pt-1 stat-low-stock"
+                      >
+                        0
+                      </p>
+                      <p class="text-secondary fs-12 mb-0">
+                        Items need reordering
+                      </p>
+                    </div>
+                  </div>
+                  <div class="col-md-3">
+                    <div class="p-4 bg-white rounded-3 border">
+                      <div
+                        class="d-flex justify-content-between align-items-center mb-4"
+                      >
+                        <h6 class="text-muted mb-0">Out of Stock</h6>
+                        <i
+                          class="fa-regular fa-file-lines text-danger fs-5"
+                        ></i>
+                      </div>
+                      <p
+                        class="fw-bolder fs-4 mb-1 text-danger pt-1 stat-out-of-stock"
+                      >
+                        0
+                      </p>
+                      <p class="text-secondary fs-12 mb-0">Items unavailable</p>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section class="analytics-charts mb-4">
+                <div class="row g-4">
+                  <div class="col-md-6">
+                    <div class="bg-white p-4 rounded-3 border h-100">
+                      <h3 class="fw-medium fs-5 mb-4">Products by Category</h3>
+
+                      <div class="mb-2" style="max-height: 350px">
+                        <canvas id="category-chart" class="mx-auto"></canvas>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <div class="bg-white p-4 rounded-3 border h-100">
+                      <h3 class="fw-medium fs-5 mb-4">
+                        Stock Status Distribution
+                      </h3>
+
+                      <div class="mb-2" style="max-height: 350px">
+                        <canvas
+                          id="stock-status-chart"
+                          class="mx-auto"
+                        ></canvas>
+                      </div>
+
+                      <div class="fs-14 stock-status-value">
+                        <div class="d-flex justify-content-between mb-2">
+                          <p class="mb-0">
+                            <span
+                              class="string-to-color"
+                              style="background-color: #10b981"
+                            ></span>
+                            In Stock
+                          </p>
+                          <p
+                            class="bg-gray fs-13 fw-medium py-1 px-2 rounded-2 mb-0 in-stock"
+                          >
+                            0 items
+                          </p>
+                        </div>
+                        <div class="d-flex justify-content-between mb-2">
+                          <p class="mb-0">
+                            <span
+                              class="string-to-color"
+                              style="background-color: #f59e0b"
+                            ></span>
+                            Low Stock
+                          </p>
+                          <p
+                            class="bg-gray fs-13 fw-medium py-1 px-2 rounded-2 mb-0 low-stock"
+                          >
+                            0 items
+                          </p>
+                        </div>
+                        <div class="d-flex justify-content-between">
+                          <p class="mb-0">
+                            <span
+                              class="string-to-color"
+                              style="background-color: #ef4444"
+                            ></span>
+                            Out of Stock
+                          </p>
+                          <p
+                            class="bg-gray fs-13 fw-medium py-1 px-2 rounded-2 mb-0 out-stock"
+                          >
+                            0 items
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="col-12">
+                    <div class="bg-white p-4 rounded-3 border h-100">
+                      <h3 class="fw-medium fs-5 mb-4">
+                        Top 5 Products by Inventory Value
+                      </h3>
+
+                      <div class="mb-2">
+                        <canvas
+                          id="top-products-chart"
+                          class="mx-auto"
+                          width="1000"
+                          height="400"
+                        ></canvas>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </section>
+
+              <section class="categories-summary bg-white p-4 rounded-2">
+                <h3 class="fw-medium fs-5 mb-4">Category Summary</h3>
+
+                <table class="w-100">
+                  <thead>
+                    <tr class="border-bottom">
+                      <th class="text-start py-3 px-4">Category</th>
+                      <th class="text-end py-3 px-4">Products</th>
+                      <th class="text-end py-3 px-4">Total Value</th>
+                      <th class="text-end py-3 px-4">Avg. Price</th>
+                    </tr>
+                  </thead>
+
+                  <tbody class=""></tbody>
+                </table>
+              </section>
+            </div>
+          </main>
         </div>
       </div>
     </div>

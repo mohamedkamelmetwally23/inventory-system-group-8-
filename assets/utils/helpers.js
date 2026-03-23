@@ -12,3 +12,77 @@ export function isEmailAddress(email) {
 
   return emailPattern.test(email);
 }
+
+// Formats a numeric value into a localized currency string.
+export const formatCurrency = (value) => {
+  return new Intl.NumberFormat('en-US', {
+    style: 'currency',
+    currency: 'USD',
+  }).format(value);
+};
+
+// Generate a color based on text.
+export function stringToColor(str) {
+  let hash = 0;
+  for (let i = 0; i < str.length; i++) {
+    hash = str.charCodeAt(i) + ((hash << 5) - hash);
+  }
+
+  const hue = Math.abs(hash % 360);
+  return `hsl(${hue}, 70%, 50%)`;
+}
+
+// Show Sppiner
+export const showSpinner = (container) => {
+  container.innerHTML =
+    '<div class="text-center text-secondary py-2">Loading...</div>';
+};
+
+// Show Sppiner for Table
+export const showTableLoader = (container) => {
+  container.innerHTML =
+    '<tr><td colspan="4" class="text-center text-secondary py-2">Loading...</td></tr>';
+};
+
+// Generate Chart
+export const generateChart = (
+  canvasElement,
+  type,
+  labels,
+  chartData,
+  colors,
+  chartOptions,
+) => {
+  const existingChart = Chart.getChart(canvasElement);
+  if (existingChart) existingChart.destroy();
+
+  return new Chart(canvasElement, {
+    type,
+    data: {
+      labels,
+      datasets: [
+        {
+          label: 'Total Value ($)',
+          data: chartData,
+          backgroundColor: colors,
+          borderWidth: 1,
+        },
+      ],
+    },
+    options: {
+      responsive: true,
+      maintainAspectRatio: false,
+      plugins: {
+        legend: {
+          position: 'bottom',
+          labels: {
+            usePointStyle: true,
+            pointStyle: 'rect',
+          },
+        },
+      },
+
+      ...chartOptions,
+    },
+  });
+};
