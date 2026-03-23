@@ -1,3 +1,3 @@
 import loadLayout from '../ui/layout.js';
 
-loadLayout('products');
+loadLayout('Products');

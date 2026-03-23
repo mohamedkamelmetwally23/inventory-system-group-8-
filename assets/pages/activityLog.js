@@ -1,3 +1,3 @@
 import loadLayout from '../ui/layout.js';
 
-loadLayout('activity-log');
+loadLayout('Activity Log');
