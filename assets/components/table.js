@@ -1,9 +1,9 @@
-function renderTablePage(
+export function renderTablePage(
   data,
-  actions,
+  actionsHTML,
   page = 1,
   rowsPerPage = 10,
-  tableName = 'items',
+  tableName
 ) {
   const tableHead = document.getElementById('tableHead');
   const tableBody = document.getElementById('tableBody');
@@ -15,7 +15,7 @@ function renderTablePage(
 
   const columns = Object.keys(data[0]);
 
-  // headers
+  // ========== HEADERS ==========
   columns.forEach((col) => {
     const th = document.createElement('th');
     th.classList.add('text-capitalize');
@@ -23,15 +23,15 @@ function renderTablePage(
     tableHead.appendChild(th);
   });
 
-  // actions header
+  // Actions column
   const actionTh = document.createElement('th');
   actionTh.textContent = 'Actions';
   tableHead.appendChild(actionTh);
 
-  // rows for current page
-  const startIdx = (page - 1) * rowsPerPage;
-  const endIdx = Math.min(startIdx + rowsPerPage, data.length);
-  const pageData = data.slice(startIdx, endIdx);
+  // ========== PAGE DATA ==========
+  const start = (page - 1) * rowsPerPage;
+  const end = Math.min(start + rowsPerPage, data.length);
+  const pageData = data.slice(start, end);
 
   pageData.forEach((item) => {
     const tr = document.createElement('tr');
@@ -43,37 +43,32 @@ function renderTablePage(
       tr.appendChild(td);
     });
 
+    // Actions column
     const actionTd = document.createElement('td');
-
-    const editBtn = document.createElement('button');
-    editBtn.className = 'btn btn-sm edit-btn';
-    editBtn.innerHTML = `<i class="fa-solid fa-pen-to-square edit-icon"></i>`;
-
-    const deleteBtn = document.createElement('button');
-    deleteBtn.className = 'btn btn-sm delete-btn border-0';
-    deleteBtn.innerHTML = `<i class="fa-solid fa-trash delete-icon"></i>`;
-
-    if (item.ProductsSupplied === 0) {
-      deleteBtn.classList.add('disabled');
-    }
-
-    actionTd.appendChild(editBtn);
-    actionTd.appendChild(deleteBtn);
-
+    actionTd.innerHTML = actionsHTML(item);
     tr.appendChild(actionTd);
+
+    // Disable delete if product_supplied > 0
+    const deleteBtn = actionTd.querySelector('.delete-btn');
+    if (deleteBtn) {
+      if (item.ProductsSupplied > 0) {
+        deleteBtn.classList.add('disabled');
+        deleteBtn.disabled = true;
+        deleteBtn.title = "Cannot delete supplier with products";
+      } else {
+        deleteBtn.onclick = () => window.deleteSupplierHandler(deleteBtn);
+      }
+    }
 
     tableBody.appendChild(tr);
   });
 
-  // update info
   document.getElementById('tableInfo').textContent =
-    `Showing ${startIdx + 1} to ${endIdx} of ${data.length} ${tableName}`;
+    `Showing ${start + 1} to ${end} of ${data.length} ${tableName}`;
 
-  // update page number
   document.getElementById('pageNumber').textContent = page;
 
-  // disable/enable buttons
-  document.getElementById("prevBtn").disabled = page === 1;
-  document.getElementById("nextBtn").disabled =
+  document.getElementById('prevBtn').disabled = page === 1;
+  document.getElementById('nextBtn').disabled =
     page === Math.ceil(data.length / rowsPerPage);
 }

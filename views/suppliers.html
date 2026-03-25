@@ -116,30 +116,158 @@
                     <tbody id="tableBody"></tbody>
                   </table>
 
-                  <!--  -->
-                  <!-- <div class="modal fade" id="supplierModal">
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <h5 class="modal-title">Supplier</h5>
-                      </div>
-                      <div class="modal-body">
-                        <form id="supplierForm">
-                          <input class="form-control mb-2" id="name" placeholder="Supplier Name">
-                          <input class="form-control mb-2" id="contactPerson" placeholder="Contact Person">
-                          <input class="form-control mb-2" id="phone" placeholder="Phone">
-                          <input class="form-control mb-2" id="email" placeholder="Email">
-                          <input class="form-control mb-2" id="address" placeholder="Address">
-                          <input class="form-control mb-2" id="productsSupplied" placeholder="Products Supplied">
-                        </form>
-                      </div>
-                      <div class="modal-footer">
-                        <button class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                        <button type="button" class="btn btn-primary" id="saveSupplier">Save</button>
+                  <!-- Modal Add / Edit Suppliers -->
+                  <div
+                    class="modal fade"
+                    id="addSupplierModal"
+                    tabindex="-1"
+                    aria-labelledby="addSupplierModalLabel"
+                    aria-hidden="true"
+                  >
+                    <div class="modal-dialog modal-dialog-centered">
+                      <div class="modal-content border-0 shadow rounded-4">
+                        <div
+                          class="modal-header border-bottom-0 pb-0 pt-4 px-4"
+                        >
+                          <div>
+                            <h5
+                              class="modal-title fw-bold text-primary mb-1"
+                              id="addSupplierModalLabel"
+                            >
+                              Add New Supplier
+                            </h5>
+                            <p
+                              id="supplierModalSubtitle"
+                              class="text-secondary font-12 mb-0"
+                            >
+                              Enter the details for the new supplier
+                            </p>
+                          </div>
+                          <button
+                            type="button"
+                            class="btn-close mb-auto mt-1"
+                            data-bs-dismiss="modal"
+                            aria-label="Close"
+                          ></button>
+                        </div>
+
+                        <div class="modal-body px-4 pt-4 pb-2">
+                          <form id="addSupplierForm">
+                            <input type="hidden" id="supplierId" />
+
+                            <!-- Supplier Name -->
+                            <div class="mb-3">
+                              <label
+                                for="supplierName"
+                                class="form-label fw-medium text-dark-blue"
+                                style="font-size: 14px"
+                              >
+                                Supplier Name <span class="text-danger">*</span>
+                              </label>
+                              <input
+                                type="text"
+                                class="form-control py-2 rounded-3"
+                                id="supplierName"
+                                name="supplier_name"
+                                placeholder="e.g., Cleopatra Pharma"
+                              />
+                            </div>
+
+                            <!-- Contact Name -->
+                            <div class="mb-3">
+                              <label
+                                for="contactName"
+                                class="form-label fw-medium text-dark-blue"
+                                style="font-size: 14px"
+                              >
+                                Contact Name <span class="text-danger">*</span>
+                              </label>
+                              <input
+                                type="text"
+                                class="form-control py-2 rounded-3"
+                                id="contactName"
+                                name="contact_name"
+                                placeholder="e.g., Ahmed Fouad"
+                              />
+                            </div>
+
+                            <!-- Contact Phone -->
+                            <div class="mb-3">
+                              <label
+                                for="contactPhone"
+                                class="form-label fw-medium text-dark-blue"
+                                style="font-size: 14px"
+                              >
+                                Phone <span class="text-danger">*</span>
+                              </label>
+                              <input
+                                type="tel"
+                                class="form-control py-2 rounded-3"
+                                id="contactPhone"
+                                name="contact_phone"
+                                placeholder="e.g., +20-120-149-2186"
+                              />
+                            </div>
+
+                            <!-- Contact Email -->
+                            <div class="mb-3">
+                              <label
+                                for="contactEmail"
+                                class="form-label fw-medium text-dark-blue"
+                                style="font-size: 14px"
+                              >
+                                Email <span class="text-danger">*</span>
+                              </label>
+                              <input
+                                type="text"
+                                class="form-control py-2 rounded-3"
+                                id="contactEmail"
+                                name="contact_email"
+                                placeholder="e.g., ahmed.fouad@cleopatrapharma.com"
+                              />
+                            </div>
+
+                            <!-- Address -->
+                            <div class="mb-3">
+                              <label
+                                for="address"
+                                class="form-label fw-medium text-dark-blue"
+                                style="font-size: 14px"
+                              >
+                                Address <span class="text-danger">*</span>
+                              </label>
+                              <input
+                                type="text"
+                                class="form-control py-2 rounded-3"
+                                id="address"
+                                name="address"
+                                placeholder="e.g., 284 Tahrir St, New Cairo, Luxor, Egypt"
+                              />
+                            </div>
+                          </form>
+                        </div>
+
+                        <div
+                          class="modal-footer border-top-0 px-4 pb-4 pt-0 d-flex gap-3"
+                        >
+                          <button
+                            type="button"
+                            class="btn btn-outline-custom px-4 py-2 rounded-3 fw-medium m-0"
+                            data-bs-dismiss="modal"
+                          >
+                            Cancel
+                          </button>
+                          <button
+                            type="submit"
+                            form="addSupplierForm"
+                            class="btn btn-add main-btn m-0"
+                          >
+                            Add Supplier
+                          </button>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div> -->
 
                   <!--  -->
                   <div class="modal fade" id="deleteModal">
