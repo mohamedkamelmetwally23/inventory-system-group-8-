@@ -26,6 +26,17 @@ const rowsPerPage = 10;
 let orders = [];
 getPurchaseOrders().then((data) => {
   orders = data.data;
+  orders = orders.map((elm) => {
+    return {
+      id: elm.id,
+      order_number: elm.order_number,
+      supplier_id: elm.supplier_id,
+      status: elm.status,
+      Total_Items: elm.items.length,
+      total_quantity: elm.total_quantity,
+      total_amount: elm.total_amount,
+    };
+  });
   if (!orders.length) return;
   updateCaption();
   renderTablePage(orders, actionsHTML, currentPage, rowsPerPage, "Orders");
@@ -41,7 +52,7 @@ function actionsHTML() {
             <i class="fa-regular fa-eye"></i>
         </button>
         <button class="btn btn-sm delete-btn">
-           <i class="fa-regular fa-box-open"></i>
+           <i class="fa-solid fa-box-open"></i>
         </button>
     `;
 }
