@@ -37,6 +37,11 @@ table td {
   white-space: nowrap;
 }
 
+#tableHead th:first-child,
+#tableBody td:first-child {
+  display: none;
+}
+
 .table-footer #tableInfo {
   color: #6b7280;
 }

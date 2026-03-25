@@ -982,15 +982,6 @@
   ],
   "stock_adjustments": [
     {
-      "id": "STK-001",
-      "product_id": "PRD-042",
-      "type": "correction",
-      "quantity": 111,
-      "date": "2025-10-07",
-      "status": "pending",
-      "note": "Inventory correction"
-    },
-    {
       "id": "STK-002",
       "product_id": "PRD-009",
       "type": "initial_stock",
@@ -1884,7 +1875,6 @@
       "total_amount": 9082.37
     }
   ],
-
   "users": [
     {
       "username": "Mohammed AboTrika",

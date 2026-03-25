@@ -2,40 +2,38 @@ import Supplier from '../models/Supplier.js';
 import { apiRequest } from './apiClient.js';
 import { generateId } from '../utils/helpers.js';
 
-//-------------------------------------------
-// Get all suppliers
+// ===============================
+// Get All Suppliers
 export const getSuppliers = async () => apiRequest('suppliers');
 
-//-------------------------------------------
-// Get supplier by id
-export const getSupplierById = async (id) => apiRequest(`suppliers/${id}`);
+// ===============================
+// Get Supplier By ID
+export const getSupplierById = async (id) =>
+  apiRequest(`suppliers/${id}`);
 
-//--------------------------------------------
-// Get suppliers with count of product Supplied
+// ===============================
+// Suppliers + Products Supplied Count
 export const getSuppliersWithProductSupplied = async () => {
   const [suppliersRes, productsRes] = await Promise.all([
     apiRequest('suppliers'),
     apiRequest('products'),
   ]);
 
-  const suppliers = suppliersRes.data;
-  const products = productsRes.data;
+  const suppliers = suppliersRes.data || [];
+  const products = productsRes.data || [];
 
-  const suppliersWithProductSupplied = suppliers.map((supplier) => {
-    const product_supplied = products.filter(
-      (pro) => pro.supplier_id == supplier.id,
-    ).length;
-
-    return { ...supplier, product_supplied};
+  const suppliersWithCount = suppliers.map((s) => {
+    const count = products.filter((p) => p.supplier_id === s.id).length;
+    return { ...s, ProductsSupplied: count };
   });
 
-  return { success: true, data: suppliersWithProductSupplied };
+  return { success: true, data: suppliersWithCount };
 };
 
-//----------------------------------------------
-// Create suppliers
+// ===============================
+// Create Supplier
 export const createSupplier = async (data) => {
-  const supplierId = generateId('SUPP');
+  const supplierId = generateId('SUP');
 
   const newSupplier = new Supplier({
     id: supplierId,
@@ -43,45 +41,39 @@ export const createSupplier = async (data) => {
     contactName: data.contact_name,
     contactEmail: data.contact_email,
     contactPhone: data.contact_phone,
-    address: data.address,
+    address: data.address
   });
 
   return await apiRequest('suppliers', {
     method: 'POST',
-    headers: {
-      'content-type': 'application/json',
-    },
-    body: JSON.stringify(newSupplier),
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(newSupplier)
   });
 };
 
-//----------------------------------------------
-// Updata suppliers
-export const updataSupplier = async (supplierId, data) => {
+// ===============================
+// Update Supplier
+export const updateSupplier = async (supplierId, data) => {
   const updatedSupplier = new Supplier({
     id: supplierId,
     supplierName: data.supplier_name,
     contactName: data.contact_name,
     contactEmail: data.contact_email,
     contactPhone: data.contact_phone,
-    address: data.address,
+    address: data.address
   });
 
   return await apiRequest(`suppliers/${supplierId}`, {
     method: 'PUT',
-    headers: {
-      'content-type': 'application/json',
-    },
-    body: JSON.stringify(updatedSupplier),
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(updatedSupplier)
   });
 };
 
-// ---------------------------------------------
-// Delete suppliers
+// ===============================
+// Delete Supplier
 export const deleteSupplier = async (supplierId) => {
-  const supplier = await apiRequest(`suppliers/${supplierId}`, {
-    method: 'DELETE',
+  return await apiRequest(`suppliers/${supplierId}`, {
+    method: 'DELETE'
   });
-
-  return { success: true, data: supplier };
 };
