@@ -26,6 +26,9 @@ const totalExpiryWriteoff = document.querySelector("#totslExpiry_writeoff");
 
 // ===================== STATE =====================
 let allStocks = [];
+let currentPage = 1;
+const rowsPerPage = 10;
+
 
 // ===================== LOAD PRODUCTS =====================
 const loadProducts = async () => {
@@ -101,35 +104,33 @@ const displayStockAdjustments = (stock) => {
     <td class="text-muted">${stock.note}</td>
     <td class="text-muted">${stock.date}</td>
     <td>
-      <div class="d-flex justify-content-center gap-2">
+      <div class="d-flex justify-content-center gap-3">
 
-        <button
-          class="btn btn-sm btn-outline-primary d-flex align-items-center justify-content-center"
-          style="width:35px; height:35px;"
-          data-bs-toggle="modal"
-          data-bs-target="#addStockModal"
-          data-action="edit"
-          data-id="${stock.id}"
-          data-product-id="${stock.product_id}"
-          data-type="${stock.type}"
-          data-quantity="${stock.quantity}"
-          data-status="${stock.status}"
-          data-note="${stock.note}"
-          data-date="${stock.date}"
-        >
-          <i class="fa-regular fa-pen-to-square"></i>
-        </button>
+  <button
+    class="btn btn-sm edit-btn d-flex align-items-center justify-content-center p-0 border-0 bg-transparent shadow-none"
+    data-bs-toggle="modal"
+    data-bs-target="#addStockModal"
+    data-action="edit"
+    data-id="${stock.id}"
+    data-product-id="${stock.product_id}"
+    data-type="${stock.type}"
+    data-quantity="${stock.quantity}"
+    data-status="${stock.status}"
+    data-note="${stock.note}"
+    data-date="${stock.date}"
+  >
+    <i class="fa-solid fa-pen-to-square edit-icon text-primary"></i> 
+  </button>
 
-        <button
-          class="btn btn-sm btn-outline-danger d-flex align-items-center justify-content-center"
-          style="width:35px; height:35px;"
-          data-action="delete"
-          data-id="${stock.id}"
-        >
-          <i class="fa-regular fa-trash-can"></i>
-        </button>
+  <button
+    class="btn btn-sm delete-btn d-flex align-items-center justify-content-center p-0 border-0 bg-transparent shadow-none"
+    data-action="delete"
+    data-id="${stock.id}"
+  >
+    <i class="fa-solid fa-trash delete-icon text-danger"></i> 
+  </button>
 
-      </div>
+</div>
     </td>
   </tr>
 `;
