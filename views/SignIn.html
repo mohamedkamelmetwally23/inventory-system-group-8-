@@ -15,26 +15,26 @@
     <link
       rel="icon"
       type="image/x-icon"
-      href="./assets/imgs/icon-site/favicon.ico"
+      href="../assets/imgs/icon-site/favicon.ico"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="16x16"
-      href="./assets/imgs/icon-site/favicon-16x16.png"
+      href="../assets/imgs/icon-site/favicon-16x16.png"
     />
     <link
       rel="icon"
       type="image/png"
       sizes="32x32"
-      href="./assets/imgs/icon-site/favicon-32x32.png"
+      href="../assets/imgs/icon-site/favicon-32x32.png"
     />
     <link
       rel="apple-touch-icon"
       sizes="180x180"
-      href="./assets/imgs/icon-site/apple-touch-icon.png"
+      href="../assets/imgs/icon-site/apple-touch-icon.png"
     />
-    <link rel="manifest" href="./assets/imgs/icon-site/site.webmanifest" />
+    <link rel="manifest" href="../assets/imgs/icon-site/site.webmanifest" />
 
     <!------------------ GOOGLE FONT ------------------>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -95,31 +95,15 @@
                 class="userpass form-control rounded-3 search my-2"
                 id="passInput"
               />
-
               <div class="d-flex justify-content-between">
                 <div>
                   <input type="checkbox" name="remember-me" id="check-me" />
                   <span class="fs-14 fw-bold">Remember me</span>
                 </div>
-                <div>
-                  <p
-                    class="fs-14 text-primary forget-password"
-                    data-bs-toggle="modal"
-                    data-bs-target="#forgetPassword"
-                  >
-                    forget Password?
-                  </p>
-                </div>
               </div>
               <button id="sign-in" class="main-btn my-4 w-100">sign-in</button>
             </form>
             <span class="errormessage"></span>
-            <div class="my-2">
-              <p>
-                Don't have an account?
-                <span class="fw-bold text-primary">Contact Adminstrator</span>
-              </p>
-            </div>
           </div>
         </div>
         <div
@@ -132,48 +116,6 @@
         </div>
       </div>
     </div>
-
-    <div
-      class="modal fade"
-      id="forgetPassword"
-      tabindex="-1"
-      aria-labelledby="forgetPasswordLabel"
-      aria-hidden="true"
-    >
-      <div class="modal-dialog">
-        <div class="modal-content">
-          <div class="modal-header">
-            <h5 class="modal-title" id="forgetPasswordLabel">Email Address</h5>
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="modal"
-              aria-label="Close"
-            ></button>
-          </div>
-          <div class="modal-body">
-            <label for="email">Write Email to send Password</label>
-            <input
-              type="email"
-              class="form-control"
-              name="email"
-              id="sendpass"
-            />
-          </div>
-          <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Close
-            </button>
-            <button type="button" class="btn main-btn">send password</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
     <script src="../assets/pages/signin.js" type="module"></script>
   </body>
 </html>

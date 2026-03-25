@@ -7,19 +7,11 @@ let email = document.getElementById("emailInput");
 let pass = document.getElementById("passInput");
 let check = document.getElementById("check-me");
 let siginbtn = document.getElementById("sign-in");
-let forget_password = document.getElementsByClassName("forget-password")[0];
 // get users data
 getUsersData().then((data) => {
   users = data.data;
 });
-// forget password
-forget_password.addEventListener("click", function () {
-  let sendpass = document.getElementById("sendpass");
-  users.forEach((person) => {
-    if (person.email == sendpass.value) {
-    }
-  });
-});
+
 // validating and sign in ...
 siginbtn.addEventListener("click", (e) => {
   e.preventDefault();

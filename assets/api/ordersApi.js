@@ -2,31 +2,28 @@ import { apiRequest } from "./apiClient.js";
 
 export const getPurchaseOrders = async () => apiRequest("purchase_orders");
 
-export async function getData(id) {
-  const response = await fetch(` http://localhost:3000/purchase_orders/${id}`);
-  return response.json();
-}
-export async function editStatus(id, data) {
-  await fetch(` http://localhost:3000/purchase_orders/${id}`, {
-    method: "PUT",
+export const getDataById = async (id) => {
+  return await apiRequest(`purchase_orders/${id}`);
+};
+
+export const editStatus = async (id, data) => {
+  return await apiRequest(`purchase_orders/${id}`, {
+    method: "PATCH",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(data),
   });
-}
+};
 
-export async function addNewOrder(data) {
-  await fetch(` http://localhost:3000/purchase_orders`, {
+export const addNewOrder = async (data) => {
+  return await apiRequest("purchase_orders", {
     method: "POST",
     headers: {
       "Content-Type": "application/json",
     },
     body: JSON.stringify(data),
   });
-}
+};
 
-export async function getSuppliers() {
-  const response = await fetch(` http://localhost:3000/suppliers`);
-  return response.json();
-}
+export const getSuppliers = async () => apiRequest("suppliers");
