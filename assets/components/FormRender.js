@@ -2,7 +2,9 @@
 // import { apiRequest } from "../api/apiClient.js";
 import { generateId } from "../utils/helpers.js";
 import { getSuppliers } from "../api/ordersApi.js";
+
 let categoryData = ["CategoryName", "Description"];
+//done..
 let OrderData = [
   "Supplier",
   "Expected Delivery Date",
@@ -54,10 +56,10 @@ export async function generateModal(headername, dataType) {
   closeButton.setAttribute("aria-label", "Close");
 
   let modal_body = await generateModalBody(dataType);
-  console.log(typeof modal_body);
   let save = document.createElement("button");
   save.setAttribute("type", "button");
-  save.setAttribute("class", "btn btn-primary main-bg save");
+  save.setAttribute("class", `btn btn-primary main-bg `);
+  save.setAttribute("id", `save${headername}`);
   save.textContent = `Save ${headername}`;
 
   let close = document.createElement("button");
@@ -101,7 +103,7 @@ export async function generateModalBody(dataType) {
   } else if (dataType == "stock adjustment") {
     generateId("STK");
     body = await form_text_Input(stockAdjustmentData);
-  } else if (dataType == "supplier") {
+  } else if (dataType == "suppliers") {
     generateId("SUP");
     body = await form_text_Input(SupplierData);
   } else {
@@ -111,19 +113,6 @@ export async function generateModalBody(dataType) {
     body.textContent = `Unknown type: ${dataType}`;
   }
   return body;
-}
-
-export function getFormData() {
-  let arrayofInputs = {};
-  if (document.querySelector(".modal-body")) {
-    document
-      .querySelector(".modal-body")
-      .querySelectorAll("input")
-      .forEach((elm) => {
-        arrayofInputs[elm.id] = elm.value;
-      });
-  }
-  console.log(arrayofInputs);
 }
 
 export async function form_text_Input(dataArray) {
@@ -139,23 +128,15 @@ export async function form_text_Input(dataArray) {
 
     let input;
     if (key == "Description") {
-      console.log(key, "textarea");
       input = input_type("textarea");
     } else if (key == "Supplier" || key == "Category") {
-      console.log(key, "selection");
       input = await Selection(key);
     } else if (/Date/i.test(key)) {
-      console.log(key, "date");
       input = input_type("date");
     } else if (/Total/i.test(key)) {
-      console.log(key, "total");
       input = input_type("number", key);
     } else {
-      input = document.createElement("input");
-      input.setAttribute("type", "text");
-      input.setAttribute("class", "form-control");
-      input.setAttribute("id", key);
-      input.setAttribute("placeholder", `Enter ${key}`);
+      input = input_type("text", key);
     }
     form.appendChild(inputLabel);
     form.appendChild(input);

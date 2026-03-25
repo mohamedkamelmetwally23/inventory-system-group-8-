@@ -1877,10 +1877,32 @@
   ],
   "users": [
     {
-      "username": "Mohammed AboTrika",
-      "email": "mmm@gmail.com",
-      "password": "2210",
-      "role": "admin"
+      "id": 1,
+      "name": "Mohamed Kamel",
+      "email": "mohamed.kamel@gmail.com",
+      "password": "Mohamed123",
+      "role": "Manager"
+    },
+    {
+      "id": 2,
+      "name": "Habeba Ahmed",
+      "email": "habebaahmed101@gmail.com",
+      "password": "Habeba123",
+      "role": "Admin"
+    },
+    {
+      "id": 3,
+      "name": "Hajar Zain",
+      "email": "hajar.zain@gmail.com",
+      "password": "Hajar2024",
+      "role": "Super_Admin"
+    },
+    {
+      "id": 4,
+      "name": "Mahmoud Mostafa",
+      "email": "mahmoud.mostafa@gmail.com",
+      "password": "Mahmoud55",
+      "role": "Admin"
     }
   ]
 }

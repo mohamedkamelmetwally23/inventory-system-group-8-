@@ -1,0 +1,179 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!------------------ PAGE INFO ------------------>
+    <title>PharmaFlow</title>
+    <meta
+      name="description"
+      content="Get a comprehensive overview of your pharmacy inventory. Monitor real-time low-stock alerts and track medical product movements for efficient management."
+    />
+
+    <!------------------ ICON PAGE ------------------>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="./assets/imgs/icon-site/favicon.ico"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="./assets/imgs/icon-site/favicon-16x16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/imgs/icon-site/favicon-32x32.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="./assets/imgs/icon-site/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="./assets/imgs/icon-site/site.webmanifest" />
+
+    <!------------------ GOOGLE FONT ------------------>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!------------------ STYLES ------------------>
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
+    <!-- FontAwesome ICONS-->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <!--  -->
+    <link rel="stylesheet" href="../assets/css/notificationStyle.css" />
+    <link rel="stylesheet" href="../assets/css/style.css" />
+
+    <!------------------ JAVASCRIPT ------------------>
+    <!-- Bootstrap -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    ></script>
+  </head>
+
+  <body>
+    <div class="container-fluid">
+      <div class="row min-vh-100">
+        <div
+          class="col-lg-6 col-md-12 d-flex align-items-center justify-content-center py-lg-4"
+        >
+          <div class="w-75">
+            <h2 class="fw-bold">Welcome back</h2>
+            <p class="fc-gray-500">Sign in to your inventory account</p>
+            <form>
+              <label for="email" class="form-label my-1 fs-6"
+                >Email Address</label
+              >
+              <input
+                type="email"
+                name="email"
+                class="useremail form-control rounded-3 search my-2"
+                id="emailInput"
+              />
+              <label for="password" class="form-label my-1 fs-6"
+                >Password</label
+              >
+              <input
+                type="password"
+                name="password"
+                class="userpass form-control rounded-3 search my-2"
+                id="passInput"
+              />
+
+              <div class="d-flex justify-content-between">
+                <div>
+                  <input type="checkbox" name="remember-me" id="check-me" />
+                  <span class="fs-14 fw-bold">Remember me</span>
+                </div>
+                <div>
+                  <p
+                    class="fs-14 text-primary forget-password"
+                    data-bs-toggle="modal"
+                    data-bs-target="#forgetPassword"
+                  >
+                    forget Password?
+                  </p>
+                </div>
+              </div>
+              <button id="sign-in" class="main-btn my-4 w-100">sign-in</button>
+            </form>
+            <span class="errormessage"></span>
+            <div class="my-2">
+              <p>
+                Don't have an account?
+                <span class="fw-bold text-primary">Contact Adminstrator</span>
+              </p>
+            </div>
+          </div>
+        </div>
+        <div
+          class="col-lg-6 col-md-12 align-items-center justify-content-center sign-in-bg d-none d-lg-flex"
+        >
+          <img
+            src="../assets/imgs/icon-site/android-chrome-512x512.png"
+            class="img-fluid top"
+          />
+        </div>
+      </div>
+    </div>
+
+    <div
+      class="modal fade"
+      id="forgetPassword"
+      tabindex="-1"
+      aria-labelledby="forgetPasswordLabel"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="forgetPasswordLabel">Email Address</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <label for="email">Write Email to send Password</label>
+            <input
+              type="email"
+              class="form-control"
+              name="email"
+              id="sendpass"
+            />
+          </div>
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary"
+              data-bs-dismiss="modal"
+            >
+              Close
+            </button>
+            <button type="button" class="btn main-btn">send password</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script src="../assets/pages/signin.js" type="module"></script>
+  </body>
+</html>

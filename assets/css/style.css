@@ -52,7 +52,7 @@
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 header {
@@ -210,4 +210,14 @@ h3 {
   border-radius: 50%;
   /* background-color: hsl(218, 70%, 50%); */
   margin-right: 8px;
+}
+
+.sign-in-bg {
+  background-color: #d6e8e7;
+}
+.fc-gray-500 {
+  color: var(--gray-500);
+}
+.forget-password:hover {
+  cursor: pointer;
 }
