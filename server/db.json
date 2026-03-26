@@ -1032,15 +1032,6 @@
   ],
   "stock_adjustments": [
     {
-      "id": "STK-001",
-      "product_id": "PRD-042",
-      "adjustment_type": "decrease",
-      "quantity": 8,
-      "reason": "Inventory correction",
-      "timestamp": "2025-10-07T12:00:00Z",
-      "user": "Admin"
-    },
-    {
       "id": "STK-002",
       "product_id": "PRD-009",
       "adjustment_type": "increase",

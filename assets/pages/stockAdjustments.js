@@ -3,257 +3,462 @@ import {
   createStockAdjustments,
   updateStock,
   deleteStock,
+  getProductNames,
 } from "../api/stockAdjustmentsApi.js";
-
-import { getProductNames } from "../api/productsApi.js";
 import loadLayout from "../ui/layout.js";
-
-// ===================== ELEMENTS =====================
-const productSelect = document.getElementById("productSelect");
-const stockForm = document.querySelector("#addStockForm");
-const tableBody = document.querySelector(".table-body");
-const filterSelect = document.getElementById("filterSelect");
-const addBtn = document.querySelector('[data-action="add"]');
-const modalEl = document.getElementById("addStockModal");
-const modalTitle = document.getElementById("addStockModalLabel");
-
-// Cards
-const totalAdjustments = document.querySelector("#totalAdjustments");
-const totalCorrection = document.querySelector("#totalCorrection");
-const totalInitialStock = document.querySelector("#totalinItial_stock");
-const totalStockIn = document.querySelector("#totalStock_in");
-const totalStockOut = document.querySelector("#totalStock_out");
-const totalExpiryWriteoff = document.querySelector("#totslExpiry_writeoff");
+import { renderTablePage } from "../components/table.js";
 
 // ===================== STATE =====================
-let allStocks = [];
+let stocksRaw = [];
+let currentPage = 1;
+const rowsPerPage = 10;
+let allProducts = [];
+let currentEditId = null;
+let editingStockData = null;
+
+// ===================== HELPER FUNCTION =====================
+function getCurrentTimestamp() {
+  return new Date().toISOString();
+}
+
+function formatDateForInput(dateString) {
+  if (!dateString) return "";
+  return dateString.split("T")[0];
+}
 
 // ===================== LOAD PRODUCTS =====================
+async function loadProducts() {
+  try {
+    const products = await getProductNames();
 
-// ===================== CALCULATIONS =====================
-const displayCalc = (stocks) => {
-  let totalCorrectionVal = 0;
-  let totalStockInVal = 0;
-  let totalExpiryWriteoffVal = 0;
-  let totalStockOutVal = 0;
-  let totalInitialStockVal = 0;
+    if (products && products.success) {
+      allProducts = products.data || [];
+    } else if (Array.isArray(products)) {
+      allProducts = products;
+    } else if (products?.data) {
+      allProducts = products.data;
+    } else {
+      allProducts = [];
+    }
 
-  stocks.forEach((stock) => {
-    switch (stock.type) {
-      case "correction":
-        totalCorrectionVal += Number(stock.quantity);
-        break;
-      case "initial_stock":
-        totalInitialStockVal += Number(stock.quantity);
-        break;
-      case "stock_in":
-        totalStockInVal += Number(stock.quantity);
-        break;
-      case "stock_out":
-        totalStockOutVal += Number(stock.quantity);
-        break;
-      case "expiry_writeoff":
-        totalExpiryWriteoffVal += Number(stock.quantity);
-        break;
+    const productSelect = document.getElementById("productSelect");
+    if (allProducts.length > 0 && productSelect) {
+      productSelect.innerHTML = '<option value="">Select Product</option>';
+      allProducts.forEach((product) => {
+        productSelect.insertAdjacentHTML(
+          "beforeend",
+          `<option value="${product.id}">${product.name}</option>`,
+        );
+      });
+    }
+
+    updateFilterOptions();
+  } catch (err) {
+    console.error("Error loading products:", err);
+  }
+}
+
+// ===================== UPDATE FILTER DROPDOWN =====================
+function updateFilterOptions() {
+  const filterSelect = document.getElementById("filterSelect");
+  if (!filterSelect) return;
+
+  let options = '<option value="">All</option>';
+  options += '<option value="increase">Increase</option>';
+  options += '<option value="decrease">Decrease</option>';
+
+  filterSelect.innerHTML = options;
+}
+
+// ===================== LOAD STOCK ADJUSTMENTS =====================
+async function loadStocks() {
+  try {
+    const res = await getAllStockAdjustmentsByProductName();
+
+    if (res && res.success) {
+      stocksRaw = res.data || [];
+    } else if (Array.isArray(res)) {
+      stocksRaw = res;
+    } else if (res?.data) {
+      stocksRaw = res.data;
+    } else {
+      stocksRaw = [];
+    }
+
+    const formattedData = stocksRaw.map((item) => {
+      const product = allProducts.find((p) => p.id == item.product_id);
+      const productName = product
+        ? product.name
+        : item.productName || item.product_name || "N/A";
+
+      return {
+        id: item.id,
+        product_name: productName,
+        adjustment_type: item.adjustment_type || "N/A",
+        quantity: item.quantity || 0,
+        reason: item.reason || "N/A",
+        timestamp: item.timestamp
+          ? new Date(item.timestamp).toLocaleString()
+          : "N/A",
+        user: item.user || "System",
+      };
+    });
+
+    renderTablePage(
+      formattedData,
+      actionsHTML,
+      currentPage,
+      rowsPerPage,
+      "stock_adjustments",
+    );
+
+    updateCards();
+    updateCaption();
+    updatePageNumber();
+    updateFilterOptions();
+  } catch (err) {
+    console.error("Error loading stocks:", err);
+    const tableBody = document.getElementById("tableBody");
+    if (tableBody) {
+      tableBody.innerHTML = `
+        <tr>
+          <td colspan="7" class="text-center text-danger">
+            Failed to load data: ${err.message}
+        </tr>
+      `;
+    }
+  }
+}
+
+// ===================== ACTION BUTTONS HTML =====================
+function actionsHTML(stock) {
+  return `
+    <button class="btn btn-sm edit-btn border-0" data-id="${stock.id}">
+      <i class="fa-solid fa-pen-to-square text-primary"></i>
+    </button>
+    <button class="btn btn-sm delete-btn border-0" data-id="${stock.id}">
+      <i class="fa-solid fa-trash text-danger"></i>
+    </button>
+  `;
+}
+
+// ===================== UPDATE STATISTICS CARDS =====================
+function updateCards() {
+  let totalIncrease = 0;
+  let totalDecrease = 0;
+
+  stocksRaw.forEach((stock) => {
+    if (stock.adjustment_type === "increase") {
+      totalIncrease += Number(stock.quantity) || 0;
+    } else if (stock.adjustment_type === "decrease") {
+      totalDecrease += Number(stock.quantity) || 0;
     }
   });
 
-  return {
-    totalAdjustment: stocks.length,
-    totalCorrection: totalCorrectionVal,
-    totalStockIn: totalStockInVal,
-    totalStockOut: totalStockOutVal,
-    totalExpiryWriteoff: totalExpiryWriteoffVal,
-    totalInitialStock: totalInitialStockVal,
-  };
-};
+  const totalAdjustments = document.querySelector("#totalAdjustments");
+  const totalIncreaseEl = document.querySelector("#totalIncrease");
+  const totalDecreaseEl = document.querySelector("#totalDecrease");
+  const totalNetChangeEl = document.querySelector("#totalNetChange");
 
-// ===================== RENDER CARDS =====================
-const renderCards = (stats) => {
-  totalAdjustments.textContent = stats.totalAdjustment;
-  totalCorrection.textContent = stats.totalCorrection;
-  totalInitialStock.textContent = stats.totalInitialStock;
-  totalStockIn.textContent = stats.totalStockIn;
-  totalStockOut.textContent = stats.totalStockOut;
-  totalExpiryWriteoff.textContent = stats.totalExpiryWriteoff;
-};
+  if (totalAdjustments) totalAdjustments.textContent = stocksRaw.length;
+  if (totalIncreaseEl) totalIncreaseEl.textContent = totalIncrease;
+  if (totalDecreaseEl) totalDecreaseEl.textContent = totalDecrease;
+  if (totalNetChangeEl)
+    totalNetChangeEl.textContent = totalIncrease - totalDecrease;
+}
 
-// ===================== TABLE =====================
-const displayStockAdjustments = (stock) => {
-  const markup = `
-  <tr>
-    <td class="text-muted">${stock.productName}</td>
-    <td class="text-muted">${stock.type}</td>
-    <td class="text-muted">${stock.quantity}</td>
-    <td class="text-muted">${stock.status}</td>
-    <td class="text-muted">${stock.note}</td>
-    <td class="text-muted">${stock.date}</td>
-    <td>
-      <div class="d-flex justify-content-center gap-2">
-
-        <button
-          class="btn btn-sm btn-outline-primary d-flex align-items-center justify-content-center"
-          style="width:35px; height:35px;"
-          data-bs-toggle="modal"
-          data-bs-target="#addStockModal"
-          data-action="edit"
-          data-id="${stock.id}"
-          data-product-id="${stock.product_id}"
-          data-type="${stock.type}"
-          data-quantity="${stock.quantity}"
-          data-status="${stock.status}"
-          data-note="${stock.note}"
-          data-date="${stock.date}"
-        >
-          <i class="fa-regular fa-pen-to-square"></i>
-        </button>
-
-        <button
-          class="btn btn-sm btn-outline-danger d-flex align-items-center justify-content-center"
-          style="width:35px; height:35px;"
-          data-action="delete"
-          data-id="${stock.id}"
-        >
-          <i class="fa-regular fa-trash-can"></i>
-        </button>
-
-      </div>
-    </td>
-  </tr>
-`;
-
-  tableBody.insertAdjacentHTML("beforeend", markup);
-};
-
-const renderStock = (stocks) => {
-  tableBody.innerHTML = "";
-  if (!stocks || stocks.length === 0) {
-    tableBody.innerHTML = `
-      <tr>
-        <td colspan="7" class="text-center text-secondary">
-          No Stock found.
-        </td>
-      </tr>
-    `;
-    return;
-  }
-  stocks.forEach(displayStockAdjustments);
-};
-
-// ===================== INIT =====================
-const init = async () => {
-  const res = await getAllStockAdjustmentsByProductName();
-
-  if (res.success) {
-    allStocks = res.data;
-    renderStock(allStocks);
-    renderCards(displayCalc(allStocks));
-  } else {
-    tableBody.innerHTML = `
-      <p class="text-center text-danger">
-        Error: ${res.error}
-      </p>
+// ===================== UPDATE TABLE CAPTION =====================
+function updateCaption() {
+  const captionEl = document.getElementById("tableCaption");
+  if (captionEl) {
+    captionEl.innerHTML = `
+      <i class="fa-solid fa-box"></i> All Stock Adjustments (${stocksRaw.length})
     `;
   }
-};
+}
 
-// ===================== FILTER =====================
-const filterStocks = (type) => {
-  if (!type) {
-    renderStock(allStocks);
-    renderCards(displayCalc(allStocks));
+// ===================== UPDATE PAGE NUMBER DISPLAY =====================
+function updatePageNumber() {
+  const pageNumberEl = document.getElementById("pageNumber");
+  if (pageNumberEl) {
+    pageNumberEl.textContent = currentPage;
+  }
+}
+
+// ===================== POPULATE FORM WITH STOCK DATA =====================
+function populateFormWithStockData(stock) {
+  const productSelect = document.getElementById("productSelect");
+  const typeSelect = document.getElementById("Type");
+  const quantityInput = document.getElementById("Quantity");
+  const reasonInput = document.getElementById("reason");
+  const userInput = document.getElementById("user");
+  const dateInput = document.getElementById("Date");
+
+  if (productSelect) productSelect.value = stock.product_id || "";
+  if (typeSelect) typeSelect.value = stock.adjustment_type;
+  if (quantityInput) quantityInput.value = stock.quantity;
+  if (reasonInput) reasonInput.value = stock.reason || "";
+  if (userInput) userInput.value = stock.user || "";
+
+  if (dateInput && stock.timestamp) {
+    dateInput.value = formatDateForInput(stock.timestamp);
+  }
+}
+
+// ===================== MODAL OPEN HANDLER =====================
+document
+  .getElementById("addStockModal")
+  ?.addEventListener("show.bs.modal", () => {
+    const form = document.getElementById("addStockForm");
+    const dateInput = document.getElementById("Date");
+
+    if (currentEditId && editingStockData) {
+      populateFormWithStockData(editingStockData);
+
+      const modalTitle = document.getElementById("addStockModalLabel");
+      if (modalTitle) modalTitle.textContent = "Edit Stock Adjustment";
+
+      const subtitle = document.getElementById("productModalSubtitle");
+      if (subtitle)
+        subtitle.textContent = "Update the stock adjustment information below";
+    } else {
+      if (form) form.reset();
+
+      if (dateInput) {
+        dateInput.value = formatDateForInput(getCurrentTimestamp());
+      }
+
+      const modalTitle = document.getElementById("addStockModalLabel");
+      if (modalTitle) modalTitle.textContent = "Add New Stock Adjustment";
+
+      const subtitle = document.getElementById("productModalSubtitle");
+      if (subtitle)
+        subtitle.textContent = "Enter the details for the new stock adjustment";
+    }
+  });
+
+// ===================== FORM SUBMIT HANDLER =====================
+document
+  .getElementById("addStockForm")
+  ?.addEventListener("submit", async (e) => {
+    e.preventDefault();
+
+    const editId = currentEditId;
+    const currentTimestamp = getCurrentTimestamp();
+
+    const data = {
+      product_id: document.getElementById("productSelect")?.value.trim(),
+      adjustment_type: document.getElementById("Type")?.value.trim(),
+      quantity: Number(document.getElementById("Quantity")?.value),
+      reason: document.getElementById("reason")?.value.trim(),
+      user: document.getElementById("user")?.value.trim(),
+      timestamp: currentTimestamp,
+    };
+
+    if (
+      !data.product_id ||
+      !data.adjustment_type ||
+      !data.quantity ||
+      !data.reason ||
+      !data.user
+    ) {
+      console.error("Please fill all required fields");
+      return;
+    }
+
+    try {
+      let result;
+
+      if (editId && editId !== "null" && editId !== "undefined") {
+        result = await updateStock(editId, data);
+      } else {
+        result = await createStockAdjustments(data);
+      }
+
+      if (result && result.success) {
+        await loadStocks();
+
+        const modal = bootstrap.Modal.getInstance(
+          document.getElementById("addStockModal"),
+        );
+        if (modal) modal.hide();
+
+        currentEditId = null;
+        editingStockData = null;
+      } else {
+        console.error(result?.error || "Failed to save stock adjustment");
+      }
+    } catch (err) {
+      console.error("Error saving stock adjustment:", err);
+    }
+  });
+
+// ===================== TABLE EVENT HANDLER (EDIT/DELETE) =====================
+document.getElementById("tableBody")?.addEventListener("click", function (e) {
+  if (e.target.closest(".edit-btn")) {
+    const id = e.target.closest(".edit-btn").dataset.id;
+    const stock = stocksRaw.find((s) => s.id == id);
+
+    if (stock) {
+      currentEditId = id;
+      editingStockData = { ...stock };
+
+      const modal = new bootstrap.Modal(
+        document.getElementById("addStockModal"),
+      );
+      modal.show();
+    }
+  }
+
+  if (e.target.closest(".delete-btn")) {
+    const id = e.target.closest(".delete-btn").dataset.id;
+    window.currentDeleteId = id;
+
+    const modal = new bootstrap.Modal(document.getElementById("deleteModal"));
+    modal.show();
+  }
+});
+
+// ===================== CONFIRM DELETE HANDLER =====================
+document
+  .getElementById("confirmDelete")
+  ?.addEventListener("click", async () => {
+    if (!window.currentDeleteId) return;
+
+    try {
+      const result = await deleteStock(window.currentDeleteId);
+
+      if (result && result.success) {
+        await loadStocks();
+        window.currentDeleteId = null;
+
+        const modal = bootstrap.Modal.getInstance(
+          document.getElementById("deleteModal"),
+        );
+        if (modal) modal.hide();
+      } else {
+        console.error(result?.error || "Failed to delete stock adjustment");
+      }
+    } catch (err) {
+      console.error("Error deleting stock adjustment:", err);
+    }
+  });
+
+// ===================== FILTER HANDLER =====================
+document.getElementById("filterSelect")?.addEventListener("change", (e) => {
+  const filterValue = e.target.value;
+
+  if (!filterValue) {
+    loadStocks();
     return;
   }
 
-  const filtered = allStocks.filter((stock) => stock.type === type);
-  renderStock(filtered);
-  renderCards(displayCalc(filtered));
-};
+  let filtered = [];
 
-filterSelect.addEventListener("change", (e) => {
-  filterStocks(e.target.value);
-});
-
-// ===================== DELETE & EDIT =====================
-tableBody.addEventListener("click", async (e) => {
-  // DELETE
-  const deleteBtn = e.target.closest('[data-action="delete"]');
-  if (deleteBtn) {
-    const id = deleteBtn.dataset.id;
-    const result = await deleteStock(id);
-    if (result.success) init();
-    else alert(result.error);
-    return;
+  if (filterValue === "increase") {
+    filtered = stocksRaw.filter(
+      (stock) => stock.adjustment_type === "increase",
+    );
+  } else if (filterValue === "decrease") {
+    filtered = stocksRaw.filter(
+      (stock) => stock.adjustment_type === "decrease",
+    );
+  } else if (filterValue.startsWith("product_")) {
+    const productName = filterValue.replace("product_", "");
+    filtered = stocksRaw.filter((stock) => {
+      const stockProductName = stock.productName || stock.product_name;
+      return stockProductName === productName;
+    });
   }
 
-  // EDIT
-  const editBtn = e.target.closest('[data-action="edit"]');
-  if (editBtn) {
-    const id = editBtn.dataset.id;
+  const formattedData = filtered.map((item) => {
+    const product = allProducts.find((p) => p.id == item.product_id);
+    const productName = product ? product.name : item.productName || "N/A";
 
-    productSelect.value = editBtn.dataset.productId;
-    document.getElementById("Type").value = editBtn.dataset.type;
-    document.getElementById("Quantity").value = editBtn.dataset.quantity;
-    document.getElementById("Status").value = editBtn.dataset.status;
-    document.getElementById("Note").value = editBtn.dataset.note;
-    document.getElementById("Date").value = editBtn.dataset.date;
+    return {
+      id: item.id,
+      product_name: productName,
+      adjustment_type: item.adjustment_type || "N/A",
+      quantity: item.quantity || 0,
+      reason: item.reason || "N/A",
+      timestamp: item.timestamp
+        ? new Date(item.timestamp).toLocaleString()
+        : "N/A",
+      user: item.user || "System",
+    };
+  });
 
-    stockForm.dataset.editId = id;
+  renderTablePage(
+    formattedData,
+    actionsHTML,
+    currentPage,
+    rowsPerPage,
+    "stock_adjustments",
+  );
 
-    modalTitle.textContent = "Edit Stock";
+  let totalIncrease = 0;
+  let totalDecrease = 0;
+  filtered.forEach((stock) => {
+    if (stock.adjustment_type === "increase") {
+      totalIncrease += Number(stock.quantity) || 0;
+    } else if (stock.adjustment_type === "decrease") {
+      totalDecrease += Number(stock.quantity) || 0;
+    }
+  });
+
+  const totalAdjustments = document.querySelector("#totalAdjustments");
+  const totalIncreaseEl = document.querySelector("#totalIncrease");
+  const totalDecreaseEl = document.querySelector("#totalDecrease");
+  const totalNetChangeEl = document.querySelector("#totalNetChange");
+
+  if (totalAdjustments) totalAdjustments.textContent = filtered.length;
+  if (totalIncreaseEl) totalIncreaseEl.textContent = totalIncrease;
+  if (totalDecreaseEl) totalDecreaseEl.textContent = totalDecrease;
+  if (totalNetChangeEl)
+    totalNetChangeEl.textContent = totalIncrease - totalDecrease;
+});
+
+// ===================== PAGINATION HANDLERS =====================
+document.getElementById("prevBtn")?.addEventListener("click", () => {
+  if (currentPage > 1) {
+    currentPage--;
+    loadStocks();
   }
 });
 
-// ===================== FORM =====================
-stockForm.addEventListener("submit", async (e) => {
-  e.preventDefault();
-
-  const id = stockForm.dataset.editId;
-
-  const newStock = {
-    product_id: productSelect.value,
-    type: document.getElementById("Type").value,
-    quantity: document.getElementById("Quantity").value,
-    status: document.getElementById("Status").value,
-    note: document.getElementById("Note").value,
-    date: document.getElementById("Date").value,
-  };
-
-  let result;
-
-  if (id) {
-    result = await updateStock(id, newStock);
-    delete stockForm.dataset.editId;
-  } else {
-    result = await createStockAdjustments(newStock);
-  }
-
-  if (result.success) {
-    init();
-    stockForm.reset();
-
-    const modal = bootstrap.Modal.getInstance(modalEl);
-    modal.hide();
-  } else {
-    alert(result.error);
+document.getElementById("nextBtn")?.addEventListener("click", () => {
+  const totalPages = Math.ceil(stocksRaw.length / rowsPerPage);
+  if (currentPage < totalPages) {
+    currentPage++;
+    loadStocks();
   }
 });
 
-// ===================== RESET FOR ADD =====================
-addBtn.addEventListener("click", () => {
-  stockForm.reset();
-  delete stockForm.dataset.editId;
-  modalTitle.textContent = "Add New Stock Adjustments";
-});
+// ===================== MODAL CLOSE HANDLER =====================
+document
+  .getElementById("addStockModal")
+  ?.addEventListener("hidden.bs.modal", () => {
+    const form = document.getElementById("addStockForm");
+    if (form && !currentEditId) {
+      form.reset();
+    }
 
-// ===================== CLEAN MODAL =====================
-modalEl.addEventListener("hidden.bs.modal", () => {
-  stockForm.reset();
-  delete stockForm.dataset.editId;
-  modalTitle.textContent = "Add New Stock Adjustments";
-});
+    currentEditId = null;
+    editingStockData = null;
 
-// ===================== START =====================
-loadLayout("Stock Adjustments");
+    const modalTitle = document.getElementById("addStockModalLabel");
+    if (modalTitle) modalTitle.textContent = "Add New Stock Adjustment";
+
+    const subtitle = document.getElementById("productModalSubtitle");
+    if (subtitle)
+      subtitle.textContent = "Enter the details for the new stock adjustment";
+  });
+
+// ===================== INITIALIZATION =====================
+async function init() {
+  loadLayout("Stock Adjustments");
+  await loadProducts();
+  await loadStocks();
+}
 
 init();
