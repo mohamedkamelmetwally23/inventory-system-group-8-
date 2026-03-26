@@ -26,6 +26,7 @@
       "description": "Category for ointment products"
     }
   ],
+
   "suppliers": [
     {
       "id": "SUP-001",
@@ -428,6 +429,7 @@
       "address": "147 El-Horreya Ave, Dokki, Cairo, Egypt"
     }
   ],
+
   "products": [
     {
       "id": "PRD-001",
@@ -435,10 +437,11 @@
       "product_name": "Artificial Tears 0.5% Eye Drops",
       "category_id": "CAT-003",
       "quantity": 28,
+      "reorderLevel": 15,
       "price": 291.07,
       "expire_date": "2028-09-01",
       "supplier_id": "SUP-004",
-      "status": "in stock"
+      "created_at": "2025-09-01T10:00:00Z"
     },
     {
       "id": "PRD-002",
@@ -446,10 +449,11 @@
       "product_name": "Hydrocortisone 1% Cream",
       "category_id": "CAT-001",
       "quantity": 160,
+      "reorderLevel": 15,
       "price": 98.45,
       "expire_date": "2028-05-09",
       "supplier_id": "SUP-019",
-      "status": "low stock"
+      "created_at": "2025-09-02T10:00:00Z"
     },
     {
       "id": "PRD-003",
@@ -457,10 +461,11 @@
       "product_name": "Artificial Tears 0.5% Eye Drops",
       "category_id": "CAT-003",
       "quantity": 69,
+      "reorderLevel": 15,
       "price": 110.63,
       "expire_date": "2027-04-21",
       "supplier_id": "SUP-017",
-      "status": "in stock"
+      "created_at": "2025-09-03T10:00:00Z"
     },
     {
       "id": "PRD-004",
@@ -468,10 +473,11 @@
       "product_name": "Paracetamol 500mg Tablets",
       "category_id": "CAT-002",
       "quantity": 187,
+      "reorderLevel": 15,
       "price": 156.64,
       "expire_date": "2028-04-06",
       "supplier_id": "SUP-033",
-      "status": "low stock"
+      "created_at": "2025-09-04T10:00:00Z"
     },
     {
       "id": "PRD-005",
@@ -479,10 +485,11 @@
       "product_name": "Hydrocortisone 1% Cream",
       "category_id": "CAT-001",
       "quantity": 27,
+      "reorderLevel": 15,
       "price": 200.91,
       "expire_date": "2030-11-05",
       "supplier_id": "SUP-028",
-      "status": "out of stock"
+      "created_at": "2025-09-05T10:00:00Z"
     },
     {
       "id": "PRD-006",
@@ -490,10 +497,11 @@
       "product_name": "Zinc 25mg Tablets",
       "category_id": "CAT-002",
       "quantity": 129,
+      "reorderLevel": 15,
       "price": 99.26,
       "expire_date": "2028-05-28",
       "supplier_id": "SUP-015",
-      "status": "low stock"
+      "created_at": "2025-09-06T10:00:00Z"
     },
     {
       "id": "PRD-007",
@@ -501,10 +509,11 @@
       "product_name": "Hydrocortisone 1% Cream",
       "category_id": "CAT-001",
       "quantity": 103,
+      "reorderLevel": 15,
       "price": 296.94,
       "expire_date": "2027-07-04",
       "supplier_id": "SUP-009",
-      "status": "in stock"
+      "created_at": "2025-09-07T10:00:00Z"
     },
     {
       "id": "PRD-008",
@@ -512,10 +521,11 @@
       "product_name": "Ibuprofen 400mg Tablets",
       "category_id": "CAT-002",
       "quantity": 110,
+      "reorderLevel": 15,
       "price": 57.34,
       "expire_date": "2027-09-04",
       "supplier_id": "SUP-043",
-      "status": "low stock"
+      "created_at": "2025-09-08T10:00:00Z"
     },
     {
       "id": "PRD-009",
@@ -523,10 +533,11 @@
       "product_name": "Artificial Tears 0.5% Eye Drops",
       "category_id": "CAT-003",
       "quantity": 153,
+      "reorderLevel": 15,
       "price": 80.24,
       "expire_date": "2028-11-04",
       "supplier_id": "SUP-003",
-      "status": "low stock"
+      "created_at": "2025-09-09T10:00:00Z"
     },
     {
       "id": "PRD-010",
@@ -534,10 +545,11 @@
       "product_name": "Amoxicillin 250mg Tablets",
       "category_id": "CAT-002",
       "quantity": 68,
+      "reorderLevel": 15,
       "price": 139.29,
       "expire_date": "2028-09-04",
       "supplier_id": "SUP-024",
-      "status": "low stock"
+      "created_at": "2025-09-10T10:00:00Z"
     },
     {
       "id": "PRD-011",
@@ -545,10 +557,11 @@
       "product_name": "Artificial Tears 0.5% Eye Drops",
       "category_id": "CAT-003",
       "quantity": 62,
+      "reorderLevel": 15,
       "price": 19.99,
       "expire_date": "2028-12-07",
       "supplier_id": "SUP-014",
-      "status": "low stock"
+      "created_at": "2025-09-11T10:00:00Z"
     },
     {
       "id": "PRD-012",
@@ -556,10 +569,11 @@
       "product_name": "Amoxicillin 250mg Tablets",
       "category_id": "CAT-002",
       "quantity": 85,
+      "reorderLevel": 15,
       "price": 120.67,
       "expire_date": "2029-11-11",
       "supplier_id": "SUP-018",
-      "status": "out of stock"
+      "created_at": "2025-09-12T10:00:00Z"
     },
     {
       "id": "PRD-013",
@@ -567,10 +581,11 @@
       "product_name": "Clotrimazole 1% Ointment",
       "category_id": "CAT-005",
       "quantity": 63,
+      "reorderLevel": 15,
       "price": 156.37,
       "expire_date": "2027-03-25",
       "supplier_id": "SUP-006",
-      "status": "low stock"
+      "created_at": "2025-09-13T10:00:00Z"
     },
     {
       "id": "PRD-014",
@@ -578,10 +593,11 @@
       "product_name": "Ibuprofen 200mg Tablets",
       "category_id": "CAT-002",
       "quantity": 102,
+      "reorderLevel": 15,
       "price": 180.17,
       "expire_date": "2029-05-29",
       "supplier_id": "SUP-002",
-      "status": "low stock"
+      "created_at": "2025-09-14T10:00:00Z"
     },
     {
       "id": "PRD-015",
@@ -589,10 +605,11 @@
       "product_name": "Miconazole 2% Cream",
       "category_id": "CAT-001",
       "quantity": 21,
+      "reorderLevel": 15,
       "price": 179.82,
       "expire_date": "2030-03-02",
       "supplier_id": "SUP-049",
-      "status": "in stock"
+      "created_at": "2025-09-15T10:00:00Z"
     },
     {
       "id": "PRD-016",
@@ -600,10 +617,11 @@
       "product_name": "Clotrimazole 1% Ointment",
       "category_id": "CAT-005",
       "quantity": 195,
+      "reorderLevel": 15,
       "price": 104.58,
       "expire_date": "2029-12-21",
       "supplier_id": "SUP-010",
-      "status": "low stock"
+      "created_at": "2025-09-16T10:00:00Z"
     },
     {
       "id": "PRD-017",
@@ -611,10 +629,11 @@
       "product_name": "Gentamicin 0.1% Ointment",
       "category_id": "CAT-005",
       "quantity": 11,
+      "reorderLevel": 15,
       "price": 249.21,
       "expire_date": "2030-01-28",
       "supplier_id": "SUP-041",
-      "status": "low stock"
+      "created_at": "2025-09-17T10:00:00Z"
     },
     {
       "id": "PRD-018",
@@ -622,10 +641,11 @@
       "product_name": "Gentamicin 0.1% Ointment",
       "category_id": "CAT-005",
       "quantity": 134,
+      "reorderLevel": 15,
       "price": 228.33,
       "expire_date": "2030-05-22",
       "supplier_id": "SUP-002",
-      "status": "out of stock"
+      "created_at": "2025-09-18T10:00:00Z"
     },
     {
       "id": "PRD-019",
@@ -633,10 +653,11 @@
       "product_name": "Timolol 0.5% Eye Drops",
       "category_id": "CAT-003",
       "quantity": 21,
+      "reorderLevel": 15,
       "price": 19.04,
       "expire_date": "2027-12-12",
       "supplier_id": "SUP-041",
-      "status": "low stock"
+      "created_at": "2025-09-19T10:00:00Z"
     },
     {
       "id": "PRD-020",
@@ -644,10 +665,11 @@
       "product_name": "Ibuprofen 400mg Tablets",
       "category_id": "CAT-002",
       "quantity": 115,
+      "reorderLevel": 15,
       "price": 171.97,
       "expire_date": "2030-09-20",
       "supplier_id": "SUP-002",
-      "status": "out of stock"
+      "created_at": "2025-09-20T10:00:00Z"
     },
     {
       "id": "PRD-021",
@@ -655,10 +677,11 @@
       "product_name": "Artificial Tears 0.5% Eye Drops",
       "category_id": "CAT-003",
       "quantity": 125,
+      "reorderLevel": 15,
       "price": 86.5,
       "expire_date": "2029-10-05",
       "supplier_id": "SUP-005",
-      "status": "out of stock"
+      "created_at": "2025-09-21T10:00:00Z"
     },
     {
       "id": "PRD-022",
@@ -666,10 +689,11 @@
       "product_name": "Artificial Tears 0.5% Eye Drops",
       "category_id": "CAT-003",
       "quantity": 168,
+      "reorderLevel": 15,
       "price": 162.54,
       "expire_date": "2029-11-09",
       "supplier_id": "SUP-017",
-      "status": "in stock"
+      "created_at": "2025-09-22T10:00:00Z"
     },
     {
       "id": "PRD-023",
@@ -677,10 +701,11 @@
       "product_name": "Miconazole 2% Cream",
       "category_id": "CAT-001",
       "quantity": 186,
+      "reorderLevel": 15,
       "price": 229.37,
       "expire_date": "2028-06-29",
       "supplier_id": "SUP-048",
-      "status": "out of stock"
+      "created_at": "2025-09-23T10:00:00Z"
     },
     {
       "id": "PRD-024",
@@ -688,10 +713,11 @@
       "product_name": "Zinc 25mg Tablets",
       "category_id": "CAT-002",
       "quantity": 97,
+      "reorderLevel": 15,
       "price": 32.25,
       "expire_date": "2031-01-13",
       "supplier_id": "SUP-019",
-      "status": "in stock"
+      "created_at": "2025-09-24T10:00:00Z"
     },
     {
       "id": "PRD-025",
@@ -699,10 +725,11 @@
       "product_name": "Timolol 0.5% Eye Drops",
       "category_id": "CAT-003",
       "quantity": 19,
+      "reorderLevel": 15,
       "price": 183.91,
       "expire_date": "2029-01-22",
       "supplier_id": "SUP-017",
-      "status": "out of stock"
+      "created_at": "2025-09-25T10:00:00Z"
     },
     {
       "id": "PRD-026",
@@ -710,10 +737,11 @@
       "product_name": "Gentamicin 0.1% Ointment",
       "category_id": "CAT-005",
       "quantity": 159,
+      "reorderLevel": 15,
       "price": 174.65,
       "expire_date": "2027-04-09",
       "supplier_id": "SUP-031",
-      "status": "in stock"
+      "created_at": "2025-09-26T10:00:00Z"
     },
     {
       "id": "PRD-027",
@@ -721,10 +749,11 @@
       "product_name": "Zinc 25mg Tablets",
       "category_id": "CAT-002",
       "quantity": 172,
+      "reorderLevel": 15,
       "price": 38.86,
       "expire_date": "2028-06-02",
       "supplier_id": "SUP-044",
-      "status": "low stock"
+      "created_at": "2025-09-27T10:00:00Z"
     },
     {
       "id": "PRD-028",
@@ -732,10 +761,11 @@
       "product_name": "Miconazole 2% Cream",
       "category_id": "CAT-001",
       "quantity": 118,
+      "reorderLevel": 15,
       "price": 145.11,
       "expire_date": "2027-11-12",
       "supplier_id": "SUP-036",
-      "status": "in stock"
+      "created_at": "2025-09-28T10:00:00Z"
     },
     {
       "id": "PRD-029",
@@ -743,10 +773,11 @@
       "product_name": "Miconazole 2% Cream",
       "category_id": "CAT-001",
       "quantity": 121,
+      "reorderLevel": 15,
       "price": 15.08,
       "expire_date": "2029-10-09",
       "supplier_id": "SUP-005",
-      "status": "out of stock"
+      "created_at": "2025-09-29T10:00:00Z"
     },
     {
       "id": "PRD-030",
@@ -754,10 +785,11 @@
       "product_name": "Zinc 25mg Tablets",
       "category_id": "CAT-002",
       "quantity": 99,
+      "reorderLevel": 15,
       "price": 70.85,
       "expire_date": "2028-05-19",
       "supplier_id": "SUP-005",
-      "status": "out of stock"
+      "created_at": "2025-09-30T10:00:00Z"
     },
     {
       "id": "PRD-031",
@@ -765,10 +797,11 @@
       "product_name": "Ibuprofen 200mg Tablets",
       "category_id": "CAT-002",
       "quantity": 191,
+      "reorderLevel": 15,
       "price": 161.98,
       "expire_date": "2029-03-20",
       "supplier_id": "SUP-009",
-      "status": "out of stock"
+      "created_at": "2025-10-01T10:00:00Z"
     },
     {
       "id": "PRD-032",
@@ -776,10 +809,11 @@
       "product_name": "Clotrimazole 1% Ointment",
       "category_id": "CAT-005",
       "quantity": 28,
+      "reorderLevel": 15,
       "price": 213.97,
       "expire_date": "2028-06-30",
       "supplier_id": "SUP-032",
-      "status": "low stock"
+      "created_at": "2025-10-02T10:00:00Z"
     },
     {
       "id": "PRD-033",
@@ -787,10 +821,11 @@
       "product_name": "Diclofenac 1% Gel",
       "category_id": "CAT-004",
       "quantity": 40,
+      "reorderLevel": 15,
       "price": 11.04,
       "expire_date": "2029-12-15",
       "supplier_id": "SUP-044",
-      "status": "low stock"
+      "created_at": "2025-10-03T10:00:00Z"
     },
     {
       "id": "PRD-034",
@@ -798,10 +833,11 @@
       "product_name": "Diclofenac 1% Gel",
       "category_id": "CAT-004",
       "quantity": 186,
+      "reorderLevel": 15,
       "price": 50.81,
       "expire_date": "2029-02-16",
       "supplier_id": "SUP-025",
-      "status": "low stock"
+      "created_at": "2025-10-04T10:00:00Z"
     },
     {
       "id": "PRD-035",
@@ -809,10 +845,11 @@
       "product_name": "Ibuprofen 400mg Tablets",
       "category_id": "CAT-002",
       "quantity": 0,
+      "reorderLevel": 15,
       "price": 104.12,
       "expire_date": "2029-02-04",
       "supplier_id": "SUP-026",
-      "status": "in stock"
+      "created_at": "2025-10-05T10:00:00Z"
     },
     {
       "id": "PRD-036",
@@ -820,10 +857,11 @@
       "product_name": "Hydrocortisone 1% Cream",
       "category_id": "CAT-001",
       "quantity": 189,
+      "reorderLevel": 15,
       "price": 94.05,
       "expire_date": "2029-04-15",
       "supplier_id": "SUP-005",
-      "status": "low stock"
+      "created_at": "2025-10-06T10:00:00Z"
     },
     {
       "id": "PRD-037",
@@ -831,10 +869,11 @@
       "product_name": "Diclofenac 1% Gel",
       "category_id": "CAT-004",
       "quantity": 92,
+      "reorderLevel": 15,
       "price": 278.37,
       "expire_date": "2028-09-28",
       "supplier_id": "SUP-004",
-      "status": "low stock"
+      "created_at": "2025-10-07T10:00:00Z"
     },
     {
       "id": "PRD-038",
@@ -842,10 +881,11 @@
       "product_name": "Ibuprofen 200mg Tablets",
       "category_id": "CAT-002",
       "quantity": 169,
+      "reorderLevel": 15,
       "price": 92.83,
       "expire_date": "2028-01-13",
       "supplier_id": "SUP-016",
-      "status": "low stock"
+      "created_at": "2025-10-08T10:00:00Z"
     },
     {
       "id": "PRD-039",
@@ -853,10 +893,11 @@
       "product_name": "Diclofenac 1% Gel",
       "category_id": "CAT-004",
       "quantity": 48,
+      "reorderLevel": 15,
       "price": 234.22,
       "expire_date": "2029-08-07",
       "supplier_id": "SUP-002",
-      "status": "out of stock"
+      "created_at": "2025-10-09T10:00:00Z"
     },
     {
       "id": "PRD-040",
@@ -864,10 +905,11 @@
       "product_name": "Diclofenac 1% Gel",
       "category_id": "CAT-004",
       "quantity": 184,
+      "reorderLevel": 15,
       "price": 33.37,
       "expire_date": "2029-07-03",
       "supplier_id": "SUP-029",
-      "status": "out of stock"
+      "created_at": "2025-10-10T10:00:00Z"
     },
     {
       "id": "PRD-041",
@@ -875,10 +917,11 @@
       "product_name": "Amoxicillin 500mg Tablets",
       "category_id": "CAT-002",
       "quantity": 124,
+      "reorderLevel": 15,
       "price": 24.2,
       "expire_date": "2030-04-14",
       "supplier_id": "SUP-009",
-      "status": "in stock"
+      "created_at": "2025-10-11T10:00:00Z"
     },
     {
       "id": "PRD-042",
@@ -886,10 +929,11 @@
       "product_name": "Zinc 25mg Tablets",
       "category_id": "CAT-002",
       "quantity": 87,
+      "reorderLevel": 15,
       "price": 91.71,
       "expire_date": "2028-08-19",
       "supplier_id": "SUP-048",
-      "status": "out of stock"
+      "created_at": "2025-10-12T10:00:00Z"
     },
     {
       "id": "PRD-043",
@@ -897,10 +941,11 @@
       "product_name": "Clotrimazole 1% Ointment",
       "category_id": "CAT-005",
       "quantity": 103,
+      "reorderLevel": 15,
       "price": 200.24,
       "expire_date": "2028-11-20",
       "supplier_id": "SUP-031",
-      "status": "out of stock"
+      "created_at": "2025-10-13T10:00:00Z"
     },
     {
       "id": "PRD-044",
@@ -908,10 +953,11 @@
       "product_name": "Clotrimazole 1% Ointment",
       "category_id": "CAT-005",
       "quantity": 30,
+      "reorderLevel": 15,
       "price": 58.53,
       "expire_date": "2028-02-09",
       "supplier_id": "SUP-005",
-      "status": "in stock"
+      "created_at": "2025-10-14T10:00:00Z"
     },
     {
       "id": "PRD-045",
@@ -919,10 +965,11 @@
       "product_name": "Artificial Tears 0.5% Eye Drops",
       "category_id": "CAT-003",
       "quantity": 140,
+      "reorderLevel": 15,
       "price": 73.81,
       "expire_date": "2029-01-24",
       "supplier_id": "SUP-049",
-      "status": "low stock"
+      "created_at": "2025-10-15T10:00:00Z"
     },
     {
       "id": "PRD-046",
@@ -930,10 +977,11 @@
       "product_name": "Diclofenac 1% Gel",
       "category_id": "CAT-004",
       "quantity": 140,
+      "reorderLevel": 15,
       "price": 65.8,
       "expire_date": "2027-09-16",
       "supplier_id": "SUP-012",
-      "status": "low stock"
+      "created_at": "2025-10-16T10:00:00Z"
     },
     {
       "id": "PRD-047",
@@ -941,10 +989,11 @@
       "product_name": "Artificial Tears 0.5% Eye Drops",
       "category_id": "CAT-003",
       "quantity": 81,
+      "reorderLevel": 15,
       "price": 79.35,
       "expire_date": "2028-08-25",
       "supplier_id": "SUP-037",
-      "status": "in stock"
+      "created_at": "2025-10-17T10:00:00Z"
     },
     {
       "id": "PRD-048",
@@ -952,10 +1001,11 @@
       "product_name": "Paracetamol 650mg Tablets",
       "category_id": "CAT-002",
       "quantity": 98,
+      "reorderLevel": 15,
       "price": 130.03,
       "expire_date": "2030-02-20",
       "supplier_id": "SUP-014",
-      "status": "low stock"
+      "created_at": "2025-10-18T10:00:00Z"
     },
     {
       "id": "PRD-049",
@@ -963,10 +1013,11 @@
       "product_name": "Miconazole 2% Cream",
       "category_id": "CAT-001",
       "quantity": 192,
+      "reorderLevel": 15,
       "price": 28,
       "expire_date": "2028-10-03",
       "supplier_id": "SUP-037",
-      "status": "low stock"
+      "created_at": "2025-10-19T10:00:00Z"
     },
     {
       "id": "PRD-050",
@@ -974,913 +1025,1266 @@
       "product_name": "Amoxicillin 250mg Tablets",
       "category_id": "CAT-002",
       "quantity": 23,
+      "reorderLevel": 15,
       "price": 88.6,
       "expire_date": "2028-08-04",
       "supplier_id": "SUP-025",
-      "status": "low stock"
+      "created_at": "2025-10-20T10:00:00Z"
     }
   ],
+
   "stock_adjustments": [
+    {
+      "id": "STK-001",
+      "product_id": "PRD-042",
+      "adjustment_type": "decrease",
+      "quantity": 8,
+      "reason": "Inventory correction",
+      "timestamp": "2025-10-07T12:00:00Z",
+      "user": "Admin"
+    },
     {
       "id": "STK-002",
       "product_id": "PRD-009",
-      "type": "initial_stock",
-      "quantity": 109,
-      "date": "2025-03-17",
-      "status": "received",
-      "note": "Initial stock import"
+      "adjustment_type": "increase",
+      "quantity": 12,
+      "reason": "Initial stock import",
+      "timestamp": "2025-03-17T12:00:00Z",
+      "user": "Admin"
     },
     {
       "id": "STK-003",
       "product_id": "PRD-038",
-      "type": "correction",
+      "adjustment_type": "decrease",
       "quantity": 1,
-      "date": "2026-02-06",
-      "status": "received",
-      "note": "Inventory correction"
+      "reason": "Inventory correction",
+      "timestamp": "2026-02-06T12:00:00Z",
+      "user": "Admin"
     },
     {
       "id": "STK-004",
       "product_id": "PRD-034",
-      "type": "correction",
-      "quantity": 115,
-      "date": "2025-11-08",
-      "status": "pending",
-      "note": "Inventory correction"
+      "adjustment_type": "decrease",
+      "quantity": 15,
+      "reason": "Inventory correction",
+      "timestamp": "2025-11-08T12:00:00Z",
+      "user": "Admin"
     },
     {
       "id": "STK-005",
       "product_id": "PRD-015",
-      "type": "stock_in",
-      "quantity": 39,
-      "date": "2025-06-21",
-      "status": "pending",
-      "note": "Supplier delivery"
+      "adjustment_type": "increase",
+      "quantity": 20,
+      "reason": "Supplier delivery",
+      "timestamp": "2025-06-21T12:00:00Z",
+      "user": "Admin"
     },
     {
       "id": "STK-006",
       "product_id": "PRD-047",
-      "type": "correction",
-      "quantity": 22,
-      "date": "2025-06-06",
-      "status": "pending",
-      "note": "Inventory correction"
+      "adjustment_type": "decrease",
+      "quantity": 5,
+      "reason": "Inventory correction",
+      "timestamp": "2025-06-06T12:00:00Z",
+      "user": "Admin"
     },
     {
       "id": "STK-007",
       "product_id": "PRD-001",
-      "type": "stock_in",
-      "quantity": 60,
-      "date": "2025-05-28",
-      "status": "pending",
-      "note": "Supplier delivery"
+      "adjustment_type": "increase",
+      "quantity": 15,
+      "reason": "Supplier delivery",
+      "timestamp": "2025-05-28T12:00:00Z",
+      "user": "Admin"
     },
     {
       "id": "STK-008",
       "product_id": "PRD-042",
-      "type": "stock_out",
-      "quantity": 33,
-      "date": "2025-04-29",
-      "status": "received",
-      "note": "Customer sales"
+      "adjustment_type": "decrease",
+      "quantity": 10,
+      "reason": "Customer sales",
+      "timestamp": "2025-04-29T12:00:00Z",
+      "user": "Admin"
     },
     {
       "id": "STK-009",
       "product_id": "PRD-034",
-      "type": "correction",
-      "quantity": 29,
-      "date": "2026-01-24",
-      "status": "pending",
-      "note": "Inventory correction"
+      "adjustment_type": "decrease",
+      "quantity": 6,
+      "reason": "Inventory correction",
+      "timestamp": "2026-01-24T12:00:00Z",
+      "user": "Admin"
     },
     {
       "id": "STK-010",
       "product_id": "PRD-020",
-      "type": "expiry_writeoff",
-      "quantity": 150,
-      "date": "2025-12-07",
-      "status": "received",
-      "note": "Expired items write-off"
+      "adjustment_type": "decrease",
+      "quantity": 4,
+      "reason": "Expired items write-off",
+      "timestamp": "2025-12-07T12:00:00Z",
+      "user": "Admin"
     },
     {
       "id": "STK-011",
       "product_id": "PRD-017",
-      "type": "stock_in",
+      "adjustment_type": "increase",
       "quantity": 1,
-      "date": "2026-03-10",
-      "status": "received",
-      "note": "Supplier delivery"
+      "reason": "Supplier delivery",
+      "timestamp": "2026-03-10T12:00:00Z",
+      "user": "Admin"
     },
     {
       "id": "STK-012",
       "product_id": "PRD-030",
-      "type": "stock_out",
-      "quantity": 81,
-      "date": "2025-04-19",
-      "status": "pending",
-      "note": "Customer sales"
+      "adjustment_type": "decrease",
+      "quantity": 12,
+      "reason": "Customer sales",
+      "timestamp": "2025-04-19T12:00:00Z",
+      "user": "Admin"
     },
     {
       "id": "STK-013",
       "product_id": "PRD-031",
-      "type": "expiry_writeoff",
-      "quantity": 61,
-      "date": "2025-06-08",
-      "status": "pending",
-      "note": "Expired items write-off"
+      "adjustment_type": "decrease",
+      "quantity": 3,
+      "reason": "Expired items write-off",
+      "timestamp": "2025-06-08T12:00:00Z",
+      "user": "Admin"
     },
     {
       "id": "STK-014",
       "product_id": "PRD-002",
-      "type": "correction",
-      "quantity": 79,
-      "date": "2026-02-15",
-      "status": "pending",
-      "note": "Inventory correction"
+      "adjustment_type": "decrease",
+      "quantity": 18,
+      "reason": "Inventory correction",
+      "timestamp": "2026-02-15T12:00:00Z",
+      "user": "Admin"
     },
     {
       "id": "STK-015",
       "product_id": "PRD-013",
-      "type": "correction",
-      "quantity": 108,
-      "date": "2026-02-02",
-      "status": "received",
-      "note": "Inventory correction"
+      "adjustment_type": "decrease",
+      "quantity": 9,
+      "reason": "Inventory correction",
+      "timestamp": "2026-02-02T12:00:00Z",
+      "user": "Admin"
     },
     {
       "id": "STK-016",
       "product_id": "PRD-015",
-      "type": "correction",
-      "quantity": 95,
-      "date": "2025-11-19",
-      "status": "received",
-      "note": "Inventory correction"
+      "adjustment_type": "decrease",
+      "quantity": 14,
+      "reason": "Inventory correction",
+      "timestamp": "2025-11-19T12:00:00Z",
+      "user": "Admin"
     },
     {
       "id": "STK-017",
       "product_id": "PRD-003",
-      "type": "stock_out",
-      "quantity": 108,
-      "date": "2025-09-11",
-      "status": "received",
-      "note": "Customer sales"
+      "adjustment_type": "decrease",
+      "quantity": 25,
+      "reason": "Customer sales",
+      "timestamp": "2025-09-11T12:00:00Z",
+      "user": "Admin"
     },
     {
       "id": "STK-018",
       "product_id": "PRD-013",
-      "type": "initial_stock",
-      "quantity": 75,
-      "date": "2025-06-30",
-      "status": "pending",
-      "note": "Initial stock import"
+      "adjustment_type": "increase",
+      "quantity": 30,
+      "reason": "Initial stock import",
+      "timestamp": "2025-06-30T12:00:00Z",
+      "user": "Admin"
     },
     {
       "id": "STK-019",
       "product_id": "PRD-014",
-      "type": "correction",
-      "quantity": 52,
-      "date": "2025-10-07",
-      "status": "pending",
-      "note": "Inventory correction"
+      "adjustment_type": "decrease",
+      "quantity": 11,
+      "reason": "Inventory correction",
+      "timestamp": "2025-10-07T12:00:00Z",
+      "user": "Admin"
     },
     {
       "id": "STK-020",
       "product_id": "PRD-015",
-      "type": "correction",
-      "quantity": 57,
-      "date": "2025-10-31",
-      "status": "received",
-      "note": "Inventory correction"
+      "adjustment_type": "decrease",
+      "quantity": 7,
+      "reason": "Inventory correction",
+      "timestamp": "2025-10-31T12:00:00Z",
+      "user": "Admin"
     },
     {
       "id": "STK-021",
       "product_id": "PRD-007",
-      "type": "expiry_writeoff",
-      "quantity": 127,
-      "date": "2025-05-07",
-      "status": "pending",
-      "note": "Expired items write-off"
+      "adjustment_type": "decrease",
+      "quantity": 5,
+      "reason": "Expired items write-off",
+      "timestamp": "2025-05-07T12:00:00Z",
+      "user": "Admin"
     },
     {
       "id": "STK-022",
       "product_id": "PRD-015",
-      "type": "correction",
-      "quantity": 107,
-      "date": "2025-04-09",
-      "status": "pending",
-      "note": "Inventory correction"
+      "adjustment_type": "decrease",
+      "quantity": 12,
+      "reason": "Inventory correction",
+      "timestamp": "2025-04-09T12:00:00Z",
+      "user": "Admin"
     },
     {
       "id": "STK-023",
       "product_id": "PRD-039",
-      "type": "stock_in",
-      "quantity": 101,
-      "date": "2026-02-16",
-      "status": "pending",
-      "note": "Supplier delivery"
+      "adjustment_type": "increase",
+      "quantity": 22,
+      "reason": "Supplier delivery",
+      "timestamp": "2026-02-16T12:00:00Z",
+      "user": "Admin"
     },
     {
       "id": "STK-024",
       "product_id": "PRD-002",
-      "type": "expiry_writeoff",
-      "quantity": 37,
-      "date": "2025-08-15",
-      "status": "pending",
-      "note": "Expired items write-off"
+      "adjustment_type": "decrease",
+      "quantity": 8,
+      "reason": "Expired items write-off",
+      "timestamp": "2025-08-15T12:00:00Z",
+      "user": "Admin"
     },
     {
       "id": "STK-025",
       "product_id": "PRD-046",
-      "type": "initial_stock",
-      "quantity": 48,
-      "date": "2025-08-26",
-      "status": "received",
-      "note": "Initial stock import"
+      "adjustment_type": "increase",
+      "quantity": 25,
+      "reason": "Initial stock import",
+      "timestamp": "2025-08-26T12:00:00Z",
+      "user": "Admin"
     },
     {
       "id": "STK-026",
       "product_id": "PRD-046",
-      "type": "stock_out",
-      "quantity": 29,
-      "date": "2026-02-03",
-      "status": "pending",
-      "note": "Customer sales"
+      "adjustment_type": "decrease",
+      "quantity": 4,
+      "reason": "Customer sales",
+      "timestamp": "2026-02-03T12:00:00Z",
+      "user": "Admin"
     },
     {
       "id": "STK-027",
       "product_id": "PRD-022",
-      "type": "stock_in",
-      "quantity": 48,
-      "date": "2025-04-15",
-      "status": "received",
-      "note": "Supplier delivery"
+      "adjustment_type": "increase",
+      "quantity": 18,
+      "reason": "Supplier delivery",
+      "timestamp": "2025-04-15T12:00:00Z",
+      "user": "Admin"
     },
     {
       "id": "STK-028",
       "product_id": "PRD-003",
-      "type": "stock_out",
-      "quantity": 97,
-      "date": "2025-09-05",
-      "status": "received",
-      "note": "Customer sales"
+      "adjustment_type": "decrease",
+      "quantity": 30,
+      "reason": "Customer sales",
+      "timestamp": "2025-09-05T12:00:00Z",
+      "user": "Admin"
     },
     {
       "id": "STK-029",
       "product_id": "PRD-029",
-      "type": "stock_in",
-      "quantity": 28,
-      "date": "2026-03-14",
-      "status": "pending",
-      "note": "Supplier delivery"
+      "adjustment_type": "increase",
+      "quantity": 10,
+      "reason": "Supplier delivery",
+      "timestamp": "2026-03-14T12:00:00Z",
+      "user": "Admin"
     },
     {
       "id": "STK-030",
       "product_id": "PRD-018",
-      "type": "initial_stock",
-      "quantity": 90,
-      "date": "2025-08-12",
-      "status": "pending",
-      "note": "Initial stock import"
+      "adjustment_type": "increase",
+      "quantity": 35,
+      "reason": "Initial stock import",
+      "timestamp": "2025-08-12T12:00:00Z",
+      "user": "Admin"
     },
     {
       "id": "STK-031",
       "product_id": "PRD-036",
-      "type": "stock_in",
-      "quantity": 98,
-      "date": "2025-09-14",
-      "status": "received",
-      "note": "Supplier delivery"
+      "adjustment_type": "increase",
+      "quantity": 15,
+      "reason": "Supplier delivery",
+      "timestamp": "2025-09-14T12:00:00Z",
+      "user": "Admin"
     },
     {
       "id": "STK-032",
       "product_id": "PRD-028",
-      "type": "initial_stock",
+      "adjustment_type": "increase",
       "quantity": 13,
-      "date": "2025-03-19",
-      "status": "received",
-      "note": "Initial stock import"
+      "reason": "Initial stock import",
+      "timestamp": "2025-03-19T12:00:00Z",
+      "user": "Admin"
     },
     {
       "id": "STK-033",
       "product_id": "PRD-013",
-      "type": "stock_out",
-      "quantity": 139,
-      "date": "2025-07-30",
-      "status": "pending",
-      "note": "Customer sales"
+      "adjustment_type": "decrease",
+      "quantity": 22,
+      "reason": "Customer sales",
+      "timestamp": "2025-07-30T12:00:00Z",
+      "user": "Admin"
     },
     {
       "id": "STK-034",
       "product_id": "PRD-021",
-      "type": "stock_out",
-      "quantity": 122,
-      "date": "2026-02-28",
-      "status": "received",
-      "note": "Customer sales"
+      "adjustment_type": "decrease",
+      "quantity": 16,
+      "reason": "Customer sales",
+      "timestamp": "2026-02-28T12:00:00Z",
+      "user": "Admin"
     },
     {
       "id": "STK-035",
       "product_id": "PRD-016",
-      "type": "correction",
+      "adjustment_type": "decrease",
       "quantity": 11,
-      "date": "2025-09-04",
-      "status": "pending",
-      "note": "Inventory correction"
+      "reason": "Inventory correction",
+      "timestamp": "2025-09-04T12:00:00Z",
+      "user": "Admin"
     },
     {
       "id": "STK-036",
       "product_id": "PRD-030",
-      "type": "initial_stock",
+      "adjustment_type": "increase",
       "quantity": 16,
-      "date": "2025-11-04",
-      "status": "pending",
-      "note": "Initial stock import"
+      "reason": "Initial stock import",
+      "timestamp": "2025-11-04T12:00:00Z",
+      "user": "Admin"
     },
     {
       "id": "STK-037",
       "product_id": "PRD-048",
-      "type": "initial_stock",
-      "quantity": 87,
-      "date": "2025-09-11",
-      "status": "received",
-      "note": "Initial stock import"
+      "adjustment_type": "increase",
+      "quantity": 9,
+      "reason": "Initial stock import",
+      "timestamp": "2025-09-11T12:00:00Z",
+      "user": "Admin"
     },
     {
       "id": "STK-038",
       "product_id": "PRD-022",
-      "type": "expiry_writeoff",
+      "adjustment_type": "decrease",
       "quantity": 12,
-      "date": "2025-11-01",
-      "status": "received",
-      "note": "Expired items write-off"
+      "reason": "Expired items write-off",
+      "timestamp": "2025-11-01T12:00:00Z",
+      "user": "Admin"
     },
     {
       "id": "STK-039",
       "product_id": "PRD-018",
-      "type": "stock_out",
+      "adjustment_type": "decrease",
       "quantity": 1,
-      "date": "2025-05-15",
-      "status": "pending",
-      "note": "Customer sales"
+      "reason": "Customer sales",
+      "timestamp": "2025-05-15T12:00:00Z",
+      "user": "Admin"
     },
     {
       "id": "STK-040",
       "product_id": "PRD-002",
-      "type": "stock_in",
+      "adjustment_type": "increase",
       "quantity": 28,
-      "date": "2025-07-15",
-      "status": "received",
-      "note": "Supplier delivery"
+      "reason": "Supplier delivery",
+      "timestamp": "2025-07-15T12:00:00Z",
+      "user": "Admin"
     },
     {
       "id": "STK-041",
       "product_id": "PRD-050",
-      "type": "correction",
-      "quantity": 65,
-      "date": "2025-08-07",
-      "status": "received",
-      "note": "Inventory correction"
+      "adjustment_type": "decrease",
+      "quantity": 13,
+      "reason": "Inventory correction",
+      "timestamp": "2025-08-07T12:00:00Z",
+      "user": "Admin"
     },
     {
       "id": "STK-042",
       "product_id": "PRD-009",
-      "type": "correction",
-      "quantity": 47,
-      "date": "2026-03-11",
-      "status": "received",
-      "note": "Inventory correction"
+      "adjustment_type": "decrease",
+      "quantity": 6,
+      "reason": "Inventory correction",
+      "timestamp": "2026-03-11T12:00:00Z",
+      "user": "Admin"
     },
     {
       "id": "STK-043",
       "product_id": "PRD-045",
-      "type": "stock_in",
-      "quantity": 61,
-      "date": "2025-09-29",
-      "status": "received",
-      "note": "Supplier delivery"
+      "adjustment_type": "increase",
+      "quantity": 12,
+      "reason": "Supplier delivery",
+      "timestamp": "2025-09-29T12:00:00Z",
+      "user": "Admin"
     },
     {
       "id": "STK-044",
       "product_id": "PRD-030",
-      "type": "stock_out",
+      "adjustment_type": "decrease",
       "quantity": 21,
-      "date": "2025-06-26",
-      "status": "pending",
-      "note": "Customer sales"
+      "reason": "Customer sales",
+      "timestamp": "2025-06-26T12:00:00Z",
+      "user": "Admin"
     },
     {
       "id": "STK-045",
       "product_id": "PRD-026",
-      "type": "stock_in",
-      "quantity": 64,
-      "date": "2025-08-19",
-      "status": "pending",
-      "note": "Supplier delivery"
+      "adjustment_type": "increase",
+      "quantity": 11,
+      "reason": "Supplier delivery",
+      "timestamp": "2025-08-19T12:00:00Z",
+      "user": "Admin"
     },
     {
       "id": "STK-046",
       "product_id": "PRD-042",
-      "type": "initial_stock",
-      "quantity": 124,
-      "date": "2025-06-06",
-      "status": "received",
-      "note": "Initial stock import"
+      "adjustment_type": "increase",
+      "quantity": 14,
+      "reason": "Initial stock import",
+      "timestamp": "2025-06-06T12:00:00Z",
+      "user": "Admin"
     },
     {
       "id": "STK-047",
       "product_id": "PRD-011",
-      "type": "correction",
-      "quantity": 27,
-      "date": "2026-02-07",
-      "status": "received",
-      "note": "Inventory correction"
+      "adjustment_type": "decrease",
+      "quantity": 5,
+      "reason": "Inventory correction",
+      "timestamp": "2026-02-07T12:00:00Z",
+      "user": "Admin"
     },
     {
       "id": "STK-048",
       "product_id": "PRD-040",
-      "type": "initial_stock",
-      "quantity": 54,
-      "date": "2026-01-25",
-      "status": "received",
-      "note": "Initial stock import"
+      "adjustment_type": "increase",
+      "quantity": 18,
+      "reason": "Initial stock import",
+      "timestamp": "2026-01-25T12:00:00Z",
+      "user": "Admin"
     },
     {
       "id": "STK-049",
       "product_id": "PRD-032",
-      "type": "correction",
-      "quantity": 45,
-      "date": "2025-11-16",
-      "status": "pending",
-      "note": "Inventory correction"
+      "adjustment_type": "decrease",
+      "quantity": 9,
+      "reason": "Inventory correction",
+      "timestamp": "2025-11-16T12:00:00Z",
+      "user": "Admin"
     },
     {
       "id": "STK-050",
       "product_id": "PRD-027",
-      "type": "correction",
-      "quantity": 61,
-      "date": "2025-06-13",
-      "status": "pending",
-      "note": "Inventory correction"
+      "adjustment_type": "decrease",
+      "quantity": 10,
+      "reason": "Inventory correction",
+      "timestamp": "2025-06-13T12:00:00Z",
+      "user": "Admin"
     }
   ],
+
   "purchase_orders": [
     {
       "id": "ORD-001",
       "order_number": "PO-2026-001",
       "supplier_id": "SUP-050",
-      "creation_date": "2025-10-16",
-      "status": "Received",
-      "total_quantity": 163,
-      "total_amount": 8719.82
+      "creation_date": "2025-10-16T12:00:00Z",
+      "status": "received",
+      "items": [
+        { "product_id": "PRD-005", "quantity": 20, "unit_price": 200.0 },
+        { "product_id": "PRD-012", "quantity": 15, "unit_price": 120.0 }
+      ],
+      "total_quantity": 35,
+      "total_amount": 5800.0
     },
     {
       "id": "ORD-002",
       "order_number": "PO-2026-002",
       "supplier_id": "SUP-024",
-      "creation_date": "2025-11-05",
-      "status": "Received",
-      "total_quantity": 121,
-      "total_amount": 6871.27
+      "creation_date": "2025-11-05T12:00:00Z",
+      "status": "received",
+      "items": [
+        { "product_id": "PRD-007", "quantity": 25, "unit_price": 295.0 },
+        { "product_id": "PRD-019", "quantity": 10, "unit_price": 19.0 }
+      ],
+      "total_quantity": 35,
+      "total_amount": 7565.0
     },
     {
       "id": "ORD-003",
       "order_number": "PO-2026-003",
       "supplier_id": "SUP-012",
-      "creation_date": "2025-11-10",
-      "status": "Pending",
-      "total_quantity": 98,
-      "total_amount": 4579.63
+      "creation_date": "2025-11-10T12:00:00Z",
+      "status": "pending",
+      "items": [
+        { "product_id": "PRD-021", "quantity": 30, "unit_price": 86.5 },
+        { "product_id": "PRD-033", "quantity": 20, "unit_price": 11.0 }
+      ],
+      "total_quantity": 50,
+      "total_amount": 2815.0
     },
     {
       "id": "ORD-004",
       "order_number": "PO-2026-004",
       "supplier_id": "SUP-038",
-      "creation_date": "2025-12-09",
-      "status": "Received",
-      "total_quantity": 53,
-      "total_amount": 6243.01
+      "creation_date": "2025-12-09T12:00:00Z",
+      "status": "received",
+      "items": [
+        { "product_id": "PRD-002", "quantity": 12, "unit_price": 98.0 },
+        { "product_id": "PRD-026", "quantity": 8, "unit_price": 174.0 }
+      ],
+      "total_quantity": 20,
+      "total_amount": 2568.0
     },
     {
       "id": "ORD-005",
       "order_number": "PO-2026-005",
       "supplier_id": "SUP-016",
-      "creation_date": "2025-06-29",
-      "status": "Pending",
-      "total_quantity": 352,
-      "total_amount": 12222.42
+      "creation_date": "2025-06-29T12:00:00Z",
+      "status": "pending",
+      "items": [
+        { "product_id": "PRD-010", "quantity": 40, "unit_price": 139.0 },
+        { "product_id": "PRD-035", "quantity": 25, "unit_price": 104.0 }
+      ],
+      "total_quantity": 65,
+      "total_amount": 8160.0
     },
     {
       "id": "ORD-006",
       "order_number": "PO-2026-006",
       "supplier_id": "SUP-042",
-      "creation_date": "2025-07-21",
-      "status": "Pending",
-      "total_quantity": 72,
-      "total_amount": 565.14
+      "creation_date": "2025-07-21T12:00:00Z",
+      "status": "pending",
+      "items": [
+        { "product_id": "PRD-048", "quantity": 10, "unit_price": 130.0 },
+        { "product_id": "PRD-049", "quantity": 8, "unit_price": 28.0 }
+      ],
+      "total_quantity": 18,
+      "total_amount": 1524.0
     },
     {
       "id": "ORD-007",
       "order_number": "PO-2026-007",
       "supplier_id": "SUP-015",
-      "creation_date": "2025-07-29",
-      "status": "Received",
-      "total_quantity": 40,
-      "total_amount": 13214.79
+      "creation_date": "2025-07-29T12:00:00Z",
+      "status": "received",
+      "items": [
+        { "product_id": "PRD-006", "quantity": 15, "unit_price": 99.0 },
+        { "product_id": "PRD-022", "quantity": 10, "unit_price": 162.0 }
+      ],
+      "total_quantity": 25,
+      "total_amount": 3105.0
     },
     {
       "id": "ORD-008",
       "order_number": "PO-2026-008",
       "supplier_id": "SUP-015",
-      "creation_date": "2026-01-13",
-      "status": "Pending",
-      "total_quantity": 117,
-      "total_amount": 9207.15
+      "creation_date": "2026-01-13T12:00:00Z",
+      "status": "pending",
+      "items": [
+        { "product_id": "PRD-011", "quantity": 20, "unit_price": 20.0 },
+        { "product_id": "PRD-028", "quantity": 12, "unit_price": 145.0 }
+      ],
+      "total_quantity": 32,
+      "total_amount": 2140.0
     },
     {
       "id": "ORD-009",
       "order_number": "PO-2026-009",
       "supplier_id": "SUP-038",
-      "creation_date": "2025-12-06",
-      "status": "Pending",
-      "total_quantity": 210,
-      "total_amount": 7933.7
+      "creation_date": "2025-12-06T12:00:00Z",
+      "status": "pending",
+      "items": [
+        { "product_id": "PRD-014", "quantity": 18, "unit_price": 180.0 },
+        { "product_id": "PRD-027", "quantity": 15, "unit_price": 38.0 }
+      ],
+      "total_quantity": 33,
+      "total_amount": 3810.0
     },
     {
       "id": "ORD-010",
       "order_number": "PO-2026-010",
       "supplier_id": "SUP-012",
-      "creation_date": "2025-07-29",
-      "status": "Received",
-      "total_quantity": 416,
-      "total_amount": 11777.76
+      "creation_date": "2025-07-29T12:00:00Z",
+      "status": "received",
+      "items": [
+        { "product_id": "PRD-003", "quantity": 25, "unit_price": 110.0 },
+        { "product_id": "PRD-018", "quantity": 10, "unit_price": 228.0 }
+      ],
+      "total_quantity": 35,
+      "total_amount": 5030.0
     },
     {
       "id": "ORD-011",
       "order_number": "PO-2026-011",
       "supplier_id": "SUP-001",
-      "creation_date": "2026-01-20",
-      "status": "Received",
-      "total_quantity": 131,
-      "total_amount": 1043.09
+      "creation_date": "2026-01-20T12:00:00Z",
+      "status": "received",
+      "items": [
+        { "product_id": "PRD-004", "quantity": 20, "unit_price": 156.0 },
+        { "product_id": "PRD-042", "quantity": 8, "unit_price": 91.0 }
+      ],
+      "total_quantity": 28,
+      "total_amount": 3848.0
     },
     {
       "id": "ORD-012",
       "order_number": "PO-2026-012",
       "supplier_id": "SUP-022",
-      "creation_date": "2026-01-02",
-      "status": "Pending",
-      "total_quantity": 124,
-      "total_amount": 14998.17
+      "creation_date": "2026-01-02T12:00:00Z",
+      "status": "pending",
+      "items": [
+        { "product_id": "PRD-009", "quantity": 22, "unit_price": 80.0 },
+        { "product_id": "PRD-036", "quantity": 15, "unit_price": 94.0 }
+      ],
+      "total_quantity": 37,
+      "total_amount": 3170.0
     },
     {
       "id": "ORD-013",
       "order_number": "PO-2026-013",
       "supplier_id": "SUP-003",
-      "creation_date": "2025-05-13",
-      "status": "Pending",
-      "total_quantity": 437,
-      "total_amount": 665.01
+      "creation_date": "2025-05-13T12:00:00Z",
+      "status": "pending",
+      "items": [
+        { "product_id": "PRD-001", "quantity": 30, "unit_price": 291.0 },
+        { "product_id": "PRD-023", "quantity": 10, "unit_price": 229.0 }
+      ],
+      "total_quantity": 40,
+      "total_amount": 11020.0
     },
     {
       "id": "ORD-014",
       "order_number": "PO-2026-014",
       "supplier_id": "SUP-021",
-      "creation_date": "2025-08-18",
-      "status": "Received",
-      "total_quantity": 114,
-      "total_amount": 9504.7
+      "creation_date": "2025-08-18T12:00:00Z",
+      "status": "received",
+      "items": [
+        { "product_id": "PRD-008", "quantity": 18, "unit_price": 57.0 },
+        { "product_id": "PRD-039", "quantity": 12, "unit_price": 234.0 }
+      ],
+      "total_quantity": 30,
+      "total_amount": 3834.0
     },
     {
       "id": "ORD-015",
       "order_number": "PO-2026-015",
       "supplier_id": "SUP-005",
-      "creation_date": "2025-12-01",
-      "status": "Pending",
-      "total_quantity": 427,
-      "total_amount": 7686.57
+      "creation_date": "2025-12-01T12:00:00Z",
+      "status": "pending",
+      "items": [
+        { "product_id": "PRD-013", "quantity": 25, "unit_price": 156.0 },
+        { "product_id": "PRD-031", "quantity": 20, "unit_price": 162.0 }
+      ],
+      "total_quantity": 45,
+      "total_amount": 7140.0
     },
     {
       "id": "ORD-016",
       "order_number": "PO-2026-016",
       "supplier_id": "SUP-031",
-      "creation_date": "2026-02-11",
-      "status": "Received",
-      "total_quantity": 71,
-      "total_amount": 12039.74
+      "creation_date": "2026-02-11T12:00:00Z",
+      "status": "received",
+      "items": [
+        { "product_id": "PRD-015", "quantity": 12, "unit_price": 179.0 },
+        { "product_id": "PRD-044", "quantity": 8, "unit_price": 58.0 }
+      ],
+      "total_quantity": 20,
+      "total_amount": 2612.0
     },
     {
       "id": "ORD-017",
       "order_number": "PO-2026-017",
       "supplier_id": "SUP-043",
-      "creation_date": "2025-06-07",
-      "status": "Pending",
-      "total_quantity": 347,
-      "total_amount": 8242.96
+      "creation_date": "2025-06-07T12:00:00Z",
+      "status": "pending",
+      "items": [
+        { "product_id": "PRD-017", "quantity": 10, "unit_price": 249.0 },
+        { "product_id": "PRD-029", "quantity": 15, "unit_price": 15.0 }
+      ],
+      "total_quantity": 25,
+      "total_amount": 2715.0
     },
     {
       "id": "ORD-018",
       "order_number": "PO-2026-018",
       "supplier_id": "SUP-042",
-      "creation_date": "2025-12-22",
-      "status": "Received",
-      "total_quantity": 376,
-      "total_amount": 4431.92
+      "creation_date": "2025-12-22T12:00:00Z",
+      "status": "received",
+      "items": [
+        { "product_id": "PRD-020", "quantity": 20, "unit_price": 171.0 },
+        { "product_id": "PRD-045", "quantity": 15, "unit_price": 73.0 }
+      ],
+      "total_quantity": 35,
+      "total_amount": 4515.0
     },
     {
       "id": "ORD-019",
       "order_number": "PO-2026-019",
       "supplier_id": "SUP-019",
-      "creation_date": "2025-04-08",
-      "status": "Received",
-      "total_quantity": 233,
-      "total_amount": 14321.24
+      "creation_date": "2025-04-08T12:00:00Z",
+      "status": "received",
+      "items": [
+        { "product_id": "PRD-016", "quantity": 18, "unit_price": 104.0 },
+        { "product_id": "PRD-034", "quantity": 12, "unit_price": 50.0 }
+      ],
+      "total_quantity": 30,
+      "total_amount": 2472.0
     },
     {
       "id": "ORD-020",
       "order_number": "PO-2026-020",
       "supplier_id": "SUP-020",
-      "creation_date": "2025-05-29",
-      "status": "Received",
-      "total_quantity": 232,
-      "total_amount": 6538.46
+      "creation_date": "2025-05-29T12:00:00Z",
+      "status": "received",
+      "items": [
+        { "product_id": "PRD-024", "quantity": 15, "unit_price": 32.0 },
+        { "product_id": "PRD-041", "quantity": 10, "unit_price": 24.0 }
+      ],
+      "total_quantity": 25,
+      "total_amount": 720.0
     },
     {
       "id": "ORD-021",
       "order_number": "PO-2026-021",
       "supplier_id": "SUP-050",
-      "creation_date": "2025-09-10",
-      "status": "Pending",
-      "total_quantity": 220,
-      "total_amount": 11056.46
+      "creation_date": "2025-09-10T12:00:00Z",
+      "status": "pending",
+      "items": [
+        { "product_id": "PRD-025", "quantity": 8, "unit_price": 183.0 },
+        { "product_id": "PRD-047", "quantity": 12, "unit_price": 79.0 }
+      ],
+      "total_quantity": 20,
+      "total_amount": 2412.0
     },
     {
       "id": "ORD-022",
       "order_number": "PO-2026-022",
       "supplier_id": "SUP-014",
-      "creation_date": "2026-03-12",
-      "status": "Received",
-      "total_quantity": 481,
-      "total_amount": 2770.22
+      "creation_date": "2026-03-12T12:00:00Z",
+      "status": "received",
+      "items": [
+        { "product_id": "PRD-030", "quantity": 10, "unit_price": 70.0 },
+        { "product_id": "PRD-050", "quantity": 15, "unit_price": 88.0 }
+      ],
+      "total_quantity": 25,
+      "total_amount": 2020.0
     },
     {
       "id": "ORD-023",
       "order_number": "PO-2026-023",
       "supplier_id": "SUP-008",
-      "creation_date": "2026-01-28",
-      "status": "Received",
-      "total_quantity": 315,
-      "total_amount": 13301.15
+      "creation_date": "2026-01-28T12:00:00Z",
+      "status": "received",
+      "items": [
+        { "product_id": "PRD-032", "quantity": 12, "unit_price": 213.0 },
+        { "product_id": "PRD-040", "quantity": 8, "unit_price": 33.0 }
+      ],
+      "total_quantity": 20,
+      "total_amount": 2820.0
     },
     {
       "id": "ORD-024",
       "order_number": "PO-2026-024",
       "supplier_id": "SUP-030",
-      "creation_date": "2025-12-22",
-      "status": "Pending",
-      "total_quantity": 27,
-      "total_amount": 1249.58
+      "creation_date": "2025-12-22T12:00:00Z",
+      "status": "pending",
+      "items": [
+        { "product_id": "PRD-037", "quantity": 10, "unit_price": 278.0 },
+        { "product_id": "PRD-046", "quantity": 5, "unit_price": 65.0 }
+      ],
+      "total_quantity": 15,
+      "total_amount": 3105.0
     },
     {
       "id": "ORD-025",
       "order_number": "PO-2026-025",
       "supplier_id": "SUP-010",
-      "creation_date": "2025-04-21",
-      "status": "Received",
-      "total_quantity": 65,
-      "total_amount": 8806.54
+      "creation_date": "2025-04-21T12:00:00Z",
+      "status": "received",
+      "items": [
+        { "product_id": "PRD-038", "quantity": 18, "unit_price": 92.0 },
+        { "product_id": "PRD-043", "quantity": 12, "unit_price": 200.0 }
+      ],
+      "total_quantity": 30,
+      "total_amount": 4056.0
     },
     {
       "id": "ORD-026",
       "order_number": "PO-2026-026",
       "supplier_id": "SUP-024",
-      "creation_date": "2025-06-30",
-      "status": "Pending",
-      "total_quantity": 94,
-      "total_amount": 5545.2
+      "creation_date": "2025-06-30T12:00:00Z",
+      "status": "pending",
+      "items": [
+        { "product_id": "PRD-001", "quantity": 12, "unit_price": 291.0 },
+        { "product_id": "PRD-009", "quantity": 8, "unit_price": 80.0 }
+      ],
+      "total_quantity": 20,
+      "total_amount": 4132.0
     },
     {
       "id": "ORD-027",
       "order_number": "PO-2026-027",
       "supplier_id": "SUP-011",
-      "creation_date": "2025-06-22",
-      "status": "Pending",
-      "total_quantity": 493,
-      "total_amount": 1472.9
+      "creation_date": "2025-06-22T12:00:00Z",
+      "status": "pending",
+      "items": [
+        { "product_id": "PRD-002", "quantity": 15, "unit_price": 98.0 },
+        { "product_id": "PRD-019", "quantity": 10, "unit_price": 19.0 }
+      ],
+      "total_quantity": 25,
+      "total_amount": 1660.0
     },
     {
       "id": "ORD-028",
       "order_number": "PO-2026-028",
       "supplier_id": "SUP-025",
-      "creation_date": "2025-07-07",
-      "status": "Pending",
-      "total_quantity": 174,
-      "total_amount": 2336.43
+      "creation_date": "2025-07-07T12:00:00Z",
+      "status": "pending",
+      "items": [
+        { "product_id": "PRD-004", "quantity": 20, "unit_price": 156.0 },
+        { "product_id": "PRD-027", "quantity": 15, "unit_price": 38.0 }
+      ],
+      "total_quantity": 35,
+      "total_amount": 3690.0
     },
     {
       "id": "ORD-029",
       "order_number": "PO-2026-029",
       "supplier_id": "SUP-003",
-      "creation_date": "2025-07-11",
-      "status": "Received",
-      "total_quantity": 47,
-      "total_amount": 9310.85
+      "creation_date": "2025-07-11T12:00:00Z",
+      "status": "received",
+      "items": [
+        { "product_id": "PRD-006", "quantity": 12, "unit_price": 99.0 },
+        { "product_id": "PRD-035", "quantity": 8, "unit_price": 104.0 }
+      ],
+      "total_quantity": 20,
+      "total_amount": 2020.0
     },
     {
       "id": "ORD-030",
       "order_number": "PO-2026-030",
       "supplier_id": "SUP-041",
-      "creation_date": "2025-08-29",
-      "status": "Pending",
-      "total_quantity": 482,
-      "total_amount": 10828.5
+      "creation_date": "2025-08-29T12:00:00Z",
+      "status": "pending",
+      "items": [
+        { "product_id": "PRD-007", "quantity": 15, "unit_price": 295.0 },
+        { "product_id": "PRD-034", "quantity": 12, "unit_price": 50.0 }
+      ],
+      "total_quantity": 27,
+      "total_amount": 5025.0
     },
     {
       "id": "ORD-031",
       "order_number": "PO-2026-031",
       "supplier_id": "SUP-045",
-      "creation_date": "2025-12-23",
-      "status": "Pending",
-      "total_quantity": 337,
-      "total_amount": 6365.03
+      "creation_date": "2025-12-23T12:00:00Z",
+      "status": "pending",
+      "items": [
+        { "product_id": "PRD-008", "quantity": 18, "unit_price": 57.0 },
+        { "product_id": "PRD-022", "quantity": 12, "unit_price": 162.0 }
+      ],
+      "total_quantity": 30,
+      "total_amount": 2970.0
     },
     {
       "id": "ORD-032",
       "order_number": "PO-2026-032",
       "supplier_id": "SUP-013",
-      "creation_date": "2025-07-16",
-      "status": "Pending",
-      "total_quantity": 309,
-      "total_amount": 3662.98
+      "creation_date": "2025-07-16T12:00:00Z",
+      "status": "pending",
+      "items": [
+        { "product_id": "PRD-010", "quantity": 20, "unit_price": 139.0 },
+        { "product_id": "PRD-041", "quantity": 15, "unit_price": 24.0 }
+      ],
+      "total_quantity": 35,
+      "total_amount": 3140.0
     },
     {
       "id": "ORD-033",
       "order_number": "PO-2026-033",
       "supplier_id": "SUP-026",
-      "creation_date": "2025-06-23",
-      "status": "Pending",
-      "total_quantity": 216,
-      "total_amount": 5708.51
+      "creation_date": "2025-06-23T12:00:00Z",
+      "status": "pending",
+      "items": [
+        { "product_id": "PRD-014", "quantity": 12, "unit_price": 180.0 },
+        { "product_id": "PRD-042", "quantity": 8, "unit_price": 91.0 }
+      ],
+      "total_quantity": 20,
+      "total_amount": 2888.0
     },
     {
       "id": "ORD-034",
       "order_number": "PO-2026-034",
       "supplier_id": "SUP-010",
-      "creation_date": "2025-11-09",
-      "status": "Pending",
-      "total_quantity": 41,
-      "total_amount": 13316.01
+      "creation_date": "2025-11-09T12:00:00Z",
+      "status": "pending",
+      "items": [
+        { "product_id": "PRD-011", "quantity": 10, "unit_price": 20.0 },
+        { "product_id": "PRD-032", "quantity": 5, "unit_price": 213.0 }
+      ],
+      "total_quantity": 15,
+      "total_amount": 1265.0
     },
     {
       "id": "ORD-035",
       "order_number": "PO-2026-035",
       "supplier_id": "SUP-049",
-      "creation_date": "2025-04-05",
-      "status": "Pending",
-      "total_quantity": 361,
-      "total_amount": 12653.96
+      "creation_date": "2025-04-05T12:00:00Z",
+      "status": "pending",
+      "items": [
+        { "product_id": "PRD-003", "quantity": 20, "unit_price": 110.0 },
+        { "product_id": "PRD-029", "quantity": 10, "unit_price": 15.0 }
+      ],
+      "total_quantity": 30,
+      "total_amount": 2350.0
     },
     {
       "id": "ORD-036",
       "order_number": "PO-2026-036",
       "supplier_id": "SUP-008",
-      "creation_date": "2025-08-28",
-      "status": "Received",
-      "total_quantity": 301,
-      "total_amount": 12810.64
+      "creation_date": "2025-08-28T12:00:00Z",
+      "status": "received",
+      "items": [
+        { "product_id": "PRD-005", "quantity": 18, "unit_price": 200.0 },
+        { "product_id": "PRD-037", "quantity": 12, "unit_price": 278.0 }
+      ],
+      "total_quantity": 30,
+      "total_amount": 6936.0
     },
     {
       "id": "ORD-037",
       "order_number": "PO-2026-037",
       "supplier_id": "SUP-050",
-      "creation_date": "2025-10-10",
-      "status": "Received",
-      "total_quantity": 177,
-      "total_amount": 8948.06
+      "creation_date": "2025-10-10T12:00:00Z",
+      "status": "received",
+      "items": [
+        { "product_id": "PRD-013", "quantity": 15, "unit_price": 156.0 },
+        { "product_id": "PRD-039", "quantity": 10, "unit_price": 234.0 }
+      ],
+      "total_quantity": 25,
+      "total_amount": 4680.0
     },
     {
       "id": "ORD-038",
       "order_number": "PO-2026-038",
       "supplier_id": "SUP-028",
-      "creation_date": "2025-08-28",
-      "status": "Received",
-      "total_quantity": 248,
-      "total_amount": 7801.89
+      "creation_date": "2025-08-28T12:00:00Z",
+      "status": "received",
+      "items": [
+        { "product_id": "PRD-016", "quantity": 20, "unit_price": 104.0 },
+        { "product_id": "PRD-044", "quantity": 15, "unit_price": 58.0 }
+      ],
+      "total_quantity": 35,
+      "total_amount": 2950.0
     },
     {
       "id": "ORD-039",
       "order_number": "PO-2026-039",
       "supplier_id": "SUP-012",
-      "creation_date": "2026-03-04",
-      "status": "Pending",
-      "total_quantity": 336,
-      "total_amount": 14799
+      "creation_date": "2026-03-04T12:00:00Z",
+      "status": "pending",
+      "items": [
+        { "product_id": "PRD-017", "quantity": 8, "unit_price": 249.0 },
+        { "product_id": "PRD-045", "quantity": 12, "unit_price": 73.0 }
+      ],
+      "total_quantity": 20,
+      "total_amount": 2868.0
     },
     {
       "id": "ORD-040",
       "order_number": "PO-2026-040",
       "supplier_id": "SUP-030",
-      "creation_date": "2025-11-15",
-      "status": "Received",
-      "total_quantity": 410,
-      "total_amount": 9469.34
+      "creation_date": "2025-11-15T12:00:00Z",
+      "status": "received",
+      "items": [
+        { "product_id": "PRD-018", "quantity": 12, "unit_price": 228.0 },
+        { "product_id": "PRD-046", "quantity": 10, "unit_price": 65.0 }
+      ],
+      "total_quantity": 22,
+      "total_amount": 3386.0
     },
     {
       "id": "ORD-041",
       "order_number": "PO-2026-041",
       "supplier_id": "SUP-030",
-      "creation_date": "2025-12-14",
-      "status": "Received",
-      "total_quantity": 224,
-      "total_amount": 2052.6
+      "creation_date": "2025-12-14T12:00:00Z",
+      "status": "received",
+      "items": [
+        { "product_id": "PRD-021", "quantity": 15, "unit_price": 86.0 },
+        { "product_id": "PRD-048", "quantity": 10, "unit_price": 130.0 }
+      ],
+      "total_quantity": 25,
+      "total_amount": 2590.0
     },
     {
       "id": "ORD-042",
       "order_number": "PO-2026-042",
       "supplier_id": "SUP-009",
-      "creation_date": "2025-09-13",
-      "status": "Received",
-      "total_quantity": 207,
-      "total_amount": 1829.84
+      "creation_date": "2025-09-13T12:00:00Z",
+      "status": "received",
+      "items": [
+        { "product_id": "PRD-023", "quantity": 12, "unit_price": 229.0 },
+        { "product_id": "PRD-049", "quantity": 8, "unit_price": 28.0 }
+      ],
+      "total_quantity": 20,
+      "total_amount": 2972.0
     },
     {
       "id": "ORD-043",
       "order_number": "PO-2026-043",
       "supplier_id": "SUP-029",
-      "creation_date": "2025-06-30",
-      "status": "Pending",
-      "total_quantity": 40,
-      "total_amount": 9728.34
+      "creation_date": "2025-06-30T12:00:00Z",
+      "status": "pending",
+      "items": [
+        { "product_id": "PRD-024", "quantity": 10, "unit_price": 32.0 },
+        { "product_id": "PRD-043", "quantity": 5, "unit_price": 200.0 }
+      ],
+      "total_quantity": 15,
+      "total_amount": 1320.0
     },
     {
       "id": "ORD-044",
       "order_number": "PO-2026-044",
       "supplier_id": "SUP-006",
-      "creation_date": "2025-10-06",
-      "status": "Pending",
-      "total_quantity": 47,
-      "total_amount": 11404.85
+      "creation_date": "2025-10-06T12:00:00Z",
+      "status": "pending",
+      "items": [
+        { "product_id": "PRD-025", "quantity": 6, "unit_price": 183.0 },
+        { "product_id": "PRD-050", "quantity": 8, "unit_price": 88.0 }
+      ],
+      "total_quantity": 14,
+      "total_amount": 1802.0
     },
     {
       "id": "ORD-045",
       "order_number": "PO-2026-045",
       "supplier_id": "SUP-025",
-      "creation_date": "2025-04-15",
-      "status": "Pending",
-      "total_quantity": 33,
-      "total_amount": 12927.52
+      "creation_date": "2025-04-15T12:00:00Z",
+      "status": "pending",
+      "items": [
+        { "product_id": "PRD-026", "quantity": 12, "unit_price": 174.0 },
+        { "product_id": "PRD-031", "quantity": 8, "unit_price": 162.0 }
+      ],
+      "total_quantity": 20,
+      "total_amount": 3384.0
     },
     {
       "id": "ORD-046",
       "order_number": "PO-2026-046",
       "supplier_id": "SUP-040",
-      "creation_date": "2025-03-26",
-      "status": "Pending",
-      "total_quantity": 119,
-      "total_amount": 2408.45
+      "creation_date": "2025-03-26T12:00:00Z",
+      "status": "pending",
+      "items": [
+        { "product_id": "PRD-028", "quantity": 10, "unit_price": 145.0 },
+        { "product_id": "PRD-040", "quantity": 5, "unit_price": 33.0 }
+      ],
+      "total_quantity": 15,
+      "total_amount": 1615.0
     },
     {
       "id": "ORD-047",
       "order_number": "PO-2026-047",
       "supplier_id": "SUP-032",
-      "creation_date": "2025-10-19",
-      "status": "Pending",
-      "total_quantity": 371,
-      "total_amount": 11931.53
+      "creation_date": "2025-10-19T12:00:00Z",
+      "status": "pending",
+      "items": [
+        { "product_id": "PRD-030", "quantity": 12, "unit_price": 70.0 },
+        { "product_id": "PRD-038", "quantity": 8, "unit_price": 92.0 }
+      ],
+      "total_quantity": 20,
+      "total_amount": 1576.0
     },
     {
       "id": "ORD-048",
       "order_number": "PO-2026-048",
       "supplier_id": "SUP-015",
-      "creation_date": "2026-02-10",
-      "status": "Received",
-      "total_quantity": 332,
-      "total_amount": 11464.61
+      "creation_date": "2026-02-10T12:00:00Z",
+      "status": "received",
+      "items": [
+        { "product_id": "PRD-033", "quantity": 15, "unit_price": 11.0 },
+        { "product_id": "PRD-047", "quantity": 10, "unit_price": 79.0 }
+      ],
+      "total_quantity": 25,
+      "total_amount": 955.0
     },
     {
       "id": "ORD-049",
       "order_number": "PO-2026-049",
       "supplier_id": "SUP-011",
-      "creation_date": "2025-10-01",
-      "status": "Received",
-      "total_quantity": 483,
-      "total_amount": 12326.59
+      "creation_date": "2025-10-01T12:00:00Z",
+      "status": "received",
+      "items": [
+        { "product_id": "PRD-036", "quantity": 12, "unit_price": 94.0 },
+        { "product_id": "PRD-002", "quantity": 8, "unit_price": 98.0 }
+      ],
+      "total_quantity": 20,
+      "total_amount": 1912.0
     },
     {
       "id": "ORD-050",
       "order_number": "PO-2026-050",
       "supplier_id": "SUP-010",
-      "creation_date": "2025-11-05",
-      "status": "Received",
-      "total_quantity": 126,
-      "total_amount": 9082.37
+      "creation_date": "2025-11-05T12:00:00Z",
+      "status": "received",
+      "items": [
+        { "product_id": "PRD-020", "quantity": 15, "unit_price": 171.0 },
+        { "product_id": "PRD-012", "quantity": 10, "unit_price": 120.0 }
+      ],
+      "total_quantity": 25,
+      "total_amount": 3765.0
     }
   ],
+
   "users": [
     {
-      "username": "Mohammed AboTrika",
-      "email": "mmm@gmail.com",
-      "password": "2210",
+      "id": "USR-4c3e2a1f",
+      "name": "Mohamed AboTrika",
+      "email": "mohamed.trika@gmail.com",
+      "password": "trika2006",
       "role": "admin"
+    },
+    {
+      "id": "USR-7b8d9c0e",
+      "name": "Mohamed Kamel",
+      "email": "mohamed.kamel@gmail.com",
+      "password": "mohamed123",
+      "role": "admin"
+    },
+    {
+      "id": "USR-2f6a4b8e",
+      "name": "Habeba Ahmed",
+      "email": "habeba.ahmed@gmail.com",
+      "password": "habeba123",
+      "role": "manager"
+    },
+    {
+      "id": "USR-1a9c3d5f",
+      "name": "Hajar Zain",
+      "email": "hajar.zain@gmail.com",
+      "password": "hajar2024",
+      "role": "super_admin"
+    },
+    {
+      "id": "USR-8e7b6c4d",
+      "name": "Mahmoud Mostafa",
+      "email": "mahmoud.mostafa@gmail.com",
+      "password": "mahmoud2210",
+      "role": "admin"
+    }
+  ],
+
+  "activity_log": [
+    {
+      "id": "ACT-001",
+      "action": "create",
+      "entity_type": "product",
+      "entity_id": "PRD-001",
+      "description": "Added new product: Artificial Tears 0.5% Eye Drops",
+      "user_id": "USR-4c3e2a1f",
+      "timestamp": "2026-03-10T10:15:00Z"
+    },
+    {
+      "id": "ACT-002",
+      "action": "update",
+      "entity_type": "product",
+      "entity_id": "PRD-002",
+      "description": "Updated Hydrocortisone 1% Cream: changed reorder level from 10 to 15",
+      "user_id": "USR-2f6a4b8e",
+      "timestamp": "2026-03-12T14:30:00Z"
+    },
+    {
+      "id": "ACT-003",
+      "action": "delete",
+      "entity_type": "product",
+      "entity_id": "PRD-999",
+      "description": "Deleted discontinued product: Old Keyboard Model",
+      "user_id": "USR-2f6a4b8e",
+      "timestamp": "2026-03-11T14:55:00Z"
+    },
+    {
+      "id": "ACT-004",
+      "action": "create",
+      "entity_type": "category",
+      "entity_id": "CAT-005",
+      "description": "Added new category: Ointment",
+      "user_id": "USR-7b8d9c0e",
+      "timestamp": "2026-03-11T09:20:00Z"
+    },
+    {
+      "id": "ACT-005",
+      "action": "update",
+      "entity_type": "category",
+      "entity_id": "CAT-003",
+      "description": "Updated Eye Drops category description",
+      "user_id": "USR-1a9c3d5f",
+      "timestamp": "2026-03-13T16:45:00Z"
+    },
+    {
+      "id": "ACT-006",
+      "action": "delete",
+      "entity_type": "category",
+      "entity_id": "CAT-004",
+      "description": "Deleted obsolete category: Gel (no products)",
+      "user_id": "USR-4c3e2a1f",
+      "timestamp": "2026-03-14T11:10:00Z"
+    },
+    {
+      "id": "ACT-007",
+      "action": "create",
+      "entity_type": "supplier",
+      "entity_id": "SUP-051",
+      "description": "Added new supplier: Tech Distributors Inc.",
+      "user_id": "USR-8e7b6c4d",
+      "timestamp": "2026-03-12T15:10:00Z"
+    },
+    {
+      "id": "ACT-008",
+      "action": "update",
+      "entity_type": "supplier",
+      "entity_id": "SUP-050",
+      "description": "Updated Cleopatra Pharma contact email",
+      "user_id": "USR-4c3e2a1f",
+      "timestamp": "2026-03-15T09:45:00Z"
+    },
+    {
+      "id": "ACT-009",
+      "action": "delete",
+      "entity_type": "supplier",
+      "entity_id": "SUP-099",
+      "description": "Removed inactive supplier: Old Supplier",
+      "user_id": "USR-2f6a4b8e",
+      "timestamp": "2026-03-10T08:30:00Z"
+    },
+    {
+      "id": "ACT-010",
+      "action": "create",
+      "entity_type": "purchase_order",
+      "entity_id": "ORD-001",
+      "description": "Created purchase order PO-2026-001 for Cleopatra Pharma",
+      "user_id": "USR-7b8d9c0e",
+      "timestamp": "2026-03-12T16:20:00Z"
+    },
+    {
+      "id": "ACT-011",
+      "action": "receive",
+      "entity_type": "purchase_order",
+      "entity_id": "ORD-001",
+      "description": "Received purchase order PO-2026-001, stock increased for Artificial Tears 0.5% Eye Drops and Paracetamol 500mg Tablets",
+      "user_id": "USR-8e7b6c4d",
+      "timestamp": "2026-03-14T13:15:00Z"
+    },
+    {
+      "id": "ACT-012",
+      "action": "adjust",
+      "entity_type": "stock_adjustment",
+      "entity_id": "STK-001",
+      "description": "Adjusted stock for Zinc 25mg Tablets: decreased by 5 units. Reason: Inventory correction",
+      "user_id": "USR-1a9c3d5f",
+      "timestamp": "2026-03-13T10:30:00Z"
     }
   ]
 }

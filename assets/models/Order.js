@@ -1,4 +1,4 @@
-class Order {
+export class Order {
   constructor({
     id,
     order_number,
@@ -17,4 +17,3 @@ class Order {
     this.total_amount = total_amount;
   }
 }
-export default Order;
