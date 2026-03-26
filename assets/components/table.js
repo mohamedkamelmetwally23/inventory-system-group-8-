@@ -39,7 +39,13 @@ export function renderTablePage(
 
     columns.forEach((col) => {
       const td = document.createElement('td');
-      td.textContent = item[col];
+
+      if (col === "status") {
+        td.innerHTML = item[col]; 
+      } else {
+        td.textContent = item[col];
+      }
+
       tr.appendChild(td);
     });
 

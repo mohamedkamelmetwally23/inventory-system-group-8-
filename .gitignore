@@ -9,3 +9,5 @@ server/*.json
 .vscode/
 
 *.log
+
+/github.txt
