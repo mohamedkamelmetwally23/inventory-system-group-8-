@@ -4,8 +4,9 @@ import { getCategoriesSummary, getProducts } from '../api/reportsApi.js';
 import {
   formatCurrency,
   generateChart,
+  getBlueShade,
+  showSpinner,
   showTableLoader,
-  stringToColor,
 } from '../utils/helpers.js';
 import loadLayout from '../ui/layout.js';
 
@@ -14,7 +15,10 @@ const totalValueEl = document.querySelector('.stat-value');
 const totalProductsEl = document.querySelector('.stat-products');
 const totalLowStockEl = document.querySelector('.stat-low-stock');
 const totalOutOfStockEl = document.querySelector('.stat-out-of-stock');
+
 const selectedDateText = document.getElementById('selectedDateText');
+
+const statsCardsContainer = document.querySelector('.stats-cards');
 const tableBody = document.querySelector('tbody');
 const categoryChartCanvas = document.getElementById('category-chart');
 const stockStatusChartCanvas = document.getElementById('stock-status-chart');
@@ -24,11 +28,11 @@ const topProductsCanvas = document.getElementById('top-products-chart');
 let inventoryProducts = [];
 
 // Display a summary of the categories in a table
-const displayCategorySummary = (catSummary) => {
+const displayCategorySummary = (catSummary, i) => {
   const markup = `
         <tr class="border-bottom">
           <td class="text-start px-4 py-2 fw-medium text-capitalize">
-            <span class="string-to-color" style="background-color: ${stringToColor(catSummary.categoryName)}"></span>
+            <span class="string-to-color" style="background-color: ${getBlueShade(i)}"></span>
             ${catSummary.categoryName}
           </td>
           <td class="text-end px-4 py-2">${catSummary.productCount}</td>
@@ -40,14 +44,15 @@ const displayCategorySummary = (catSummary) => {
   tableBody.insertAdjacentHTML('beforeend', markup);
 };
 
+//------------------------------------------
 // Calculate and Display Stats total==> products, values, low stock, and out of stock
 const renderStatsOverview = () => {
   const stats = inventoryProducts.reduce(
     (acc, prd) => {
       acc.value += prd.price * (prd.quantity ?? 0);
 
-      if (prd.status == 'low stock') acc.lowStock++;
-      if (prd.status == 'out of stock') acc.outOfStock++;
+      if (prd.quantity == 0) acc.outOfStock++;
+      else if (prd.quantity <= prd.reorderLevel) acc.lowStock++;
 
       return acc;
     },
@@ -66,10 +71,9 @@ const renderStatsOverview = () => {
 
 // Retrieve a summary of the categories
 const renderSummaryCategories = async () => {
-  showTableLoader(tableBody);
-
   const result = await getCategoriesSummary(inventoryProducts);
 
+  showTableLoader(tableBody);
   if (result.success) {
     tableBody.innerHTML = '';
     result.data.forEach(displayCategorySummary);
@@ -85,11 +89,33 @@ const renderSummaryCategories = async () => {
 const renderCategoriesChart = async () => {
   const result = await getCategoriesWithProductCount();
 
+  showSpinner(categoryChartCanvas);
+  categoryChartCanvas.innerHTML = '';
+  if (!result.success) {
+    categoryChartCanvas.parentElement.innerHTML = `
+      <div class="text-danger text-center py-4">
+        <i class="fa-solid fa-circle-exclamation me-2"></i>
+        Failed to load category data. Please try again later.
+      </div>
+    `;
+    return;
+  }
+
+  if (!result.data || result.data.length === 0) {
+    categoryChartCanvas.parentElement.innerHTML = `
+      <div class="text-muted text-center py-4">
+        <i class="fa-regular fa-folder-open me-2"></i>
+        No categories found. Add some categories to see the distribution.
+      </div>
+    `;
+    return;
+  }
+
   const chartData = result.data.reduce(
-    (acc, cat) => {
+    (acc, cat, i) => {
       acc.labels.push(cat.name);
       acc.count.push(cat.productCount);
-      acc.colors.push(stringToColor(cat.name));
+      acc.colors.push(getBlueShade(i));
       return acc;
     },
     { labels: [], count: [], colors: [] },
@@ -108,9 +134,9 @@ const renderCategoriesChart = async () => {
 const renderStockStatusChart = () => {
   const chartData = inventoryProducts.reduce(
     (acc, prd) => {
-      if (prd.status == 'in stock') acc.inStock++;
-      if (prd.status == 'low stock') acc.lowStock++;
-      if (prd.status == 'out of stock') acc.outOfStock++;
+      if (prd.quantity == 0) acc.outOfStock++;
+      else if (prd.quantity <= prd.reorderLevel) acc.lowStock++;
+      else acc.inStock++;
 
       return acc;
     },
@@ -177,20 +203,42 @@ document.querySelectorAll('.filter-opt').forEach((item) => {
 const init = async () => {
   const result = await getProducts();
 
+  renderSummaryCategories();
+  renderCategoriesChart();
+
   if (result.success) {
     inventoryProducts = result.data;
 
     renderStatsOverview();
-    renderSummaryCategories();
-    renderCategoriesChart();
     renderStockStatusChart();
     renderTopProducts();
 
     //
   } else {
-    console.error('Failed to load products:', result.error);
+    statsCardsContainer.innerHTML = `
+        <div class="alert alert-danger text-center">
+          Failed to load inventory data. Please check your connection or try again later.
+        </div>
+    `;
+
+    stockStatusChartCanvas.parentElement.parentElement.innerHTML = `
+      <div class="text-danger text-center py-4">
+        <i class="fa-solid fa-circle-exclamation me-2"></i>
+        Failed to load low stock data.
+      </div>
+    `;
+
+    topProductsCanvas.parentElement.innerHTML = `
+        <div class="text-danger text-center py-4">
+          <i class="fa-solid fa-circle-exclamation me-2"></i>
+          No product data available.
+        </div>
+    `;
+
     tableBody.innerHTML =
       '<tr><td colspan="4" class="text-center text-danger py-2">Error loading data</td></tr>';
+
+    console.error('Failed to load products:', result.error);
   }
 };
 

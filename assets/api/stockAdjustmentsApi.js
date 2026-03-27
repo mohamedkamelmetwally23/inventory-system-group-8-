@@ -33,11 +33,11 @@ export const createStockAdjustments = async (data) => {
   const newStockAdjustments = new StockAdjustments({
     id: generateStockId,
     product_id: data.product_id,
-    type: data.type,
+    adjustment_type: data.adjustment_type,
     quantity: data.quantity,
-    status: data.status,
-    note: data.note,
-    date: data.date,
+    reason: data.reason,
+    timestamp: data.timestamp,
+    user: data.user,
   });
   const stockAdjustment = await apiRequest("stock_adjustments", {
     method: "POST",
@@ -61,4 +61,25 @@ export const deleteStock = async (id) => {
     method: "DELETE",
   });
   return { success: true, data: deleteOneStock };
+};
+// get all product by name
+export const getProductNames = async () => {
+  try {
+    const response = await apiRequest("products");
+    const products =
+      response?.products ||
+      response?.data ||
+      (Array.isArray(response) ? response : []);
+
+    if (!products.length)
+      return { success: false, data: [], error: "No products found" };
+    const data = products.map((p) => ({
+      id: p.id || p.product_id,
+      name: p.product_name || p.name,
+    }));
+    return { success: true, data };
+  } catch (err) {
+    console.error("getProductNames error:", err);
+    return { success: false, data: [], error: err?.message || err };
+  }
 };

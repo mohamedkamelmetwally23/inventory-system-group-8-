@@ -3,7 +3,7 @@ export function renderTablePage(
   actionsHTML,
   page = 1,
   rowsPerPage = 10,
-  tableName
+  tableName,
 ) {
   const tableHead = document.getElementById('tableHead');
   const tableBody = document.getElementById('tableBody');
@@ -39,7 +39,13 @@ export function renderTablePage(
 
     columns.forEach((col) => {
       const td = document.createElement('td');
-      td.textContent = item[col];
+
+      if (col === 'status' || col === 'adjustment_type') {
+        td.innerHTML = item[col];
+      } else {
+        td.textContent = item[col];
+      }
+
       tr.appendChild(td);
     });
 
@@ -54,7 +60,7 @@ export function renderTablePage(
       if (item.ProductsSupplied > 0) {
         deleteBtn.classList.add('disabled');
         deleteBtn.disabled = true;
-        deleteBtn.title = "Cannot delete supplier with products";
+        deleteBtn.title = 'Cannot delete supplier with products';
       } else {
         deleteBtn.onclick = () => window.deleteSupplierHandler(deleteBtn);
       }

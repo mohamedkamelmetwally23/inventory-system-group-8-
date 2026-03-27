@@ -64,7 +64,7 @@ export const updateSupplier = async (supplierId, data) => {
   });
 
   return await apiRequest(`suppliers/${supplierId}`, {
-    method: 'PUT',
+    method: 'PATCH',
     headers: { 'Content-Type': 'application/json' },
     body: JSON.stringify(updatedSupplier)
   });

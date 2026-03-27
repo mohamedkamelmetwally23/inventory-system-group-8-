@@ -8,8 +8,9 @@ export const getProducts = async () => await apiRequest('products');
 export const getCategoriesSummary = async (productsData = null) => {
   const [categoriesRes, productsRes] = await Promise.all([
     getCategories(),
-    productsData ? { success: true, data: productsData } : getProducts(),
-    ,
+    productsData.length === 0 || !productsData
+      ? getProducts()
+      : { success: true, data: productsData },
   ]);
 
   if (!categoriesRes.success) {

@@ -1,12 +1,20 @@
 class StockAdjustments {
-  constructor({ id, product_id, type, quantity, status, note, date }) {
+  constructor({
+    id,
+    product_id,
+    adjustment_type,
+    quantity,
+    reason,
+    timestamp,
+    user,
+  }) {
     this.id = id;
     this.product_id = product_id;
-    this.type = type;
+    this.adjustment_type = adjustment_type;
     this.quantity = quantity;
-    this.status = status;
-    this.note = note;
-    this.date = date;
+    this.reason = reason;
+    this.timestamp = timestamp;
+    this.user = user;
   }
 }
 

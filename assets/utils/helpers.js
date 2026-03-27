@@ -21,6 +21,14 @@ export const formatCurrency = (value) => {
   }).format(value);
 };
 
+// Format date ==> (Mar 3 2026)
+export const formatDate = (dateString) =>
+  new Date(dateString).toLocaleDateString('en-US', {
+    month: 'short',
+    day: 'numeric',
+    year: 'numeric',
+  });
+
 // Generate a color based on text.
 export function stringToColor(str) {
   let hash = 0;
@@ -30,6 +38,17 @@ export function stringToColor(str) {
 
   const hue = Math.abs(hash % 360);
   return `hsl(${hue}, 70%, 50%)`;
+}
+
+// Generate monochromatic blue shades based on array index
+export function getBlueShade(index) {
+  const hue = 218;
+  const saturation = 72;
+
+  let lightness = 21 + index * 10;
+  lightness = Math.min(lightness, 85);
+
+  return `hsl(${hue}, ${saturation}%, ${lightness}%)`;
 }
 
 // Show Sppiner
