@@ -4,9 +4,9 @@ import {
   updateStock,
   deleteStock,
   getProductNames,
-} from "../api/stockAdjustmentsApi.js";
-import loadLayout from "../ui/layout.js";
-import { renderTablePage } from "../components/table.js";
+} from '../api/stockAdjustmentsApi.js';
+import loadLayout from '../ui/layout.js';
+import { renderTablePage } from '../components/table.js';
 
 // ===================== STATE =====================
 let stocksRaw = [];
@@ -22,8 +22,8 @@ function getCurrentTimestamp() {
 }
 
 function formatDateForInput(dateString) {
-  if (!dateString) return "";
-  return dateString.split("T")[0];
+  if (!dateString) return '';
+  return dateString.split('T')[0];
 }
 
 // ===================== LOAD PRODUCTS =====================
@@ -41,12 +41,12 @@ async function loadProducts() {
       allProducts = [];
     }
 
-    const productSelect = document.getElementById("productSelect");
+    const productSelect = document.getElementById('productSelect');
     if (allProducts.length > 0 && productSelect) {
       productSelect.innerHTML = '<option value="">Select Product</option>';
       allProducts.forEach((product) => {
         productSelect.insertAdjacentHTML(
-          "beforeend",
+          'beforeend',
           `<option value="${product.id}">${product.name}</option>`,
         );
       });
@@ -54,13 +54,13 @@ async function loadProducts() {
 
     updateFilterOptions();
   } catch (err) {
-    console.error("Error loading products:", err);
+    console.error('Error loading products:', err);
   }
 }
 
 // ===================== UPDATE FILTER DROPDOWN =====================
 function updateFilterOptions() {
-  const filterSelect = document.getElementById("filterSelect");
+  const filterSelect = document.getElementById('filterSelect');
   if (!filterSelect) return;
 
   let options = '<option value="">All</option>';
@@ -89,18 +89,27 @@ async function loadStocks() {
       const product = allProducts.find((p) => p.id == item.product_id);
       const productName = product
         ? product.name
-        : item.productName || item.product_name || "N/A";
+        : item.productName || item.product_name || 'N/A';
+
+      // ===================== STATUS BADGE =====================
+      let typeText = item.adjustment_type || 'N/A';
+
+      const adjustmentTypeClass = {
+        increase: 'badge bg-success',
+        decrease: 'badge bg-danger',
+        'N/A': 'badge bg-secondary',
+      };
 
       return {
         id: item.id,
         product_name: productName,
-        adjustment_type: item.adjustment_type || "N/A",
+        adjustment_type: `<span class="${adjustmentTypeClass[typeText]}">${typeText}</span>`,
         quantity: item.quantity || 0,
-        reason: item.reason || "N/A",
+        reason: item.reason || 'N/A',
         timestamp: item.timestamp
           ? new Date(item.timestamp).toLocaleString()
-          : "N/A",
-        user: item.user || "System",
+          : 'N/A',
+        user: item.user || 'System',
       };
     });
 
@@ -109,7 +118,7 @@ async function loadStocks() {
       actionsHTML,
       currentPage,
       rowsPerPage,
-      "stock_adjustments",
+      'stock_adjustments',
     );
 
     updateCards();
@@ -117,8 +126,8 @@ async function loadStocks() {
     updatePageNumber();
     updateFilterOptions();
   } catch (err) {
-    console.error("Error loading stocks:", err);
-    const tableBody = document.getElementById("tableBody");
+    console.error('Error loading stocks:', err);
+    const tableBody = document.getElementById('tableBody');
     if (tableBody) {
       tableBody.innerHTML = `
         <tr>
@@ -148,17 +157,17 @@ function updateCards() {
   let totalDecrease = 0;
 
   stocksRaw.forEach((stock) => {
-    if (stock.adjustment_type === "increase") {
+    if (stock.adjustment_type === 'increase') {
       totalIncrease += Number(stock.quantity) || 0;
-    } else if (stock.adjustment_type === "decrease") {
+    } else if (stock.adjustment_type === 'decrease') {
       totalDecrease += Number(stock.quantity) || 0;
     }
   });
 
-  const totalAdjustments = document.querySelector("#totalAdjustments");
-  const totalIncreaseEl = document.querySelector("#totalIncrease");
-  const totalDecreaseEl = document.querySelector("#totalDecrease");
-  const totalNetChangeEl = document.querySelector("#totalNetChange");
+  const totalAdjustments = document.querySelector('#totalAdjustments');
+  const totalIncreaseEl = document.querySelector('#totalIncrease');
+  const totalDecreaseEl = document.querySelector('#totalDecrease');
+  const totalNetChangeEl = document.querySelector('#totalNetChange');
 
   if (totalAdjustments) totalAdjustments.textContent = stocksRaw.length;
   if (totalIncreaseEl) totalIncreaseEl.textContent = totalIncrease;
@@ -169,7 +178,7 @@ function updateCards() {
 
 // ===================== UPDATE TABLE CAPTION =====================
 function updateCaption() {
-  const captionEl = document.getElementById("tableCaption");
+  const captionEl = document.getElementById('tableCaption');
   if (captionEl) {
     captionEl.innerHTML = `
       <i class="fa-solid fa-box"></i> All Stock Adjustments (${stocksRaw.length})
@@ -179,7 +188,7 @@ function updateCaption() {
 
 // ===================== UPDATE PAGE NUMBER DISPLAY =====================
 function updatePageNumber() {
-  const pageNumberEl = document.getElementById("pageNumber");
+  const pageNumberEl = document.getElementById('pageNumber');
   if (pageNumberEl) {
     pageNumberEl.textContent = currentPage;
   }
@@ -187,18 +196,18 @@ function updatePageNumber() {
 
 // ===================== POPULATE FORM WITH STOCK DATA =====================
 function populateFormWithStockData(stock) {
-  const productSelect = document.getElementById("productSelect");
-  const typeSelect = document.getElementById("Type");
-  const quantityInput = document.getElementById("Quantity");
-  const reasonInput = document.getElementById("reason");
-  const userInput = document.getElementById("user");
-  const dateInput = document.getElementById("Date");
+  const productSelect = document.getElementById('productSelect');
+  const typeSelect = document.getElementById('Type');
+  const quantityInput = document.getElementById('Quantity');
+  const reasonInput = document.getElementById('reason');
+  const userInput = document.getElementById('user');
+  const dateInput = document.getElementById('Date');
 
-  if (productSelect) productSelect.value = stock.product_id || "";
+  if (productSelect) productSelect.value = stock.product_id || '';
   if (typeSelect) typeSelect.value = stock.adjustment_type;
   if (quantityInput) quantityInput.value = stock.quantity;
-  if (reasonInput) reasonInput.value = stock.reason || "";
-  if (userInput) userInput.value = stock.user || "";
+  if (reasonInput) reasonInput.value = stock.reason || '';
+  if (userInput) userInput.value = stock.user || '';
 
   if (dateInput && stock.timestamp) {
     dateInput.value = formatDateForInput(stock.timestamp);
@@ -207,20 +216,20 @@ function populateFormWithStockData(stock) {
 
 // ===================== MODAL OPEN HANDLER =====================
 document
-  .getElementById("addStockModal")
-  ?.addEventListener("show.bs.modal", () => {
-    const form = document.getElementById("addStockForm");
-    const dateInput = document.getElementById("Date");
+  .getElementById('addStockModal')
+  ?.addEventListener('show.bs.modal', () => {
+    const form = document.getElementById('addStockForm');
+    const dateInput = document.getElementById('Date');
 
     if (currentEditId && editingStockData) {
       populateFormWithStockData(editingStockData);
 
-      const modalTitle = document.getElementById("addStockModalLabel");
-      if (modalTitle) modalTitle.textContent = "Edit Stock Adjustment";
+      const modalTitle = document.getElementById('addStockModalLabel');
+      if (modalTitle) modalTitle.textContent = 'Edit Stock Adjustment';
 
-      const subtitle = document.getElementById("productModalSubtitle");
+      const subtitle = document.getElementById('productModalSubtitle');
       if (subtitle)
-        subtitle.textContent = "Update the stock adjustment information below";
+        subtitle.textContent = 'Update the stock adjustment information below';
     } else {
       if (form) form.reset();
 
@@ -228,30 +237,30 @@ document
         dateInput.value = formatDateForInput(getCurrentTimestamp());
       }
 
-      const modalTitle = document.getElementById("addStockModalLabel");
-      if (modalTitle) modalTitle.textContent = "Add New Stock Adjustment";
+      const modalTitle = document.getElementById('addStockModalLabel');
+      if (modalTitle) modalTitle.textContent = 'Add New Stock Adjustment';
 
-      const subtitle = document.getElementById("productModalSubtitle");
+      const subtitle = document.getElementById('productModalSubtitle');
       if (subtitle)
-        subtitle.textContent = "Enter the details for the new stock adjustment";
+        subtitle.textContent = 'Enter the details for the new stock adjustment';
     }
   });
 
 // ===================== FORM SUBMIT HANDLER =====================
 document
-  .getElementById("addStockForm")
-  ?.addEventListener("submit", async (e) => {
+  .getElementById('addStockForm')
+  ?.addEventListener('submit', async (e) => {
     e.preventDefault();
 
     const editId = currentEditId;
     const currentTimestamp = getCurrentTimestamp();
 
     const data = {
-      product_id: document.getElementById("productSelect")?.value.trim(),
-      adjustment_type: document.getElementById("Type")?.value.trim(),
-      quantity: Number(document.getElementById("Quantity")?.value),
-      reason: document.getElementById("reason")?.value.trim(),
-      user: document.getElementById("user")?.value.trim(),
+      product_id: document.getElementById('productSelect')?.value.trim(),
+      adjustment_type: document.getElementById('Type')?.value.trim(),
+      quantity: Number(document.getElementById('Quantity')?.value),
+      reason: document.getElementById('reason')?.value.trim(),
+      user: document.getElementById('user')?.value.trim(),
       timestamp: currentTimestamp,
     };
 
@@ -262,14 +271,14 @@ document
       !data.reason ||
       !data.user
     ) {
-      console.error("Please fill all required fields");
+      console.error('Please fill all required fields');
       return;
     }
 
     try {
       let result;
 
-      if (editId && editId !== "null" && editId !== "undefined") {
+      if (editId && editId !== 'null' && editId !== 'undefined') {
         result = await updateStock(editId, data);
       } else {
         result = await createStockAdjustments(data);
@@ -279,24 +288,24 @@ document
         await loadStocks();
 
         const modal = bootstrap.Modal.getInstance(
-          document.getElementById("addStockModal"),
+          document.getElementById('addStockModal'),
         );
         if (modal) modal.hide();
 
         currentEditId = null;
         editingStockData = null;
       } else {
-        console.error(result?.error || "Failed to save stock adjustment");
+        console.error(result?.error || 'Failed to save stock adjustment');
       }
     } catch (err) {
-      console.error("Error saving stock adjustment:", err);
+      console.error('Error saving stock adjustment:', err);
     }
   });
 
 // ===================== TABLE EVENT HANDLER (EDIT/DELETE) =====================
-document.getElementById("tableBody")?.addEventListener("click", function (e) {
-  if (e.target.closest(".edit-btn")) {
-    const id = e.target.closest(".edit-btn").dataset.id;
+document.getElementById('tableBody')?.addEventListener('click', function (e) {
+  if (e.target.closest('.edit-btn')) {
+    const id = e.target.closest('.edit-btn').dataset.id;
     const stock = stocksRaw.find((s) => s.id == id);
 
     if (stock) {
@@ -304,25 +313,25 @@ document.getElementById("tableBody")?.addEventListener("click", function (e) {
       editingStockData = { ...stock };
 
       const modal = new bootstrap.Modal(
-        document.getElementById("addStockModal"),
+        document.getElementById('addStockModal'),
       );
       modal.show();
     }
   }
 
-  if (e.target.closest(".delete-btn")) {
-    const id = e.target.closest(".delete-btn").dataset.id;
+  if (e.target.closest('.delete-btn')) {
+    const id = e.target.closest('.delete-btn').dataset.id;
     window.currentDeleteId = id;
 
-    const modal = new bootstrap.Modal(document.getElementById("deleteModal"));
+    const modal = new bootstrap.Modal(document.getElementById('deleteModal'));
     modal.show();
   }
 });
 
 // ===================== CONFIRM DELETE HANDLER =====================
 document
-  .getElementById("confirmDelete")
-  ?.addEventListener("click", async () => {
+  .getElementById('confirmDelete')
+  ?.addEventListener('click', async () => {
     if (!window.currentDeleteId) return;
 
     try {
@@ -333,19 +342,19 @@ document
         window.currentDeleteId = null;
 
         const modal = bootstrap.Modal.getInstance(
-          document.getElementById("deleteModal"),
+          document.getElementById('deleteModal'),
         );
         if (modal) modal.hide();
       } else {
-        console.error(result?.error || "Failed to delete stock adjustment");
+        console.error(result?.error || 'Failed to delete stock adjustment');
       }
     } catch (err) {
-      console.error("Error deleting stock adjustment:", err);
+      console.error('Error deleting stock adjustment:', err);
     }
   });
 
 // ===================== FILTER HANDLER =====================
-document.getElementById("filterSelect")?.addEventListener("change", (e) => {
+document.getElementById('filterSelect')?.addEventListener('change', (e) => {
   const filterValue = e.target.value;
 
   if (!filterValue) {
@@ -355,16 +364,16 @@ document.getElementById("filterSelect")?.addEventListener("change", (e) => {
 
   let filtered = [];
 
-  if (filterValue === "increase") {
+  if (filterValue === 'increase') {
     filtered = stocksRaw.filter(
-      (stock) => stock.adjustment_type === "increase",
+      (stock) => stock.adjustment_type === 'increase',
     );
-  } else if (filterValue === "decrease") {
+  } else if (filterValue === 'decrease') {
     filtered = stocksRaw.filter(
-      (stock) => stock.adjustment_type === "decrease",
+      (stock) => stock.adjustment_type === 'decrease',
     );
-  } else if (filterValue.startsWith("product_")) {
-    const productName = filterValue.replace("product_", "");
+  } else if (filterValue.startsWith('product_')) {
+    const productName = filterValue.replace('product_', '');
     filtered = stocksRaw.filter((stock) => {
       const stockProductName = stock.productName || stock.product_name;
       return stockProductName === productName;
@@ -373,18 +382,18 @@ document.getElementById("filterSelect")?.addEventListener("change", (e) => {
 
   const formattedData = filtered.map((item) => {
     const product = allProducts.find((p) => p.id == item.product_id);
-    const productName = product ? product.name : item.productName || "N/A";
+    const productName = product ? product.name : item.productName || 'N/A';
 
     return {
       id: item.id,
       product_name: productName,
-      adjustment_type: item.adjustment_type || "N/A",
+      adjustment_type: item.adjustment_type || 'N/A',
       quantity: item.quantity || 0,
-      reason: item.reason || "N/A",
+      reason: item.reason || 'N/A',
       timestamp: item.timestamp
         ? new Date(item.timestamp).toLocaleString()
-        : "N/A",
-      user: item.user || "System",
+        : 'N/A',
+      user: item.user || 'System',
     };
   });
 
@@ -393,23 +402,23 @@ document.getElementById("filterSelect")?.addEventListener("change", (e) => {
     actionsHTML,
     currentPage,
     rowsPerPage,
-    "stock_adjustments",
+    'stock_adjustments',
   );
 
   let totalIncrease = 0;
   let totalDecrease = 0;
   filtered.forEach((stock) => {
-    if (stock.adjustment_type === "increase") {
+    if (stock.adjustment_type === 'increase') {
       totalIncrease += Number(stock.quantity) || 0;
-    } else if (stock.adjustment_type === "decrease") {
+    } else if (stock.adjustment_type === 'decrease') {
       totalDecrease += Number(stock.quantity) || 0;
     }
   });
 
-  const totalAdjustments = document.querySelector("#totalAdjustments");
-  const totalIncreaseEl = document.querySelector("#totalIncrease");
-  const totalDecreaseEl = document.querySelector("#totalDecrease");
-  const totalNetChangeEl = document.querySelector("#totalNetChange");
+  const totalAdjustments = document.querySelector('#totalAdjustments');
+  const totalIncreaseEl = document.querySelector('#totalIncrease');
+  const totalDecreaseEl = document.querySelector('#totalDecrease');
+  const totalNetChangeEl = document.querySelector('#totalNetChange');
 
   if (totalAdjustments) totalAdjustments.textContent = filtered.length;
   if (totalIncreaseEl) totalIncreaseEl.textContent = totalIncrease;
@@ -419,14 +428,14 @@ document.getElementById("filterSelect")?.addEventListener("change", (e) => {
 });
 
 // ===================== PAGINATION HANDLERS =====================
-document.getElementById("prevBtn")?.addEventListener("click", () => {
+document.getElementById('prevBtn')?.addEventListener('click', () => {
   if (currentPage > 1) {
     currentPage--;
     loadStocks();
   }
 });
 
-document.getElementById("nextBtn")?.addEventListener("click", () => {
+document.getElementById('nextBtn')?.addEventListener('click', () => {
   const totalPages = Math.ceil(stocksRaw.length / rowsPerPage);
   if (currentPage < totalPages) {
     currentPage++;
@@ -436,9 +445,9 @@ document.getElementById("nextBtn")?.addEventListener("click", () => {
 
 // ===================== MODAL CLOSE HANDLER =====================
 document
-  .getElementById("addStockModal")
-  ?.addEventListener("hidden.bs.modal", () => {
-    const form = document.getElementById("addStockForm");
+  .getElementById('addStockModal')
+  ?.addEventListener('hidden.bs.modal', () => {
+    const form = document.getElementById('addStockForm');
     if (form && !currentEditId) {
       form.reset();
     }
@@ -446,17 +455,17 @@ document
     currentEditId = null;
     editingStockData = null;
 
-    const modalTitle = document.getElementById("addStockModalLabel");
-    if (modalTitle) modalTitle.textContent = "Add New Stock Adjustment";
+    const modalTitle = document.getElementById('addStockModalLabel');
+    if (modalTitle) modalTitle.textContent = 'Add New Stock Adjustment';
 
-    const subtitle = document.getElementById("productModalSubtitle");
+    const subtitle = document.getElementById('productModalSubtitle');
     if (subtitle)
-      subtitle.textContent = "Enter the details for the new stock adjustment";
+      subtitle.textContent = 'Enter the details for the new stock adjustment';
   });
 
 // ===================== INITIALIZATION =====================
 async function init() {
-  loadLayout("Stock Adjustments");
+  loadLayout('Stock Adjustments');
   await loadProducts();
   await loadStocks();
 }
