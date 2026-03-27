@@ -1,104 +1,133 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!------------------ PAGE INFO ------------------>
-    <title>PharmaFlow | Activity log</title>
-    <meta
-      name="description"
-      content="Track all system actions with a comprehensive activity log. Monitor user modifications to products and stock levels to ensure accountability and transparency."
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <!------------------ ICON PAGE ------------------>
-    <link
-      rel="icon"
-      type="image/x-icon"
-      href="../assets/imgs/icon-site/favicon.ico"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="16x16"
-      href="../assets/imgs/icon-site/favicon-16x16.png"
-    />
-    <link
-      rel="icon"
-      type="image/png"
-      sizes="32x32"
-      href="../assets/imgs/icon-site/favicon-32x32.png"
-    />
-    <link
-      rel="apple-touch-icon"
-      sizes="180x180"
-      href="../assets/imgs/icon-site/apple-touch-icon.png"
-    />
-    <link rel="manifest" href="../assets/imgs/icon-site/site.webmanifest" />
+  <!------------------ PAGE INFO ------------------>
+  <title>PharmaFlow | Activity Log</title>
+  <meta name="description"
+    content="Track all system actions with a comprehensive activity log. Monitor user modifications to products and stock levels to ensure accountability and transparency." />
 
-    <!------------------ GOOGLE FONT ------------------>
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-      rel="stylesheet"
-    />
+  <!------------------ ICON PAGE ------------------>
+  <link rel="icon" type="image/x-icon" href="../assets/imgs/icon-site/favicon.ico" />
+  <link rel="icon" type="image/png" sizes="16x16" href="../assets/imgs/icon-site/favicon-16x16.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="../assets/imgs/icon-site/favicon-32x32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="../assets/imgs/icon-site/apple-touch-icon.png" />
+  <link rel="manifest" href="../assets/imgs/icon-site/site.webmanifest" />
 
-    <!------------------ STYLES ------------------>
-    <!-- Bootstrap -->
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <!-- FontAwesome ICONS-->
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
-    />
-    <!--  -->
-    <link rel="stylesheet" href="../assets/css/style.css" />
+  <!------------------ GOOGLE FONT ------------------>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+    rel="stylesheet" />
 
-    <!------------------ JAVASCRIPT ------------------>
-    <!-- Bootstrap -->
-    <script
-      defer
-      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
-    ></script>
-    <!--  -->
-    <script type="module" src="../assets/pages/activityLog.js"></script>
-  </head>
+  <!------------------ STYLES ------------------>
+  <!-- Bootstrap -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
 
-  <body>
-    <body>
-      <div>
-        <!-- Navbar -->
-        <header
-          class="border-bottom border-bottom-5 border-gray-200 px-4"
-        ></header>
+  <!-- FontAwesome ICONS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
 
-        <div class="container-fluid">
-          <div class="row">
-            <!-- Aside -->
-            <aside class="col-12 col-md-3" id="main"></aside>
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="../assets/css/style.css" />
 
-            <!-- Main page -->
-            <main class="col-12 col-md-9 pt-4">
-              <section class="dashboard-section">
-                <div class="container">
-                  <div>
-                    <h2 class="fw-bold text-dark-blue mb-1">Activity Log</h2>
-                    <p class="text-secondary mb-0">
-                      Track all system activities and changes
-                    </p>
-                  </div>
+  <!------------------ JAVASCRIPT ------------------>
+  <!-- Bootstrap -->
+  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
-                  <!-- Complete here -->
+  <!-- Page Script -->
+  <script type="module" src="../assets/pages/activityLog.js"></script>
+</head>
+
+<body>
+
+  <!-- Navbar -->
+  <header class="border-bottom border-bottom-5 border-gray-200 px-4"></header>
+
+  <div class="container-fluid">
+    <div class="row">
+
+      <!-- Aside -->
+      <aside class="col-12 col-md-3" id="main"></aside>
+
+      <!-- Main Content -->
+      <main class="col-12 col-md-9 pt-4">
+
+        <section class="dashboard-section">
+          <div class="container">
+
+            <!-- Title -->
+            <div>
+              <h2 class="fw-bold text-dark-blue mb-1">Activity Log</h2>
+              <p class="text-secondary mb-0">
+                Track all system activities and changes
+              </p>
+            </div>
+
+            <!-- Filters -->
+            <div class="row g-2 mt-3">
+
+              <!-- Filter Section -->
+              <div class="row mb-4">
+                <!-- Filter by Action -->
+                <div class="col-md-6 col-lg-4 mb-3">
+                  <label class="form-label fw-semibold mb-2">
+                    <i class="fas fa-filter me-1"></i> Filter by Action
+                  </label>
+                  <select class="form-select" id="actionFilter">
+                    <option value="">All Actions</option>
+                  </select>
                 </div>
-              </section>
-            </main>
-          </div>
-        </div>
-      </div>
-    </body>
-  </body>
+
+                <!-- Filter by Entity Type -->
+                <div class="col-md-6 col-lg-4 mb-3">
+                  <label class="form-label fw-semibold mb-2">
+                    <i class="fas fa-tag me-1"></i> Filter by Type
+                  </label>
+                  <select class="form-select" id="entityFilter">
+                    <option value="">All Types</option>
+                  </select>
+                </div>
+
+                <!-- Filter by User -->
+                <div class="col-md-6 col-lg-4 mb-3">
+                  <label class="form-label fw-semibold mb-2">
+                    <i class="fas fa-user me-1"></i> Filter by User
+                  </label>
+                  <select class="form-select" id="userFilter">
+                    <option value="">All Users</option>
+                  </select>
+                </div>
+              </div>
+
+              <!-- Search Input (Optional) -->
+              <div class="row mb-4">
+                <div class="col-12">
+                  <div class="input-group">
+                    <span class="input-group-text bg-white border-end-0">
+                      <i class="fas fa-search text-secondary"></i>
+                    </span>
+                    <input type="text" class="form-control border-start-0 ps-0" id="searchInput"
+                      placeholder="Search activities..." style="box-shadow: none;">
+                  </div>
+                </div>
+              </div>
+              <!-- Logs Container -->
+              <div class="row activity-container mt-4 g-3" id="logsContainer">
+                <!-- Dynamic logs will be rendered here -->
+              </div>
+
+            </div>
+        </section>
+
+      </main>
+
+    </div>
+  </div>
+
+</body>
+
 </html>
