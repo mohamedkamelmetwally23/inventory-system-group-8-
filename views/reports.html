@@ -112,11 +112,17 @@
                         aria-expanded="false"
                       >
                         <i class="fa-regular fa-calendar me-1"></i>
-                        <span id="selectedDateText">Last 30 days</span>
+                        <span id="selectedDateText">All Time</span>
                       </button>
                       <ul
                         class="dropdown-menu shadow border-0 rounded-3 w-100 mt-2"
                       >
+                        <li
+                          class="dropdown-item py-1 filter-opt filter-opt--active"
+                          data-value="all-time"
+                        >
+                          All Time
+                        </li>
                         <li
                           class="dropdown-item py-1 filter-opt"
                           data-value="7-days"
@@ -124,7 +130,7 @@
                           Last 7 days
                         </li>
                         <li
-                          class="dropdown-item py-1 filter-opt filter-opt--active"
+                          class="dropdown-item py-1 filter-opt"
                           data-value="30-days"
                         >
                           Last 30 days
@@ -169,6 +175,7 @@
                       </p>
                     </div>
                   </div>
+
                   <div class="col-md-6 col-lg-3">
                     <div class="h-100 p-4 bg-white rounded-3 border">
                       <div
@@ -242,13 +249,19 @@
                         Stock Status Distribution
                       </h3>
 
-                      <div>
-                        <div class="mb-2" style="max-height: 350px">
-                          <canvas
-                            id="stock-status-chart"
-                            class="mx-auto"
-                          ></canvas>
-                        </div>
+                      <div
+                        class="text-muted text-center py-4 no-product-available visually-hidden"
+                      >
+                        <i class="fa-solid fa-circle-exclamation me-2"></i>
+                        No product data available.
+                      </div>
+
+                      <div class="mb-2 h-100">
+                        <canvas
+                          id="stock-status-chart"
+                          class="mx-auto"
+                          style="max-height: 300px"
+                        ></canvas>
 
                         <div class="fs-14 stock-status-value">
                           <div class="d-flex justify-content-between mb-2">
@@ -299,15 +312,23 @@
                   </div>
 
                   <div class="col-12">
-                    <div class="bg-white p-4 rounded-3 border h-100">
+                    <div class="bg-white p-4 rounded-3 border">
                       <h3 class="fw-medium fs-5 mb-4">
                         Top 5 Products by Inventory Value
                       </h3>
 
                       <div class="mb-2 w-100">
+                        <div
+                          class="text-muted text-center py-4 no-product-available visually-hidden"
+                        >
+                          <i class="fa-solid fa-circle-exclamation me-2"></i>
+                          No product data available.
+                        </div>
+
                         <canvas
                           id="top-products-chart"
                           class="mx-auto w-100"
+                          style="max-height: 400px"
                           height="400"
                         ></canvas>
                       </div>
