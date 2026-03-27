@@ -2,9 +2,7 @@ import { apiRequest } from "./apiClient.js";
 
 export const getPurchaseOrders = async () => apiRequest("purchase_orders");
 
-export const getDataById = async (id) => {
-  return await apiRequest(`purchase_orders/${id}`);
-};
+export const getDataById = async (id) => apiRequest(`purchase_orders/${id}`);
 
 export const editStatus = async (id, data) => {
   return await apiRequest(`purchase_orders/${id}`, {
@@ -27,3 +25,5 @@ export const addNewOrder = async (data) => {
 };
 
 export const getSuppliers = async () => apiRequest("suppliers");
+
+export const getProducts = async () => apiRequest("products");
