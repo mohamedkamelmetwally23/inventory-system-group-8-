@@ -143,20 +143,20 @@
                         </li>
                       </ul>
                     </div>
-                    <button
+                    <!-- <button
                       class="btn btn-outline-secondary border px-4 py-2 rounded-3 d-flex align-items-center gap-2"
                     >
                       <i class="fa fa-download"></i>
                       <span>Export Report</span>
-                    </button>
+                    </button> -->
                   </div>
                 </div>
               </section>
 
               <section class="stats-cards pt-2 mb-4">
                 <div class="row g-3">
-                  <div class="col-md-3">
-                    <div class="p-4 bg-white rounded-3 border">
+                  <div class="col-md-6 col-lg-3">
+                    <div class="h-100 p-4 bg-white rounded-3 border">
                       <div
                         class="d-flex justify-content-between align-items-center mb-4"
                       >
@@ -169,8 +169,8 @@
                       </p>
                     </div>
                   </div>
-                  <div class="col-md-3">
-                    <div class="p-4 bg-white rounded-3 border">
+                  <div class="col-md-6 col-lg-3">
+                    <div class="h-100 p-4 bg-white rounded-3 border">
                       <div
                         class="d-flex justify-content-between align-items-center mb-4"
                       >
@@ -183,8 +183,8 @@
                       </p>
                     </div>
                   </div>
-                  <div class="col-md-3">
-                    <div class="p-4 bg-white rounded-3 border">
+                  <div class="col-md-6 col-lg-3">
+                    <div class="h-100 p-4 bg-white rounded-3 border">
                       <div
                         class="d-flex justify-content-between align-items-center mb-4"
                       >
@@ -203,8 +203,8 @@
                       </p>
                     </div>
                   </div>
-                  <div class="col-md-3">
-                    <div class="p-4 bg-white rounded-3 border">
+                  <div class="col-md-6 col-lg-3">
+                    <div class="h-100 p-4 bg-white rounded-3 border">
                       <div
                         class="d-flex justify-content-between align-items-center mb-4"
                       >
@@ -226,7 +226,7 @@
 
               <section class="analytics-charts mb-4">
                 <div class="row g-4">
-                  <div class="col-md-6">
+                  <div class="col-lg-6">
                     <div class="bg-white p-4 rounded-3 border h-100">
                       <h3 class="fw-medium fs-5 mb-4">Products by Category</h3>
 
@@ -236,61 +236,63 @@
                     </div>
                   </div>
 
-                  <div class="col-md-6">
+                  <div class="col-lg-6">
                     <div class="bg-white p-4 rounded-3 border h-100">
                       <h3 class="fw-medium fs-5 mb-4">
                         Stock Status Distribution
                       </h3>
 
-                      <div class="mb-2" style="max-height: 350px">
-                        <canvas
-                          id="stock-status-chart"
-                          class="mx-auto"
-                        ></canvas>
-                      </div>
+                      <div>
+                        <div class="mb-2" style="max-height: 350px">
+                          <canvas
+                            id="stock-status-chart"
+                            class="mx-auto"
+                          ></canvas>
+                        </div>
 
-                      <div class="fs-14 stock-status-value">
-                        <div class="d-flex justify-content-between mb-2">
-                          <p class="mb-0">
-                            <span
-                              class="string-to-color"
-                              style="background-color: #10b981"
-                            ></span>
-                            In Stock
-                          </p>
-                          <p
-                            class="bg-gray fs-13 fw-medium py-1 px-2 rounded-2 mb-0 in-stock"
-                          >
-                            0 items
-                          </p>
-                        </div>
-                        <div class="d-flex justify-content-between mb-2">
-                          <p class="mb-0">
-                            <span
-                              class="string-to-color"
-                              style="background-color: #f59e0b"
-                            ></span>
-                            Low Stock
-                          </p>
-                          <p
-                            class="bg-gray fs-13 fw-medium py-1 px-2 rounded-2 mb-0 low-stock"
-                          >
-                            0 items
-                          </p>
-                        </div>
-                        <div class="d-flex justify-content-between">
-                          <p class="mb-0">
-                            <span
-                              class="string-to-color"
-                              style="background-color: #ef4444"
-                            ></span>
-                            Out of Stock
-                          </p>
-                          <p
-                            class="bg-gray fs-13 fw-medium py-1 px-2 rounded-2 mb-0 out-stock"
-                          >
-                            0 items
-                          </p>
+                        <div class="fs-14 stock-status-value">
+                          <div class="d-flex justify-content-between mb-2">
+                            <p class="mb-0">
+                              <span
+                                class="string-to-color"
+                                style="background-color: #10b981"
+                              ></span>
+                              In Stock
+                            </p>
+                            <p
+                              class="bg-gray fs-13 fw-medium py-1 px-2 rounded-2 mb-0 in-stock"
+                            >
+                              0 items
+                            </p>
+                          </div>
+                          <div class="d-flex justify-content-between mb-2">
+                            <p class="mb-0">
+                              <span
+                                class="string-to-color"
+                                style="background-color: #f59e0b"
+                              ></span>
+                              Low Stock
+                            </p>
+                            <p
+                              class="bg-gray fs-13 fw-medium py-1 px-2 rounded-2 mb-0 low-stock"
+                            >
+                              0 items
+                            </p>
+                          </div>
+                          <div class="d-flex justify-content-between">
+                            <p class="mb-0">
+                              <span
+                                class="string-to-color"
+                                style="background-color: #ef4444"
+                              ></span>
+                              Out of Stock
+                            </p>
+                            <p
+                              class="bg-gray fs-13 fw-medium py-1 px-2 rounded-2 mb-0 out-stock"
+                            >
+                              0 items
+                            </p>
+                          </div>
                         </div>
                       </div>
                     </div>
@@ -302,11 +304,10 @@
                         Top 5 Products by Inventory Value
                       </h3>
 
-                      <div class="mb-2">
+                      <div class="mb-2 w-100">
                         <canvas
                           id="top-products-chart"
-                          class="mx-auto"
-                          width="1000"
+                          class="mx-auto w-100"
                           height="400"
                         ></canvas>
                       </div>

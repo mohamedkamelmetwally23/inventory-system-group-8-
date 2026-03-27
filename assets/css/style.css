@@ -52,7 +52,7 @@
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 header {
@@ -225,6 +225,31 @@ h3 {
   cursor: pointer;
 }
 
+.line-clump {
+  overflow: hidden;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+}
+.line-clump-1 {
+  -webkit-line-clamp: 1;
+  line-clamp: 1;
+}
+.line-clump-2 {
+  -webkit-line-clamp: 2;
+  line-clamp: 2;
+}
+.line-clump-3 {
+  -webkit-line-clamp: 3;
+  line-clamp: 3;
+}
+.bg-orange {
+  background-color: purple !important;
+  color: white;
+}
+.view-more:hover {
+  background-color: var(--primary-light);
+  transition: background-color 0.2s ease-in-out;
+}
 /* stock  */
 .transition-card {
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
