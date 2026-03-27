@@ -91,10 +91,17 @@ async function loadStocks() {
         ? product.name
         : item.productName || item.product_name || "N/A";
 
+      // ===================== STATUS BADGE =====================
+      let badgeClass = "badge bg-secondary";
+      let typeText = item.adjustment_type || "N/A";
+
+      if (typeText === "increase") badgeClass = "badge bg-success";
+      else if (typeText === "decrease") badgeClass = "badge bg-danger";
+
       return {
         id: item.id,
         product_name: productName,
-        adjustment_type: item.adjustment_type || "N/A",
+        adjustment_type: `<span class="${badgeClass}">${typeText}</span>`,
         quantity: item.quantity || 0,
         reason: item.reason || "N/A",
         timestamp: item.timestamp

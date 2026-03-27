@@ -40,7 +40,7 @@ export function renderTablePage(
     columns.forEach((col) => {
       const td = document.createElement('td');
 
-      if (col === "status") {
+      if (col === "status" || col === "adjustment_type") {
         td.innerHTML = item[col]; 
       } else {
         td.textContent = item[col];
