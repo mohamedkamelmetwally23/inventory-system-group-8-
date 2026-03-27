@@ -218,6 +218,3 @@ h3 {
 .fc-gray-500 {
   color: var(--gray-500);
 }
-.forget-password:hover {
-  cursor: pointer;
-}

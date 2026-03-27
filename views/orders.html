@@ -60,7 +60,6 @@
     <link rel="stylesheet" href="../assets/css/style.css" />
     <link rel="stylesheet" href="../assets/css/table.css" />
     <!------------------ JAVASCRIPT ------------------>
-    <script defer src="../assets/components/table.js"></script>
 
     <!-- Bootstrap -->
     <script
@@ -106,7 +105,7 @@
             </div>
             <div class="container">
               <div class="row">
-                <div class="col-lg-4 col-md-3 col-12 my-1">
+                <div class="col-lg-4 col-md-4 col-12 my-1">
                   <div class="card h-100 border-0 shadow-sm">
                     <div
                       class="card-body d-flex flex-column justify-content-center align-items-center text-center"
@@ -141,7 +140,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-lg-4 col-md-3 col-12 my-1">
+                <div class="col-lg-4 col-md-4 col-12 my-1">
                   <div class="card h-100 border-0 shadow-sm">
                     <div
                       class="card-body d-flex flex-column justify-content-center align-items-center text-center"
@@ -176,7 +175,7 @@
                     </div>
                   </div>
                 </div>
-                <div class="col-lg-4 col-md-3 col-12 my-1">
+                <div class="col-lg-4 col-md-4 col-12 my-1">
                   <div class="card h-100 border-0 shadow-sm">
                     <div
                       class="card-body d-flex flex-column justify-content-center align-items-center text-center"
@@ -203,7 +202,7 @@
 
                       <p
                         id="receivedOrders"
-                        class="card-text fw-bold fs-6 mb-0 recieved"
+                        class="card-text fw-bold fs-6 mb-0 received"
                         style="color: #4c6edb"
                       >
                         0
@@ -259,6 +258,85 @@
               </div>
             </div>
           </main>
+        </div>
+      </div>
+    </div>
+    <!-- ========== show Order Details ==========  -->
+    <div
+      class="modal fade"
+      id="orderModal"
+      tabindex="-1"
+      aria-labelledby="orderModal"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content order-details bg-light">
+          <div class="modal-header">
+            <div class="container">
+              <h5 class="modal-title" id="orderModal">
+                Purchase Orders Details
+              </h5>
+              <span class="order-number"></span>
+            </div>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <h6 class="col-6">Order Number</h6>
+              <h6 class="col-6">Status</h6>
+            </div>
+            <div class="row">
+              <p class="order-number col-6"></p>
+              <p class="status col-6"></p>
+            </div>
+            <div class="row">
+              <h6 class="col-6">Creation Date</h6>
+              <h6 class="col-6">Supplier</h6>
+            </div>
+            <div class="row">
+              <p class="creation-date col-6"></p>
+              <p class="supplier col-6"></p>
+            </div>
+            <div>
+              <table class="table product-table">
+                <caption id="tableCaption" style="caption-side: top">
+                  <p>Order items</p>
+                </caption>
+                <thead>
+                  <tr id="tableHead">
+                    <th>start</th>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                  </tr>
+                </thead>
+
+                <tbody class="productBody table-light"></tbody>
+              </table>
+            </div>
+            <div class="container">
+              <div class="row">
+                <p class="col-6 tq-t">Total Quantity:</p>
+                <p class="col-6 tq"></p>
+              </div>
+              <div class="row">
+                <h4 class="col-6">Total Amount:</h4>
+                <h4 class="col-6 ta"></h4>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button type="button" class="btn main-btn" data-bs-dismiss="modal">
+              Close
+            </button>
+          </div>
         </div>
       </div>
     </div>

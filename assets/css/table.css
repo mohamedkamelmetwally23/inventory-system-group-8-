@@ -1,6 +1,7 @@
 :root {
   --success: #10b981;
   --warning: #f59e0b;
+  --gray-400: #9ca3af;
 }
 
 .suppliers-section {
@@ -61,7 +62,7 @@ table td {
   color: #fff;
 }
 
-.status-recieved {
+.status-received {
   border-radius: 10px;
   padding-left: 8px;
   width: 85px;
@@ -75,4 +76,21 @@ table td {
   width: 85px;
   color: white;
   background-color: var(--warning);
+}
+
+/* Order Details Styling */
+.order-details h6,
+span {
+  color: var(--gray-400);
+}
+.order-details th {
+  font-weight: normal;
+}
+.order-details tr:first-child {
+  background-color: white;
+}
+
+.order-details .tq,
+.tq-t {
+  color: var(--gray-400);
 }
