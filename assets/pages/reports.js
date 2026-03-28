@@ -16,6 +16,7 @@ const totalProductsEl = document.querySelector('.stat-products');
 const totalLowStockEl = document.querySelector('.stat-low-stock');
 const totalOutOfStockEl = document.querySelector('.stat-out-of-stock');
 
+const noProductAvailable = document.querySelectorAll('.no-product-available');
 const selectedDateText = document.getElementById('selectedDateText');
 
 const statsCardsContainer = document.querySelector('.stats-cards');
@@ -25,7 +26,8 @@ const stockStatusChartCanvas = document.getElementById('stock-status-chart');
 const topProductsCanvas = document.getElementById('top-products-chart');
 
 // States
-let inventoryProducts = [];
+let allProducts = []; // original
+let inventoryProducts = []; // filtered
 
 // Display a summary of the categories in a table
 const displayCategorySummary = (catSummary, i) => {
@@ -85,7 +87,7 @@ const renderSummaryCategories = async () => {
   }
 };
 
-//
+// Render pie chart showing product count per category
 const renderCategoriesChart = async () => {
   const result = await getCategoriesWithProductCount();
 
@@ -130,8 +132,16 @@ const renderCategoriesChart = async () => {
   );
 };
 
-//
+// Render pie chart for stock status (in stock, low stock, out of stock) and update legend counts
 const renderStockStatusChart = () => {
+  if (inventoryProducts.length === 0) {
+    noProductAvailable[0].classList.remove('visually-hidden');
+    stockStatusChartCanvas.parentElement.classList.add('visually-hidden');
+    return;
+  }
+  noProductAvailable[0].classList.add('visually-hidden');
+  stockStatusChartCanvas.parentElement.classList.remove('visually-hidden');
+
   const chartData = inventoryProducts.reduce(
     (acc, prd) => {
       if (prd.quantity == 0) acc.outOfStock++;
@@ -162,8 +172,17 @@ const renderStockStatusChart = () => {
   outStockEl.textContent = `${chartData.outOfStock} items`;
 };
 
-//
+// Render bar chart for top 5 products by total inventory value
 const renderTopProducts = () => {
+  if (inventoryProducts.length === 0) {
+    noProductAvailable[1].classList.remove('visually-hidden');
+    topProductsCanvas.classList.add('visually-hidden', 'd-none');
+    return;
+  }
+
+  noProductAvailable[1].classList.add('visually-hidden');
+  topProductsCanvas.classList.remove('visually-hidden', 'd-none');
+
   const topProducts = inventoryProducts
     .map((prd) => ({
       name: prd.product_name,
@@ -180,8 +199,45 @@ const renderTopProducts = () => {
   });
 };
 
+// Calculate start date based on selected range
+const getStartDateFromRange = (rangeDate) => {
+  const today = new Date();
+
+  const startDate = {
+    '7-days': new Date(today.setDate(today.getDate() - 7)),
+    '30-days': new Date(today.setDate(today.getDate() - 30)),
+    '90-days': new Date(today.setDate(today.getDate() - 90)),
+    'last-year': new Date(today.setFullYear(today.getFullYear() - 1)),
+  };
+
+  return startDate[rangeDate] ? startDate[rangeDate] : null;
+};
+
+// Filter products by created_at based on range
+const filterProductsByDateRange = (rangeDate) => {
+  if (rangeDate === 'all-time' || rangeDate === '') return allProducts;
+
+  const startDate = getStartDateFromRange(rangeDate);
+  if (!startDate) return allProducts;
+
+  return allProducts.filter((p) => new Date(p.created_at) >= startDate);
+};
+
+// Update dashboard with filtered products
+const updateDashboardWithFilter = (filteredProducts) => {
+  inventoryProducts = filteredProducts;
+
+  // Update stats, stock status chart, top products, category summary
+  renderStatsOverview();
+  renderStockStatusChart();
+  renderTopProducts();
+
+  // Render category summary asynchronously (it uses inventoryProducts)
+  renderSummaryCategories();
+};
+
 //----------------------------------------------
-// Event Listeners for filter options
+// Event Listeners to date filter options
 document.querySelectorAll('.filter-opt').forEach((item) => {
   item.addEventListener('click', (e) => {
     e.preventDefault();
@@ -190,16 +246,19 @@ document.querySelectorAll('.filter-opt').forEach((item) => {
       opt.classList.remove('filter-opt--active');
     });
 
-    // const selectedValue = clickedOption.getAttribute('data-value');
     const clickedOption = e.currentTarget;
+    clickedOption.classList.add('filter-opt--active');
+    const selectedValue = clickedOption.getAttribute('data-value');
 
     selectedDateText.textContent = clickedOption.textContent.trim();
-    clickedOption.classList.add('filter-opt--active');
+
+    const filtered = filterProductsByDateRange(selectedValue);
+    updateDashboardWithFilter(filtered);
   });
 });
 
 //-----------------------------------------------
-// Initialization
+// Initialize : fetch products, set initial data, and render all charts/tables
 const init = async () => {
   const result = await getProducts();
 
@@ -207,6 +266,7 @@ const init = async () => {
   renderCategoriesChart();
 
   if (result.success) {
+    allProducts = result.data;
     inventoryProducts = result.data;
 
     renderStatsOverview();
@@ -221,7 +281,7 @@ const init = async () => {
         </div>
     `;
 
-    stockStatusChartCanvas.parentElement.parentElement.innerHTML = `
+    stockStatusChartCanvas.parentElement.innerHTML = `
       <div class="text-danger text-center py-4">
         <i class="fa-solid fa-circle-exclamation me-2"></i>
         Failed to load low stock data.

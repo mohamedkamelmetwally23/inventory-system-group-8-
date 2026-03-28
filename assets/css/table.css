@@ -14,21 +14,18 @@
   color: #6b7280;
   font-size: 18px;
 }
-.table-container {
+.table-container , .filter-container {
   background-color: #fff;
 }
 #addSupplier {
   background-color: #1e3a8a;
   color: #fff;
 }
-.delete-icon {
-  color: red;
-}
 button.disabled i {
   opacity: 0.5;
   pointer-events: none;
   cursor: not-allowed;
-  color: #6b7280;
+  color: #6b7280 !important;
 }
 
 table td {
@@ -93,4 +90,40 @@ span {
 .order-details .tq,
 .tq-t {
   color: var(--gray-400);
+}
+
+
+/* Products Styling */
+
+/* Filter Box Style */
+.filter-container {
+    border: 1px solid #e3e6ea;
+}
+
+/* Clear Filter Button */
+.btn-clear-filter {
+  background-color: #f8d7da;
+  color: #842029;
+  font-weight: 600;
+  border: 1px solid #f5c2c7;
+  border-radius: 8px;
+  transition: 0.3s ease;
+}
+.btn-clear-filter:hover {
+    background-color: #f1b6bc;
+    color: #6a1a22;
+}
+
+/* Improve Input Group appearance */
+.input-group-text {
+    border-right: none !important;
+}
+
+.form-control {
+    border-left: none !important;
+}
+
+.input-group .form-control:focus {
+    box-shadow: none !important;
+    border-color: #86b7fe !important;
 }

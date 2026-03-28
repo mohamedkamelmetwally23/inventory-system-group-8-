@@ -42,19 +42,21 @@ export const getCategoriesSummary = async (productsData = null) => {
   }, {});
 
   //
-  const summary = categories.map((category) => {
-    const avgPrice =
-      group[category.id].totalQuantity > 0
-        ? group[category.id].totalValue / group[category.id].totalQuantity
-        : 0;
+  const summary = categories
+    .filter((category) => group[category.id])
+    .map((category) => {
+      const avgPrice =
+        group[category.id].totalQuantity > 0
+          ? group[category.id].totalValue / group[category.id].totalQuantity
+          : 0;
 
-    return {
-      categoryName: category.name,
-      productCount: group[category.id].productCount,
-      totalValue: group[category.id].totalValue,
-      avgPrice,
-    };
-  });
+      return {
+        categoryName: category.name,
+        productCount: group[category.id].productCount,
+        totalValue: group[category.id].totalValue,
+        avgPrice,
+      };
+    });
 
   return { success: true, data: summary };
 };

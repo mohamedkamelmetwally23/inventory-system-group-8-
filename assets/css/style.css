@@ -192,6 +192,10 @@ main {
   background-color: #0f2b5c;
 }
 
+.filter-opt {
+  cursor: pointer;
+  margin-bottom: 4px;
+}
 .filter-opt--active,
 .filter-opt:hover,
 .filter-opt:active {

@@ -17,6 +17,7 @@ loadLayout("Products");
 // =======================
 let productsRaw = [];
 let productsTable = [];
+let filteredProducts = null; 
 let editIndex = null;
 let deleteIndex = null;
 let currentPage = 1;
@@ -30,38 +31,47 @@ async function loadProducts() {
     const res = await getProductsWithRelations();
     productsRaw = res?.data || [];
 
-    // Table Data Only
     productsTable = productsRaw.map((p) => {
-      let statusText = "In Stock";
-      let statusClass = "badge bg-success";   
+      let statusText = "";
+      let statusClass = "";
+      let statusKey = "";
 
       if (p.quantity === 0) {
         statusText = "Out of Stock";
-        statusClass = "badge bg-danger"; 
+        statusClass = "badge bg-danger";
+        statusKey = "out-stock";
       } else if (p.quantity <= p.reorderLevel) {
         statusText = "Low Stock";
         statusClass = "badge bg-warning";
+        statusKey = "low-stock";
+      } else {
+        statusText = "In Stock";
+        statusClass = "badge bg-success";
+        statusKey = "in-stock";
       }
 
       return {
-        id: p.id, 
+        id: p.id,
         sku: p.sku,
         product_name: p.product_name,
         category: p.category_name,
         supplier: p.supplier_name,
         quantity: p.quantity,
         status: `<span class="${statusClass}">${statusText}</span>`,
+        statusKey,
         price: p.price,
         expire_date: p.expire_date,
       };
     });
+
+    filteredProducts = null; // reset filters on load
 
     renderTablePage(
       productsTable,
       actionsHTML,
       currentPage,
       rowsPerPage,
-      "products"
+      "products",
     );
 
     updateCaption();
@@ -74,16 +84,91 @@ async function loadProducts() {
 loadProducts();
 
 // =======================
+// Filters
+// =======================
+
+// DOM Elements
+const searchInput = document.getElementById("productSearchInput");
+const categoryFilter = document.getElementById("filterCategory");
+const stockFilter = document.getElementById("filterStock");
+const clearBtn = document.querySelector(".btn-clear-filter");
+
+// Apply Filters
+function applyFilters() {
+  filteredProducts = [...productsTable];
+
+  // Search filter
+  const searchValue = searchInput.value.toLowerCase().trim();
+  if (searchValue) {
+    filteredProducts = filteredProducts.filter(
+      (p) =>
+        p.product_name.toLowerCase().includes(searchValue) ||
+        p.sku.toLowerCase().includes(searchValue)
+    );
+  }
+
+  // Category filter
+  const selectedCategory = categoryFilter.value.trim();
+  if (selectedCategory) {
+    filteredProducts = filteredProducts.filter(
+      (p) => p.category?.toLowerCase() === selectedCategory.toLowerCase()
+    );
+  }
+
+  // Stock filter
+  const stockValue = stockFilter.value;
+  if (stockValue) {
+    filteredProducts = filteredProducts.filter(
+      (p) => p.statusKey === stockValue
+    );
+  }
+
+  currentPage = 1;
+
+  renderTablePage(
+    filteredProducts,
+    actionsHTML,
+    currentPage,
+    rowsPerPage,
+    "products"
+  );
+}
+
+// Events
+searchInput.addEventListener("input", applyFilters);
+categoryFilter.addEventListener("change", applyFilters);
+stockFilter.addEventListener("change", applyFilters);
+
+// Clear Filters
+clearBtn.addEventListener("click", () => {
+  searchInput.value = "";
+  categoryFilter.value = "";
+  stockFilter.value = "";
+
+  filteredProducts = null;
+
+  currentPage = 1;
+
+  renderTablePage(
+    productsTable,
+    actionsHTML,
+    currentPage,
+    rowsPerPage,
+    "products"
+  );
+});
+
+// =======================
 // Actions Icons
 // =======================
 function actionsHTML(product) {
   return `
     <button class="btn btn-sm edit-btn border-0">
-      <i class="fa-solid fa-pen-to-square edit-icon"></i>
+      <i class="fa-solid fa-pen-to-square edit-icon text-primary"></i>
     </button>
 
     <button class="btn btn-sm delete-btn border-0">
-      <i class="fa-solid fa-trash delete-icon"></i>
+      <i class="fa-solid fa-trash delete-icon text-danger"></i>
     </button>
   `;
 }
@@ -100,28 +185,33 @@ function updateCaption() {
 // =======================
 // Pagination Events
 // =======================
+function getCurrentList() {
+  return filteredProducts ?? productsTable;
+}
+
 document.getElementById("prevBtn").addEventListener("click", () => {
   if (currentPage > 1) {
     currentPage--;
     renderTablePage(
-      productsTable,
+      getCurrentList(),
       actionsHTML,
       currentPage,
       rowsPerPage,
-      "products",
+      "products"
     );
   }
 });
 
 document.getElementById("nextBtn").addEventListener("click", () => {
-  if (currentPage < Math.ceil(productsTable.length / rowsPerPage)) {
+  const list = getCurrentList();
+  if (currentPage < Math.ceil(list.length / rowsPerPage)) {
     currentPage++;
     renderTablePage(
-      productsTable,
+      list,
       actionsHTML,
       currentPage,
       rowsPerPage,
-      "products",
+      "products"
     );
   }
 });
@@ -161,7 +251,6 @@ document
       created_at: document.getElementById("productCreatedDate").value.trim(),
     };
 
-    // Validation
     for (let key in data) {
       if (!data[key]) {
         alert("Please fill all fields");
@@ -177,8 +266,9 @@ document
       }
 
       await loadProducts();
+
       const modal = bootstrap.Modal.getInstance(
-        document.getElementById("addProductModal"),
+        document.getElementById("addProductModal")
       );
       modal.hide();
     } catch (err) {
@@ -217,7 +307,7 @@ document.getElementById("tableBody").addEventListener("click", function (e) {
       "Update the product information below";
 
     const modal = new bootstrap.Modal(
-      document.getElementById("addProductModal"),
+      document.getElementById("addProductModal")
     );
     modal.show();
   }
@@ -246,7 +336,7 @@ document.getElementById("confirmDelete").addEventListener("click", async () => {
     deleteIndex = null;
 
     const modal = bootstrap.Modal.getInstance(
-      document.getElementById("deleteModal"),
+      document.getElementById("deleteModal")
     );
     modal.hide();
   } catch (err) {
