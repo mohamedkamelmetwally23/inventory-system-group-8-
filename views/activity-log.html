@@ -1,146 +1,176 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!------------------ PAGE INFO ------------------>
+    <title>PharmaFlow | Activity Log</title>
+    <meta
+      name="description"
+      content="Track all system actions with a comprehensive activity log. Monitor user modifications to products and stock levels to ensure accountability and transparency."
+    />
 
-  <!------------------ PAGE INFO ------------------>
-  <title>PharmaFlow | Activity Log</title>
-  <meta name="description"
-    content="Track all system actions with a comprehensive activity log. Monitor user modifications to products and stock levels to ensure accountability and transparency." />
+    <!------------------ ICON PAGE ------------------>
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href="../assets/imgs/icon-site/favicon.ico"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="16x16"
+      href="../assets/imgs/icon-site/favicon-16x16.png"
+    />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="../assets/imgs/icon-site/favicon-32x32.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="180x180"
+      href="../assets/imgs/icon-site/apple-touch-icon.png"
+    />
+    <link rel="manifest" href="../assets/imgs/icon-site/site.webmanifest" />
 
-  <!------------------ ICON PAGE ------------------>
-  <link rel="icon" type="image/x-icon" href="../assets/imgs/icon-site/favicon.ico" />
-  <link rel="icon" type="image/png" sizes="16x16" href="../assets/imgs/icon-site/favicon-16x16.png" />
-  <link rel="icon" type="image/png" sizes="32x32" href="../assets/imgs/icon-site/favicon-32x32.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="../assets/imgs/icon-site/apple-touch-icon.png" />
-  <link rel="manifest" href="../assets/imgs/icon-site/site.webmanifest" />
+    <!------------------ GOOGLE FONT ------------------>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
+      rel="stylesheet"
+    />
 
-  <!------------------ GOOGLE FONT ------------------>
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
-    rel="stylesheet" />
+    <!------------------ STYLES ------------------>
+    <!-- Bootstrap -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+    />
 
-  <!------------------ STYLES ------------------>
-  <!-- Bootstrap -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" />
-  <link rel="stylesheet" href="../assets/css/table.css" />
+    <!-- FontAwesome ICONS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
 
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="../assets/css/style.css" />
 
-  <!-- FontAwesome ICONS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" />
+    <!------------------ JAVASCRIPT ------------------>
+    <!-- Bootstrap -->
+    <script
+      defer
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"
+    ></script>
 
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="../assets/css/style.css" />
+    <!-- Page Script -->
+    <script type="module" src="../assets/pages/activityLog.js"></script>
+  </head>
 
-  <!------------------ JAVASCRIPT ------------------>
-  <!-- Bootstrap -->
-  <script defer src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <body>
+    <!-- Navbar -->
+    <header
+      class="border-bottom border-bottom-5 border-gray-200 px-md-2 px-lg-4"
+    ></header>
 
-  <!-- Page Script -->
-  <script type="module" src="../assets/pages/activityLog.js"></script>
-</head>
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Aside -->
+        <aside class="col-lg-3 d-none d-lg-block" id="main"></aside>
 
-<body>
+        <div
+          class="offcanvas offcanvas-start d-lg-none p-0"
+          tabindex="-1"
+          id="offcanvasSidebar"
+        >
+          <div class="offcanvas-header">
+            <h5 class="offcanvas-title">Menu</h5>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="offcanvas"
+            ></button>
+          </div>
+          <div class="offcanvas-body main-bg"></div>
+        </div>
 
-  <!-- Navbar -->
-  <header class="border-bottom border-bottom-5 border-gray-200 px-4"></header>
-
-  <div class="container-fluid">
-    <div class="row">
-
-      <!-- Aside -->
-      <aside class="col-12 col-md-3" id="main"></aside>
-
-      <!-- Main Content -->
-      <main class="col-12 col-md-9 pt-4">
-
-        <section class="dashboard-section">
-          <div class="container">
-
-            <!-- Title -->
-            <div>
-              <h2 class="fw-bold text-dark-blue mb-1">Activity Log</h2>
-              <p class="text-secondary mb-0">
-                Track all system activities and changes
-              </p>
-            </div>
-
-            <!-- Filters -->
-            <div class="row g-2 mt-3">
-
-              <!-- Filter Section -->
-              <div class="row mb-4">
-                <!-- Filter by Action -->
-                <div class="col-md-6 col-lg-4 mb-3">
-                  <label class="form-label fw-semibold mb-2">
-                    <i class="fas fa-filter me-1"></i> Filter by Action
-                  </label>
-                  <select class="form-select" id="actionFilter">
-                    <option value="">All Actions</option>
-                  </select>
-                </div>
-
-                <!-- Filter by Entity Type -->
-                <div class="col-md-6 col-lg-4 mb-3">
-                  <label class="form-label fw-semibold mb-2">
-                    <i class="fas fa-tag me-1"></i> Filter by Type
-                  </label>
-                  <select class="form-select" id="entityFilter">
-                    <option value="">All Types</option>
-                  </select>
-                </div>
-
-                <!-- Filter by User -->
-                <div class="col-md-6 col-lg-4 mb-3">
-                  <label class="form-label fw-semibold mb-2">
-                    <i class="fas fa-user me-1"></i> Filter by User
-                  </label>
-                  <select class="form-select" id="userFilter">
-                    <option value="">All Users</option>
-                  </select>
-                </div>
+        <!-- Main page -->
+        <main class="col-12 col-lg-9 pt-4 bg-light">
+          <div class="container-lg">
+            <section class="dashboard-section">
+              <!-- Title -->
+              <div>
+                <h2 class="fw-bold text-dark-blue mb-1">Activity Log</h2>
+                <p class="text-secondary mb-0">
+                  Track all system activities and changes
+                </p>
               </div>
 
-              <!-- Search Input (Optional) -->
-              <div class="row mb-4">
-                <div class="col-12">
-                  <div class="input-group">
-                    <span class="input-group-text bg-white border-end-0">
-                      <i class="fas fa-search text-secondary"></i>
-                    </span>
-                    <input type="text" class="form-control border-start-0 ps-0" id="searchInput"
-                      placeholder="Search activities..." style="box-shadow: none;">
+              <!-- Filters -->
+              <div class="row g-2 mt-3">
+                <!-- Filter Section -->
+                <div class="row mb-4">
+                  <!-- Filter by Action -->
+                  <div class="col-md-6 col-lg-4 mb-3">
+                    <label class="form-label fw-semibold mb-2">
+                      <i class="fas fa-filter me-1"></i> Filter by Action
+                    </label>
+                    <select class="form-select" id="actionFilter">
+                      <option value="">All Actions</option>
+                    </select>
+                  </div>
+
+                  <!-- Filter by Entity Type -->
+                  <div class="col-md-6 col-lg-4 mb-3">
+                    <label class="form-label fw-semibold mb-2">
+                      <i class="fas fa-tag me-1"></i> Filter by Type
+                    </label>
+                    <select class="form-select" id="entityFilter">
+                      <option value="">All Types</option>
+                    </select>
+                  </div>
+
+                  <!-- Filter by User -->
+                  <div class="col-md-6 col-lg-4 mb-3">
+                    <label class="form-label fw-semibold mb-2">
+                      <i class="fas fa-user me-1"></i> Filter by User
+                    </label>
+                    <select class="form-select" id="userFilter">
+                      <option value="">All Users</option>
+                    </select>
                   </div>
                 </div>
-              </div>
-              <!-- Logs Container -->
-              <div class="row activity-container mt-4 g-3" id="logsContainer">
-                <!-- Dynamic logs will be rendered here -->
-              </div>
-              <!-- Pagination -->
-              <div class="table-footer d-flex justify-content-between align-items-center mb-4">
-                <span id="tableInfo" class="fs-6"></span>
-                <div class="pagination gap-2">
-                  <button id="prevBtn" class="rounded-2">
-                    <i class="fa-solid fa-angle-left"></i>
-                  </button>
-                  <span id="pageNumber" class="d-flex justify-content-center align-items-center rounded-1">1</span>
-                  <button id="nextBtn" class="rounded-2">
-                    <i class="fa-solid fa-angle-right"></i>
-                  </button>
+
+                <!-- Search Input (Optional) -->
+                <div class="row mb-4">
+                  <div class="col-12">
+                    <div class="input-group">
+                      <span class="input-group-text bg-white border-end-0">
+                        <i class="fas fa-search text-secondary"></i>
+                      </span>
+                      <input
+                        type="text"
+                        class="form-control border-start-0 ps-0"
+                        id="searchInput"
+                        placeholder="Search activities..."
+                        style="box-shadow: none"
+                      />
+                    </div>
+                  </div>
+                </div>
+                <!-- Logs Container -->
+                <div class="row activity-container mt-4 g-3" id="logsContainer">
+                  <!-- Dynamic logs will be rendered here -->
                 </div>
               </div>
-        </section>
-
-      </main>
-
+            </section>
+          </div>
+        </main>
+      </div>
     </div>
-  </div>
-
-</body>
-
+  </body>
 </html>

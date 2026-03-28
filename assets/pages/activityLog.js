@@ -1,10 +1,10 @@
-import loadLayout from "../ui/layout.js";
-import { getActivityLogs } from "../api/activityLogApi.js";
+import loadLayout from '../ui/layout.js';
+import { getActivityLogs } from '../api/activityLogApi.js';
 
 // ===================== UTILITIES =====================
 
 const formatDate = (timestamp) => {
-  if (!timestamp) return "N/A";
+  if (!timestamp) return 'N/A';
 
   try {
     const date = new Date(timestamp);
@@ -14,18 +14,18 @@ const formatDate = (timestamp) => {
     const diffHours = Math.floor(diffMs / 3600000);
     const diffDays = Math.floor(diffMs / 86400000);
 
-    if (diffMins < 1) return "Just now";
+    if (diffMins < 1) return 'Just now';
     if (diffMins < 60) return `${diffMins} min ago`;
     if (diffHours < 24)
-      return `${diffHours} hour${diffHours > 1 ? "s" : ""} ago`;
-    if (diffDays < 7) return `${diffDays} day${diffDays > 1 ? "s" : ""} ago`;
+      return `${diffHours} hour${diffHours > 1 ? 's' : ''} ago`;
+    if (diffDays < 7) return `${diffDays} day${diffDays > 1 ? 's' : ''} ago`;
 
-    return date.toLocaleDateString("en-US", {
-      month: "short",
-      day: "numeric",
-      year: "numeric",
-      hour: "2-digit",
-      minute: "2-digit",
+    return date.toLocaleDateString('en-US', {
+      month: 'short',
+      day: 'numeric',
+      year: 'numeric',
+      hour: '2-digit',
+      minute: '2-digit',
     });
   } catch (error) {
     return timestamp;

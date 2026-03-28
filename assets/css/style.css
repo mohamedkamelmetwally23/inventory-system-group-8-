@@ -52,7 +52,7 @@
 }
 
 body {
-  font-family: "Inter", sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 
 header {
@@ -153,7 +153,6 @@ header {
 }
 
 aside {
-  width: 20% !important;
   min-height: 100vh;
   background-color: var(--primary) !important;
 }
@@ -167,14 +166,24 @@ aside {
   background-color: var(--primary-dark-hover) !important;
 }
 
-.sidebar-nav:hover,
-.sidebar-nav-active {
+.sidebar-nav a {
+  padding-block: 12px !important;
+}
+
+.sidebar-nav:hover:not(.sidebar-nav-active) {
   background-color: var(--primary-dark-hover) !important;
   transition: background-color 0.3s ease-in-out;
 }
 
+.sidebar-nav-active {
+  background-color: var(--bg-light) !important;
+
+  a {
+    color: var(--primary-dark-hover) !important;
+  }
+}
+
 main {
-  width: 80% !important;
   background-color: var(--bg-light);
 }
 
@@ -269,4 +278,13 @@ h3 {
 .transition-card:hover .icon-wrapper {
   transform: scale(1.05);
   transition: transform 0.3s ease;
+}
+
+@media (min-width: 992px) {
+  aside {
+    width: 22% !important;
+  }
+  main {
+    width: 78% !important;
+  }
 }

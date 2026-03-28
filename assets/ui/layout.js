@@ -5,20 +5,25 @@ const loadLayout = (pageTitle) => {
   const navbar = `
         <nav class="navbar">
           <div class="container-fluid">
-            <a class="navbar-brand" href="../index.html">
-              <img
-                src="../assets/imgs/logo.png"
-                class="logo me-1"
-                alt="PharmaFlow Logo"
-              />
-              <span class="text-primary fw-semibold"
-                >Pharma<span class="text-success text-info-dark"
-                  >Flow</span
-                ></span
-              >
-            </a>
+            <div>
+              <button class="navbar-toggler d-lg-none me-3 border-0 fs-5" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasSidebar">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <a class="navbar-brand" href="../index.html">
+                <img
+                  src="../assets/imgs/logo.png"
+                  class="logo me-1"
+                  alt="PharmaFlow Logo"
+                />
+                <span class="text-primary fw-semibold"
+                  >Pharma<span class="text-success text-info-dark"
+                    >Flow</span
+                  ></span
+                >
+              </a>
+            </div>
             <div class="d-flex align-items-center gap-2">
-              <div class="text-end">
+              <div class="text-end d-none d-sm-block">
                 <h5 class="fs-6 mb-0">Admin User</h5>
                 <p class="fs-12 mb-0 text-secondary user-role">
                   Inventory Manager
@@ -80,7 +85,7 @@ const loadLayout = (pageTitle) => {
   const navLists = navLinks
     .map(
       (link) =>
-        `<li class="sidebar-nav rounded-2">
+        `<li class="sidebar-nav rounded-2 ${pageTitle == link.title ? 'sidebar-nav-active' : ''}">
         <a
           href='${link.href}'
           class="text-white text-decoration-none d-block py-2 px-4"
@@ -102,6 +107,7 @@ const loadLayout = (pageTitle) => {
 
   headerEl.innerHTML = navbar;
   sidebarEl.innerHTML = sidebar;
+  document.querySelector('.offcanvas-body').innerHTML = sidebar;
 };
 
 export default loadLayout;
