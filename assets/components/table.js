@@ -61,9 +61,10 @@ export function renderTablePage(
         deleteBtn.classList.add('disabled');
         deleteBtn.disabled = true;
         deleteBtn.title = 'Cannot delete supplier with products';
-      } else {
-        deleteBtn.onclick = () => window.deleteSupplierHandler(deleteBtn);
       }
+      // else {
+      //   deleteBtn.onclick = () => window.deleteSupplierHandler(deleteBtn);
+      // }
     }
 
     tableBody.appendChild(tr);
