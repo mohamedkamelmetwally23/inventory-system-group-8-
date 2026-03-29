@@ -2,28 +2,28 @@
   "categories": [
     {
       "id": "CAT-001",
-      "name": "cream",
-      "description": "Category for cream products"
+      "name": "Tablets",
+      "description": "Solid dosage forms intended for oral administration."
     },
     {
       "id": "CAT-002",
-      "name": "tablets",
-      "description": "Category for tablets products"
+      "name": "Liquids",
+      "description": "Liquid formulations including syrups, solutions, and drops."
     },
     {
       "id": "CAT-003",
-      "name": "eye drops",
-      "description": "Category for eye drops products"
+      "name": "Creams",
+      "description": "Topical preparations including creams, gels, and ointments."
     },
     {
       "id": "CAT-004",
-      "name": "gel",
-      "description": "Category for gel products"
+      "name": "Sprays",
+      "description": "Aerosol or pump spray formulations for topical or oral use."
     },
     {
       "id": "CAT-005",
-      "name": "ointment",
-      "description": "Category for ointment products"
+      "name": "Injections",
+      "description": "Sterile solutions or suspensions for parenteral administration."
     }
   ],
   "suppliers": [
@@ -433,8 +433,8 @@
       "id": "PRD-001",
       "sku": "MED-001",
       "product_name": "Artificial Tears 0.5% Eye Drops",
-      "category_id": "CAT-003",
-      "quantity": 28,
+      "category_id": "CAT-002",
+      "quantity": 58,
       "reorderLevel": 15,
       "price": 291.07,
       "expire_date": "2028-09-01",
@@ -445,8 +445,8 @@
       "id": "PRD-002",
       "sku": "MED-002",
       "product_name": "Hydrocortisone 1% Cream",
-      "category_id": "CAT-001",
-      "quantity": 160,
+      "category_id": "CAT-003",
+      "quantity": 180,
       "reorderLevel": 15,
       "price": 98.45,
       "expire_date": "2028-05-09",
@@ -457,8 +457,8 @@
       "id": "PRD-003",
       "sku": "MED-003",
       "product_name": "Artificial Tears 0.5% Eye Drops",
-      "category_id": "CAT-003",
-      "quantity": 69,
+      "category_id": "CAT-002",
+      "quantity": 94,
       "reorderLevel": 15,
       "price": 110.63,
       "expire_date": "2027-04-21",
@@ -469,8 +469,8 @@
       "id": "PRD-004",
       "sku": "MED-004",
       "product_name": "Paracetamol 500mg Tablets",
-      "category_id": "CAT-002",
-      "quantity": 187,
+      "category_id": "CAT-001",
+      "quantity": 207,
       "reorderLevel": 15,
       "price": 156.64,
       "expire_date": "2028-04-06",
@@ -481,8 +481,8 @@
       "id": "PRD-005",
       "sku": "MED-005",
       "product_name": "Hydrocortisone 1% Cream",
-      "category_id": "CAT-001",
-      "quantity": 27,
+      "category_id": "CAT-003",
+      "quantity": 65,
       "reorderLevel": 15,
       "price": 200.91,
       "expire_date": "2030-11-05",
@@ -493,8 +493,8 @@
       "id": "PRD-006",
       "sku": "MED-006",
       "product_name": "Zinc 25mg Tablets",
-      "category_id": "CAT-002",
-      "quantity": 129,
+      "category_id": "CAT-001",
+      "quantity": 156,
       "reorderLevel": 15,
       "price": 99.26,
       "expire_date": "2028-05-28",
@@ -505,8 +505,8 @@
       "id": "PRD-007",
       "sku": "MED-007",
       "product_name": "Hydrocortisone 1% Cream",
-      "category_id": "CAT-001",
-      "quantity": 103,
+      "category_id": "CAT-003",
+      "quantity": 128,
       "reorderLevel": 15,
       "price": 296.94,
       "expire_date": "2027-07-04",
@@ -517,8 +517,8 @@
       "id": "PRD-008",
       "sku": "MED-008",
       "product_name": "Ibuprofen 400mg Tablets",
-      "category_id": "CAT-002",
-      "quantity": 110,
+      "category_id": "CAT-001",
+      "quantity": 130,
       "reorderLevel": 15,
       "price": 57.34,
       "expire_date": "2027-09-04",
@@ -529,7 +529,7 @@
       "id": "PRD-009",
       "sku": "MED-009",
       "product_name": "Artificial Tears 0.5% Eye Drops",
-      "category_id": "CAT-003",
+      "category_id": "CAT-002",
       "quantity": 153,
       "reorderLevel": 15,
       "price": 80.24,
@@ -541,8 +541,8 @@
       "id": "PRD-010",
       "sku": "MED-010",
       "product_name": "Amoxicillin 250mg Tablets",
-      "category_id": "CAT-002",
-      "quantity": 68,
+      "category_id": "CAT-001",
+      "quantity": 111,
       "reorderLevel": 15,
       "price": 139.29,
       "expire_date": "2028-09-04",
@@ -553,8 +553,8 @@
       "id": "PRD-011",
       "sku": "MED-011",
       "product_name": "Artificial Tears 0.5% Eye Drops",
-      "category_id": "CAT-003",
-      "quantity": 62,
+      "category_id": "CAT-002",
+      "quantity": 82,
       "reorderLevel": 15,
       "price": 19.99,
       "expire_date": "2028-12-07",
@@ -565,8 +565,8 @@
       "id": "PRD-012",
       "sku": "MED-012",
       "product_name": "Amoxicillin 250mg Tablets",
-      "category_id": "CAT-002",
-      "quantity": 85,
+      "category_id": "CAT-001",
+      "quantity": 110,
       "reorderLevel": 15,
       "price": 120.67,
       "expire_date": "2029-11-11",
@@ -577,8 +577,8 @@
       "id": "PRD-013",
       "sku": "MED-013",
       "product_name": "Clotrimazole 1% Ointment",
-      "category_id": "CAT-005",
-      "quantity": 63,
+      "category_id": "CAT-003",
+      "quantity": 103,
       "reorderLevel": 15,
       "price": 156.37,
       "expire_date": "2027-03-25",
@@ -589,8 +589,8 @@
       "id": "PRD-014",
       "sku": "MED-014",
       "product_name": "Ibuprofen 200mg Tablets",
-      "category_id": "CAT-002",
-      "quantity": 102,
+      "category_id": "CAT-001",
+      "quantity": 120,
       "reorderLevel": 15,
       "price": 180.17,
       "expire_date": "2029-05-29",
@@ -601,8 +601,8 @@
       "id": "PRD-015",
       "sku": "MED-015",
       "product_name": "Miconazole 2% Cream",
-      "category_id": "CAT-001",
-      "quantity": 21,
+      "category_id": "CAT-003",
+      "quantity": 33,
       "reorderLevel": 15,
       "price": 179.82,
       "expire_date": "2030-03-02",
@@ -613,8 +613,8 @@
       "id": "PRD-016",
       "sku": "MED-016",
       "product_name": "Clotrimazole 1% Ointment",
-      "category_id": "CAT-005",
-      "quantity": 195,
+      "category_id": "CAT-003",
+      "quantity": 233,
       "reorderLevel": 15,
       "price": 104.58,
       "expire_date": "2029-12-21",
@@ -625,8 +625,8 @@
       "id": "PRD-017",
       "sku": "MED-017",
       "product_name": "Gentamicin 0.1% Ointment",
-      "category_id": "CAT-005",
-      "quantity": 11,
+      "category_id": "CAT-003",
+      "quantity": 21,
       "reorderLevel": 15,
       "price": 249.21,
       "expire_date": "2030-01-28",
@@ -637,8 +637,8 @@
       "id": "PRD-018",
       "sku": "MED-018",
       "product_name": "Gentamicin 0.1% Ointment",
-      "category_id": "CAT-005",
-      "quantity": 134,
+      "category_id": "CAT-003",
+      "quantity": 156,
       "reorderLevel": 15,
       "price": 228.33,
       "expire_date": "2030-05-22",
@@ -649,8 +649,8 @@
       "id": "PRD-019",
       "sku": "MED-019",
       "product_name": "Timolol 0.5% Eye Drops",
-      "category_id": "CAT-003",
-      "quantity": 21,
+      "category_id": "CAT-002",
+      "quantity": 31,
       "reorderLevel": 15,
       "price": 19.04,
       "expire_date": "2027-12-12",
@@ -661,8 +661,8 @@
       "id": "PRD-020",
       "sku": "MED-020",
       "product_name": "Ibuprofen 400mg Tablets",
-      "category_id": "CAT-002",
-      "quantity": 115,
+      "category_id": "CAT-001",
+      "quantity": 150,
       "reorderLevel": 15,
       "price": 171.97,
       "expire_date": "2030-09-20",
@@ -673,8 +673,8 @@
       "id": "PRD-021",
       "sku": "MED-021",
       "product_name": "Artificial Tears 0.5% Eye Drops",
-      "category_id": "CAT-003",
-      "quantity": 125,
+      "category_id": "CAT-002",
+      "quantity": 170,
       "reorderLevel": 15,
       "price": 86.5,
       "expire_date": "2029-10-05",
@@ -685,8 +685,8 @@
       "id": "PRD-022",
       "sku": "MED-022",
       "product_name": "Artificial Tears 0.5% Eye Drops",
-      "category_id": "CAT-003",
-      "quantity": 168,
+      "category_id": "CAT-002",
+      "quantity": 178,
       "reorderLevel": 15,
       "price": 162.54,
       "expire_date": "2029-11-09",
@@ -697,8 +697,8 @@
       "id": "PRD-023",
       "sku": "MED-023",
       "product_name": "Miconazole 2% Cream",
-      "category_id": "CAT-001",
-      "quantity": 186,
+      "category_id": "CAT-003",
+      "quantity": 208,
       "reorderLevel": 15,
       "price": 229.37,
       "expire_date": "2028-06-29",
@@ -709,8 +709,8 @@
       "id": "PRD-024",
       "sku": "MED-024",
       "product_name": "Zinc 25mg Tablets",
-      "category_id": "CAT-002",
-      "quantity": 97,
+      "category_id": "CAT-001",
+      "quantity": 112,
       "reorderLevel": 15,
       "price": 32.25,
       "expire_date": "2031-01-13",
@@ -721,7 +721,7 @@
       "id": "PRD-025",
       "sku": "MED-025",
       "product_name": "Timolol 0.5% Eye Drops",
-      "category_id": "CAT-003",
+      "category_id": "CAT-002",
       "quantity": 19,
       "reorderLevel": 15,
       "price": 183.91,
@@ -733,8 +733,8 @@
       "id": "PRD-026",
       "sku": "MED-026",
       "product_name": "Gentamicin 0.1% Ointment",
-      "category_id": "CAT-005",
-      "quantity": 159,
+      "category_id": "CAT-003",
+      "quantity": 167,
       "reorderLevel": 15,
       "price": 174.65,
       "expire_date": "2027-04-09",
@@ -745,8 +745,8 @@
       "id": "PRD-027",
       "sku": "MED-027",
       "product_name": "Zinc 25mg Tablets",
-      "category_id": "CAT-002",
-      "quantity": 172,
+      "category_id": "CAT-001",
+      "quantity": 187,
       "reorderLevel": 15,
       "price": 38.86,
       "expire_date": "2028-06-02",
@@ -757,8 +757,8 @@
       "id": "PRD-028",
       "sku": "MED-028",
       "product_name": "Miconazole 2% Cream",
-      "category_id": "CAT-001",
-      "quantity": 118,
+      "category_id": "CAT-003",
+      "quantity": 130,
       "reorderLevel": 15,
       "price": 145.11,
       "expire_date": "2027-11-12",
@@ -769,8 +769,8 @@
       "id": "PRD-029",
       "sku": "MED-029",
       "product_name": "Miconazole 2% Cream",
-      "category_id": "CAT-001",
-      "quantity": 121,
+      "category_id": "CAT-003",
+      "quantity": 136,
       "reorderLevel": 15,
       "price": 15.08,
       "expire_date": "2029-10-09",
@@ -781,8 +781,8 @@
       "id": "PRD-030",
       "sku": "MED-030",
       "product_name": "Zinc 25mg Tablets",
-      "category_id": "CAT-002",
-      "quantity": 99,
+      "category_id": "CAT-001",
+      "quantity": 109,
       "reorderLevel": 15,
       "price": 70.85,
       "expire_date": "2028-05-19",
@@ -793,8 +793,8 @@
       "id": "PRD-031",
       "sku": "MED-031",
       "product_name": "Ibuprofen 200mg Tablets",
-      "category_id": "CAT-002",
-      "quantity": 191,
+      "category_id": "CAT-001",
+      "quantity": 211,
       "reorderLevel": 15,
       "price": 161.98,
       "expire_date": "2029-03-20",
@@ -805,8 +805,8 @@
       "id": "PRD-032",
       "sku": "MED-032",
       "product_name": "Clotrimazole 1% Ointment",
-      "category_id": "CAT-005",
-      "quantity": 28,
+      "category_id": "CAT-003",
+      "quantity": 40,
       "reorderLevel": 15,
       "price": 213.97,
       "expire_date": "2028-06-30",
@@ -817,8 +817,8 @@
       "id": "PRD-033",
       "sku": "MED-033",
       "product_name": "Diclofenac 1% Gel",
-      "category_id": "CAT-004",
-      "quantity": 40,
+      "category_id": "CAT-003",
+      "quantity": 75,
       "reorderLevel": 15,
       "price": 11.04,
       "expire_date": "2029-12-15",
@@ -829,8 +829,8 @@
       "id": "PRD-034",
       "sku": "MED-034",
       "product_name": "Diclofenac 1% Gel",
-      "category_id": "CAT-004",
-      "quantity": 186,
+      "category_id": "CAT-003",
+      "quantity": 198,
       "reorderLevel": 15,
       "price": 50.81,
       "expire_date": "2029-02-16",
@@ -841,8 +841,8 @@
       "id": "PRD-035",
       "sku": "MED-035",
       "product_name": "Ibuprofen 400mg Tablets",
-      "category_id": "CAT-002",
-      "quantity": 0,
+      "category_id": "CAT-001",
+      "quantity": 33,
       "reorderLevel": 15,
       "price": 104.12,
       "expire_date": "2029-02-04",
@@ -853,8 +853,8 @@
       "id": "PRD-036",
       "sku": "MED-036",
       "product_name": "Hydrocortisone 1% Cream",
-      "category_id": "CAT-001",
-      "quantity": 189,
+      "category_id": "CAT-003",
+      "quantity": 201,
       "reorderLevel": 15,
       "price": 94.05,
       "expire_date": "2029-04-15",
@@ -865,8 +865,8 @@
       "id": "PRD-037",
       "sku": "MED-037",
       "product_name": "Diclofenac 1% Gel",
-      "category_id": "CAT-004",
-      "quantity": 92,
+      "category_id": "CAT-003",
+      "quantity": 114,
       "reorderLevel": 15,
       "price": 278.37,
       "expire_date": "2028-09-28",
@@ -877,8 +877,8 @@
       "id": "PRD-038",
       "sku": "MED-038",
       "product_name": "Ibuprofen 200mg Tablets",
-      "category_id": "CAT-002",
-      "quantity": 169,
+      "category_id": "CAT-001",
+      "quantity": 187,
       "reorderLevel": 15,
       "price": 92.83,
       "expire_date": "2028-01-13",
@@ -889,8 +889,8 @@
       "id": "PRD-039",
       "sku": "MED-039",
       "product_name": "Diclofenac 1% Gel",
-      "category_id": "CAT-004",
-      "quantity": 48,
+      "category_id": "CAT-003",
+      "quantity": 70,
       "reorderLevel": 15,
       "price": 234.22,
       "expire_date": "2029-08-07",
@@ -901,8 +901,8 @@
       "id": "PRD-040",
       "sku": "MED-040",
       "product_name": "Diclofenac 1% Gel",
-      "category_id": "CAT-004",
-      "quantity": 184,
+      "category_id": "CAT-003",
+      "quantity": 192,
       "reorderLevel": 15,
       "price": 33.37,
       "expire_date": "2029-07-03",
@@ -913,8 +913,8 @@
       "id": "PRD-041",
       "sku": "MED-041",
       "product_name": "Amoxicillin 500mg Tablets",
-      "category_id": "CAT-002",
-      "quantity": 124,
+      "category_id": "CAT-001",
+      "quantity": 134,
       "reorderLevel": 15,
       "price": 24.2,
       "expire_date": "2030-04-14",
@@ -925,8 +925,8 @@
       "id": "PRD-042",
       "sku": "MED-042",
       "product_name": "Zinc 25mg Tablets",
-      "category_id": "CAT-002",
-      "quantity": 87,
+      "category_id": "CAT-001",
+      "quantity": 95,
       "reorderLevel": 15,
       "price": 91.71,
       "expire_date": "2028-08-19",
@@ -937,8 +937,8 @@
       "id": "PRD-043",
       "sku": "MED-043",
       "product_name": "Clotrimazole 1% Ointment",
-      "category_id": "CAT-005",
-      "quantity": 103,
+      "category_id": "CAT-003",
+      "quantity": 115,
       "reorderLevel": 15,
       "price": 200.24,
       "expire_date": "2028-11-20",
@@ -949,8 +949,8 @@
       "id": "PRD-044",
       "sku": "MED-044",
       "product_name": "Clotrimazole 1% Ointment",
-      "category_id": "CAT-005",
-      "quantity": 30,
+      "category_id": "CAT-003",
+      "quantity": 53,
       "reorderLevel": 15,
       "price": 58.53,
       "expire_date": "2028-02-09",
@@ -961,8 +961,8 @@
       "id": "PRD-045",
       "sku": "MED-045",
       "product_name": "Artificial Tears 0.5% Eye Drops",
-      "category_id": "CAT-003",
-      "quantity": 140,
+      "category_id": "CAT-002",
+      "quantity": 155,
       "reorderLevel": 15,
       "price": 73.81,
       "expire_date": "2029-01-24",
@@ -973,8 +973,8 @@
       "id": "PRD-046",
       "sku": "MED-046",
       "product_name": "Diclofenac 1% Gel",
-      "category_id": "CAT-004",
-      "quantity": 140,
+      "category_id": "CAT-003",
+      "quantity": 155,
       "reorderLevel": 15,
       "price": 65.8,
       "expire_date": "2027-09-16",
@@ -985,8 +985,8 @@
       "id": "PRD-047",
       "sku": "MED-047",
       "product_name": "Artificial Tears 0.5% Eye Drops",
-      "category_id": "CAT-003",
-      "quantity": 81,
+      "category_id": "CAT-002",
+      "quantity": 91,
       "reorderLevel": 15,
       "price": 79.35,
       "expire_date": "2028-08-25",
@@ -997,8 +997,8 @@
       "id": "PRD-048",
       "sku": "MED-048",
       "product_name": "Paracetamol 650mg Tablets",
-      "category_id": "CAT-002",
-      "quantity": 98,
+      "category_id": "CAT-001",
+      "quantity": 118,
       "reorderLevel": 15,
       "price": 130.03,
       "expire_date": "2030-02-20",
@@ -1009,8 +1009,8 @@
       "id": "PRD-049",
       "sku": "MED-049",
       "product_name": "Miconazole 2% Cream",
-      "category_id": "CAT-001",
-      "quantity": 192,
+      "category_id": "CAT-003",
+      "quantity": 208,
       "reorderLevel": 15,
       "price": 28,
       "expire_date": "2028-10-03",
@@ -1021,8 +1021,8 @@
       "id": "PRD-050",
       "sku": "MED-050",
       "product_name": "Amoxicillin 250mg Tablets",
-      "category_id": "CAT-002",
-      "quantity": 23,
+      "category_id": "CAT-001",
+      "quantity": 38,
       "reorderLevel": 15,
       "price": 88.6,
       "expire_date": "2028-08-04",
@@ -1502,7 +1502,8 @@
         }
       ],
       "total_quantity": 35,
-      "total_amount": 5800
+      "total_amount": 5800,
+      "quantityUpdated": true
     },
     {
       "id": "ORD-002",
@@ -1523,7 +1524,8 @@
         }
       ],
       "total_quantity": 35,
-      "total_amount": 7565
+      "total_amount": 7565,
+      "quantityUpdated": true
     },
     {
       "id": "ORD-003",
@@ -1544,7 +1546,8 @@
         }
       ],
       "total_quantity": 50,
-      "total_amount": 2815
+      "total_amount": 2815,
+      "quantityUpdated": true
     },
     {
       "id": "ORD-004",
@@ -1565,7 +1568,8 @@
         }
       ],
       "total_quantity": 20,
-      "total_amount": 2568
+      "total_amount": 2568,
+      "quantityUpdated": true
     },
     {
       "id": "ORD-005",
@@ -1586,7 +1590,8 @@
         }
       ],
       "total_quantity": 65,
-      "total_amount": 8160
+      "total_amount": 8160,
+      "quantityUpdated": true
     },
     {
       "id": "ORD-006",
@@ -1607,7 +1612,8 @@
         }
       ],
       "total_quantity": 18,
-      "total_amount": 1524
+      "total_amount": 1524,
+      "quantityUpdated": true
     },
     {
       "id": "ORD-007",
@@ -1628,7 +1634,8 @@
         }
       ],
       "total_quantity": 25,
-      "total_amount": 3105
+      "total_amount": 3105,
+      "quantityUpdated": true
     },
     {
       "id": "ORD-008",
@@ -1649,7 +1656,8 @@
         }
       ],
       "total_quantity": 32,
-      "total_amount": 2140
+      "total_amount": 2140,
+      "quantityUpdated": true
     },
     {
       "id": "ORD-009",
@@ -1670,7 +1678,8 @@
         }
       ],
       "total_quantity": 33,
-      "total_amount": 3810
+      "total_amount": 3810,
+      "quantityUpdated": true
     },
     {
       "id": "ORD-010",
@@ -1691,7 +1700,8 @@
         }
       ],
       "total_quantity": 35,
-      "total_amount": 5030
+      "total_amount": 5030,
+      "quantityUpdated": true
     },
     {
       "id": "ORD-011",
@@ -1712,7 +1722,8 @@
         }
       ],
       "total_quantity": 28,
-      "total_amount": 3848
+      "total_amount": 3848,
+      "quantityUpdated": true
     },
     {
       "id": "ORD-012",
@@ -1740,7 +1751,7 @@
       "order_number": "PO-2026-013",
       "supplier_id": "SUP-003",
       "creation_date": "2025-05-13T12:00:00Z",
-      "status": "pending",
+      "status": "received",
       "items": [
         {
           "product_id": "PRD-001",
@@ -1754,7 +1765,8 @@
         }
       ],
       "total_quantity": 40,
-      "total_amount": 11020
+      "total_amount": 11020,
+      "quantityUpdated": true
     },
     {
       "id": "ORD-014",
@@ -1775,7 +1787,8 @@
         }
       ],
       "total_quantity": 30,
-      "total_amount": 3834
+      "total_amount": 3834,
+      "quantityUpdated": true
     },
     {
       "id": "ORD-015",
@@ -1796,7 +1809,8 @@
         }
       ],
       "total_quantity": 45,
-      "total_amount": 7140
+      "total_amount": 7140,
+      "quantityUpdated": true
     },
     {
       "id": "ORD-016",
@@ -1817,7 +1831,8 @@
         }
       ],
       "total_quantity": 20,
-      "total_amount": 2612
+      "total_amount": 2612,
+      "quantityUpdated": true
     },
     {
       "id": "ORD-017",
@@ -1838,7 +1853,8 @@
         }
       ],
       "total_quantity": 25,
-      "total_amount": 2715
+      "total_amount": 2715,
+      "quantityUpdated": true
     },
     {
       "id": "ORD-018",
@@ -1859,7 +1875,8 @@
         }
       ],
       "total_quantity": 35,
-      "total_amount": 4515
+      "total_amount": 4515,
+      "quantityUpdated": true
     },
     {
       "id": "ORD-019",
@@ -1880,7 +1897,8 @@
         }
       ],
       "total_quantity": 30,
-      "total_amount": 2472
+      "total_amount": 2472,
+      "quantityUpdated": true
     },
     {
       "id": "ORD-020",
@@ -1901,7 +1919,8 @@
         }
       ],
       "total_quantity": 25,
-      "total_amount": 720
+      "total_amount": 720,
+      "quantityUpdated": true
     },
     {
       "id": "ORD-021",
@@ -1943,7 +1962,8 @@
         }
       ],
       "total_quantity": 25,
-      "total_amount": 2020
+      "total_amount": 2020,
+      "quantityUpdated": true
     },
     {
       "id": "ORD-023",
@@ -1964,14 +1984,15 @@
         }
       ],
       "total_quantity": 20,
-      "total_amount": 2820
+      "total_amount": 2820,
+      "quantityUpdated": true
     },
     {
       "id": "ORD-024",
       "order_number": "PO-2026-024",
       "supplier_id": "SUP-030",
       "creation_date": "2025-12-22T12:00:00Z",
-      "status": "pending",
+      "status": "received",
       "items": [
         {
           "product_id": "PRD-037",
@@ -1985,7 +2006,8 @@
         }
       ],
       "total_quantity": 15,
-      "total_amount": 3105
+      "total_amount": 3105,
+      "quantityUpdated": true
     },
     {
       "id": "ORD-025",
@@ -2006,7 +2028,8 @@
         }
       ],
       "total_quantity": 30,
-      "total_amount": 4056
+      "total_amount": 4056,
+      "quantityUpdated": true
     },
     {
       "id": "ORD-026",
@@ -2090,7 +2113,8 @@
         }
       ],
       "total_quantity": 20,
-      "total_amount": 2020
+      "total_amount": 2020,
+      "quantityUpdated": true
     },
     {
       "id": "ORD-030",
@@ -2237,7 +2261,8 @@
         }
       ],
       "total_quantity": 30,
-      "total_amount": 6936
+      "total_amount": 6936,
+      "quantityUpdated": true
     },
     {
       "id": "ORD-037",
@@ -2258,7 +2283,8 @@
         }
       ],
       "total_quantity": 25,
-      "total_amount": 4680
+      "total_amount": 4680,
+      "quantityUpdated": true
     },
     {
       "id": "ORD-038",
@@ -2279,7 +2305,8 @@
         }
       ],
       "total_quantity": 35,
-      "total_amount": 2950
+      "total_amount": 2950,
+      "quantityUpdated": true
     },
     {
       "id": "ORD-039",
@@ -2321,7 +2348,8 @@
         }
       ],
       "total_quantity": 22,
-      "total_amount": 3386
+      "total_amount": 3386,
+      "quantityUpdated": true
     },
     {
       "id": "ORD-041",
@@ -2342,7 +2370,8 @@
         }
       ],
       "total_quantity": 25,
-      "total_amount": 2590
+      "total_amount": 2590,
+      "quantityUpdated": true
     },
     {
       "id": "ORD-042",
@@ -2363,7 +2392,8 @@
         }
       ],
       "total_quantity": 20,
-      "total_amount": 2972
+      "total_amount": 2972,
+      "quantityUpdated": true
     },
     {
       "id": "ORD-043",
@@ -2489,7 +2519,8 @@
         }
       ],
       "total_quantity": 25,
-      "total_amount": 955
+      "total_amount": 955,
+      "quantityUpdated": true
     },
     {
       "id": "ORD-049",
@@ -2510,7 +2541,8 @@
         }
       ],
       "total_quantity": 20,
-      "total_amount": 1912
+      "total_amount": 1912,
+      "quantityUpdated": true
     },
     {
       "id": "ORD-050",
@@ -2531,7 +2563,189 @@
         }
       ],
       "total_quantity": 25,
-      "total_amount": 3765
+      "total_amount": 3765,
+      "quantityUpdated": true
+    },
+    {
+      "id": "ORD-142404b7",
+      "order_number": "PO-c70c66cf",
+      "supplier_id": "SUP-002",
+      "creation_date": "2026-03-12",
+      "status": "received",
+      "items": [
+        {
+          "product_id": "PRD-010",
+          "quantity": 1,
+          "unit_price": 139.29
+        },
+        {
+          "product_id": "PRD-010",
+          "quantity": 2,
+          "unit_price": 139.29
+        }
+      ],
+      "total_quantity": 3,
+      "total_amount": 417.87,
+      "quantityUpdated": true
+    },
+    {
+      "id": "ORD-c5eb819c",
+      "order_number": "PO-5a875897",
+      "supplier_id": "SUP-002",
+      "creation_date": "2026-03-10",
+      "status": "received",
+      "items": [
+        {
+          "product_id": "PRD-008",
+          "quantity": 2,
+          "unit_price": 57.34
+        }
+      ],
+      "total_quantity": 2,
+      "total_amount": 114.68,
+      "quantityUpdated": true
+    },
+    {
+      "id": "ORD-0e4f3cbe",
+      "order_number": "PO-e43a7822",
+      "supplier_id": "SUP-003",
+      "creation_date": "2026-03-18",
+      "status": "pending",
+      "items": [
+        {
+          "product_id": "PRD-002",
+          "quantity": 1,
+          "unit_price": 98.45
+        }
+      ],
+      "total_quantity": 1,
+      "total_amount": 98.45
+    },
+    {
+      "id": "ORD-e2177d1d",
+      "order_number": "PO-922cd0a1",
+      "supplier_id": "SUP-006",
+      "creation_date": "2026-03-04",
+      "status": "pending",
+      "items": [
+        {
+          "product_id": "PRD-010",
+          "quantity": 2,
+          "unit_price": 139.29
+        },
+        {
+          "product_id": "PRD-010",
+          "quantity": 2,
+          "unit_price": 139.29
+        }
+      ],
+      "total_quantity": 4,
+      "total_amount": 557.16
+    },
+    {
+      "id": "ORD-8f181af1",
+      "order_number": "PO-da046e19",
+      "supplier_id": "SUP-004",
+      "creation_date": "2026-03-19",
+      "status": "pending",
+      "items": [
+        {
+          "product_id": "PRD-001",
+          "quantity": 1,
+          "unit_price": 291.07
+        },
+        {
+          "product_id": "PRD-002",
+          "quantity": 1,
+          "unit_price": 98.45
+        }
+      ],
+      "total_quantity": 2,
+      "total_amount": 389.52
+    },
+    {
+      "id": "ORD-6519043d",
+      "order_number": "PO-55528bc1",
+      "supplier_id": "SUP-003",
+      "creation_date": "2026-03-11",
+      "status": "pending",
+      "items": [
+        {
+          "product_id": "PRD-010",
+          "quantity": 5,
+          "unit_price": 139.29
+        },
+        {
+          "product_id": "PRD-002",
+          "quantity": 11,
+          "unit_price": 98.45
+        }
+      ],
+      "total_quantity": 16,
+      "total_amount": 1779.4
+    },
+    {
+      "id": "ORD-23dc1ce9",
+      "order_number": "PO-6a06916a",
+      "supplier_id": "SUP-003",
+      "creation_date": "2026-03-04",
+      "status": "pending",
+      "items": [
+        {
+          "product_id": "PRD-010",
+          "quantity": 1,
+          "unit_price": 139.29
+        }
+      ],
+      "total_quantity": 1,
+      "total_amount": 139.29
+    },
+    {
+      "id": "ORD-a7ceb1ef",
+      "order_number": "PO-177ce775",
+      "supplier_id": "SUP-003",
+      "creation_date": "2026-03-18",
+      "status": "pending",
+      "items": [
+        {
+          "product_id": "PRD-001",
+          "quantity": 5,
+          "unit_price": 291.07
+        },
+        {
+          "product_id": "PRD-010",
+          "quantity": 6,
+          "unit_price": 139.29
+        },
+        {
+          "product_id": "PRD-002",
+          "quantity": 5,
+          "unit_price": 98.45
+        }
+      ],
+      "total_quantity": 16,
+      "total_amount": 2783.34
+    },
+    {
+      "id": "ORD-b995913f",
+      "order_number": "PO-883729be",
+      "supplier_id": "SUP-004",
+      "creation_date": "2026-03-19",
+      "status": "pending",
+      "items": [
+        {
+          "product_id": "PRD-010",
+          "quantity": 1,
+          "unit_price": 139.29
+        },
+        {
+          "product_id": "PRD-013",
+          "quantity": 3,
+          "unit_price": 156.37
+        }
+      ],
+      "total_quantity": 4,
+      "total_amount": 608.4
     }
   ],
   "users": [

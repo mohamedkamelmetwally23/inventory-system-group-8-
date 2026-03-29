@@ -59,6 +59,7 @@
 
     <link rel="stylesheet" href="../assets/css/style.css" />
     <link rel="stylesheet" href="../assets/css/table.css" />
+    <link rel="stylesheet" href="../assets/css/notificationStyle.css" />
     <!------------------ JAVASCRIPT ------------------>
 
     <!-- Bootstrap -->
@@ -94,15 +95,17 @@
                   </p>
                 </div>
                 <div>
-                  <button class="border-1 rounded p-2 bg-white me-2">
-                    <i class="fa-solid fa-download"></i> Export
-                  </button>
-                  <button class="main-btn create-order border-1">
+                  <button
+                    class="main-btn create-order border-1"
+                    data-bs-toggle="modal"
+                    data-bs-target="#NewOrder"
+                  >
                     <i class="fa-solid fa-plus mx-1"></i> Create Orders
                   </button>
                 </div>
               </div>
             </div>
+
             <div class="container">
               <div class="row">
                 <div class="col-lg-4 col-md-4 col-12 my-1">
@@ -335,6 +338,112 @@
           <div class="modal-footer">
             <button type="button" class="btn main-btn" data-bs-dismiss="modal">
               Close
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- ========== New Order Form ==========  -->
+    <div
+      class="modal fade"
+      id="NewOrder"
+      tabindex="-1"
+      aria-labelledby="NewOrderTitle"
+      aria-hidden="true"
+    >
+      <div class="modal-dialog">
+        <div class="modal-content order-details bg-light">
+          <div class="modal-header">
+            <div class="container">
+              <h5 class="modal-title" id="NewOrderTitle">
+                Create New Purchase Order
+              </h5>
+              <p>Fill in the details to create a new purchase order</p>
+            </div>
+            <button
+              type="button"
+              class="btn-close"
+              data-bs-dismiss="modal"
+              aria-label="Close"
+            ></button>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <h6 class="col-6">Supplier</h6>
+              <h6 class="col-6">Order Date</h6>
+            </div>
+            <div class="row">
+              <div class="supplierName col-6"></div>
+              <div class="col-6">
+                <input type="date" class="date form-control" />
+              </div>
+            </div>
+
+            <div>
+              <table class="table product-table">
+                <caption id="newOrdertableCaption" style="caption-side: top">
+                  <p>Order items</p>
+                </caption>
+                <thead>
+                  <tr id="tableHead">
+                    <th>#</th>
+                    <th>Product</th>
+                    <th>Quantity</th>
+                    <th>Price</th>
+                    <th>Total</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+
+                <tbody class="newProduct table-light">
+                  <tr>
+                    <td>
+                      <select class="form-control productSelector"></select>
+                    </td>
+                    <td>
+                      <input
+                        type="number"
+                        class="quantity w-custom border-1 border-light rounded form-control"
+                        value="1"
+                        min="1"
+                      />
+                    </td>
+                    <td class="price">$0.00</td>
+                    <td class="total">$0.00</td>
+                    <td>
+                      <i class="fa-regular fa-trash-can delete mx-3"></i>
+                    </td>
+                  </tr>
+
+                  <tr colspan="6" class="newrow">
+                    <td colspan="4" class="border-0">
+                      <button class="btn addRow border-gray-200">
+                        <i class="fa-solid fa-circle-plus"></i> add Row
+                      </button>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="container">
+              <div class="d-flex justify-content-between">
+                <h4>Total Amount:</h4>
+                <h3 class="tamount">$0.00</h3>
+              </div>
+            </div>
+          </div>
+
+          <div class="modal-footer">
+            <button
+              type="button"
+              class="btn btn-secondary cancel"
+              data-bs-dismiss="modal"
+            >
+              Cancel
+            </button>
+
+            <button type="button" class="btn main-btn save">
+              Save changes
             </button>
           </div>
         </div>

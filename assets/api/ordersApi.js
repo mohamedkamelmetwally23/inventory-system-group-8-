@@ -27,3 +27,21 @@ export const addNewOrder = async (data) => {
 export const getSuppliers = async () => apiRequest("suppliers");
 
 export const getProducts = async () => apiRequest("products");
+
+export const updateProductQuantity = async (id, data) =>
+  apiRequest(`products/${id}`, {
+    method: "PUT",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify(data),
+  });
+
+export const markOrderUpdated = async (id) =>
+  apiRequest(`purchase_orders/${id}`, {
+    method: "PATCH",
+    headers: {
+      "Content-Type": "application/json",
+    },
+    body: JSON.stringify({ quantityUpdated: true }),
+  });

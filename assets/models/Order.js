@@ -4,6 +4,7 @@ export class Order {
     order_number,
     supplier_id,
     creation_date,
+    items,
     status,
     total_quantity,
     total_amount,
@@ -13,6 +14,7 @@ export class Order {
     this.supplier_id = supplier_id;
     this.creation_date = creation_date;
     this.status = status;
+    this.items = items;
     this.total_quantity = total_quantity;
     this.total_amount = total_amount;
   }
