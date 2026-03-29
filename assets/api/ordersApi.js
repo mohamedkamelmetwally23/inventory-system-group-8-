@@ -8,6 +8,8 @@ export const getPurchaseOrders = async () => apiRequest('purchase_orders');
 export const getDataById = async (id) => apiRequest(`purchase_orders/${id}`);
 
 export const editStatus = async (id, data) => {
+  const order = await getDataById(id);
+
   const result = await apiRequest(`purchase_orders/${id}`, {
     method: 'PATCH',
     headers: {
@@ -20,7 +22,6 @@ export const editStatus = async (id, data) => {
     return { success: false, error: result.error };
   }
 
-  const order = await getDataById(id);
   const orderData = order.data;
 
   return await createActivityLog({
@@ -67,10 +68,6 @@ export const addNewOrder = async (data) => {
   });
 };
 
-export const getSuppliers = async () => apiRequest('suppliers');
-
-export const getProducts = async () => apiRequest('products');
-
 export const updateProductQuantity = async (id, data) => {
   const result = await apiRequest(`products/${id}`, {
     method: 'PUT',
@@ -84,13 +81,7 @@ export const updateProductQuantity = async (id, data) => {
     return { success: false, error: result.error };
   }
 
-  return await createActivityLog({
-    action: 'update',
-    entity_type: 'product',
-    entity_id: id,
-    description: `Updated ${data.product_name} quantity`,
-    user_id: 'USR-4c3e2a1f',
-  });
+  return result;
 };
 
 export const markOrderUpdated = async (id) => {
@@ -104,6 +95,8 @@ export const markOrderUpdated = async (id) => {
 };
 
 export const deletePurchaseOrder = async (id) => {
+  const order = await getDataById(id);
+
   const result = await apiRequest(`purchase_orders/${id}`, {
     method: 'DELETE',
   });
@@ -112,7 +105,6 @@ export const deletePurchaseOrder = async (id) => {
     return { success: false, error: result.error };
   }
 
-  const order = await getDataById(id);
   const data = order.data;
 
   return await createActivityLog({

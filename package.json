@@ -8,14 +8,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mohamedkamelmetwally23/inventory-system-group-8-.git"
+    "url": "git+https://github.com/mohamedkamelmetwally23/PhramaFlow-Group8.git"
   },
   "author": "Team G8",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/mohamedkamelmetwally23/inventory-system-group-8-/issues"
+    "url": "https://github.com/mohamedkamelmetwally23/PhramaFlow-Group8.git/issues"
   },
-  "homepage": "https://github.com/mohamedkamelmetwally23/inventory-system-group-8-#readme",
+  "homepage": "https://github.com/mohamedkamelmetwally23/PhramaFlow-Group8.git#readme",
   "description": "Inventory Management System for small business",
   "dependencies": {
     "json-server": "^0.17.4"

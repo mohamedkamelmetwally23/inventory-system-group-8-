@@ -17,7 +17,7 @@ function isAuthenticated() {
   return token !== null && token.length > 0;
 }
 
-function logout() {
+export function logout() {
   clearAuthToken();
   window.location.href = '/index.html';
 }

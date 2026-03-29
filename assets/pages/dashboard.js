@@ -17,6 +17,8 @@ const recentActivityContainer = document.querySelector('.recent-activity-list');
 const pendingOrdersContainer = document.querySelector('.pending-orders-list');
 const nearExpireContainer = document.querySelector('.near-expire-list');
 
+const greatingEl = document.querySelector('.greating');
+
 // States
 let inventoryProducts = [];
 
@@ -244,6 +246,9 @@ const renderNearExpire = () => {
 //-----------------------------------------------
 // Initialize the dashboard: load layout, fetch products, and trigger all render functions
 const init = async () => {
+  const userData = JSON.parse(localStorage.getItem('loggedInUser'));
+  greatingEl.innerHTML = `Welcome ${userData.name.split(' ')[0]}`
+
   const result = await getProducts();
 
   renderRecentActivity();

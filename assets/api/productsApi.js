@@ -65,7 +65,7 @@ export const createProduct = async (data) => {
     price: data.price,
     expire_date: data.expire_date,
     supplier_id: data.supplier_id,
-    created_at: data.created_at || new Date().toISOString(),
+    created_at: new Date().toISOString(),
   });
 
   const result = await apiRequest('products', {
@@ -123,7 +123,7 @@ export const deleteProduct = async (productId) => {
     return { success: false, error: productRes.error };
   }
 
-  const data = productRes.data?.product_name || 'Unknown';
+  const productName = productRes.data?.product_name || 'Unknown';
 
   const result = await apiRequest(`products/${productId}`, {
     method: 'DELETE',
@@ -137,7 +137,7 @@ export const deleteProduct = async (productId) => {
     action: 'delete',
     entity_type: 'product',
     entity_id: productId,
-    description: `Deleted discontinued product: Old ${data.product_name} Modal`,
+    description: `Deleted discontinued product: Old ${productName} Modal`,
     user_id: 'USR-4c3e2a1f',
   });
 

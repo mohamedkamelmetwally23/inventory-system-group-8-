@@ -267,12 +267,16 @@ document
       reorderLevel: Number(document.getElementById('reorderLevel').value),
       price: Number(document.getElementById('price').value),
       expire_date: document.getElementById('productExpireDate').value.trim(),
-      supplier_id: document.getElementById('productSupplierId').value.trim(),
-      created_at: document.getElementById('productCreatedDate').value.trim(),
+      supplier_id: document.getElementById('supplierProduct').value.trim(),
+      // created_at: document.getElementById('productCreatedDate').value.trim(),
     };
 
     for (let key in data) {
-      if (!data[key]) {
+      const value = data[key];
+      if (
+        (value === '' || value === null || value === undefined) &&
+        value !== 0
+      ) {
         showNotification('warning', 'Please fill all fields');
         return;
       }
@@ -323,7 +327,7 @@ const handleActionClick = function (e) {
     document.getElementById('price').value = p.price;
     document.getElementById('productExpireDate').value = p.expire_date;
     document.getElementById('supplierProduct').value = p.supplier_id;
-    document.getElementById('productCreatedDate').value = p.created_at;
+    // document.getElementById('productCreatedDate').value = p.created_at;
 
     document.getElementById('addProductModalLabel').textContent =
       'Edit Product';

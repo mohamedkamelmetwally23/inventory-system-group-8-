@@ -257,14 +257,16 @@ let currentPage = 1;
 const rowsPerPage = 10;
 let orders = [];
 let hasRun = false;
+let isUpdating = false;
 let ordersRecieved = [];
 let receivedItems = [];
 
-getPurchaseOrders().then((data) => {
+getPurchaseOrders().then(async (data) => {
   orders = data.data;
   ordersRecieved = data.data;
 
   if (!ordersRecieved.length) return;
+
   ordersRecieved.forEach((order) => {
     if (order.status === 'received' && !order.quantityUpdated) {
       order.items.forEach((item) => {
@@ -277,7 +279,11 @@ getPurchaseOrders().then((data) => {
     }
   });
 
-  productQuantityUpdate(receivedItems);
+  if (!isUpdating) {
+    isUpdating = true;
+    await productQuantityUpdate(receivedItems);
+  }
+
   if (!orders.length) return;
   orders = orders.map((elm) => {
     let supplier = suppliers.find((sup) => sup.supplier_id == elm.supplier_id);
@@ -316,7 +322,8 @@ async function handleOrderActionClick(e) {
     const btn = e.target.closest('.show-btn');
     const orderId = btn.dataset.id;
 
-    const rowDetails = (await getDataById(orderId)).data;
+    const res = await getDataById(orderId);
+    const rowDetails = res.data;
 
     let ordNum = document.getElementsByClassName('order-number');
     ordNum[0].textContent = `${rowDetails.order_number}`;
@@ -325,7 +332,7 @@ async function handleOrderActionClick(e) {
     let statusVal = document.getElementsByClassName('status')[0];
     statusVal.textContent = `${rowDetails.status}`;
 
-    statusVal.className = 'status'; // تنظيف الكلاسات القديمة
+    statusVal.className = 'status';
     if (rowDetails.status == 'received') {
       statusVal.classList.add('status-received');
     } else {
@@ -346,12 +353,13 @@ async function handleOrderActionClick(e) {
     let tableBody = document
       .getElementsByClassName('product-table')[0]
       .getElementsByClassName('productBody')[0];
-    let totalQuantity = 0;
-    let totalAmount = 0;
+    let totalQuantity = rowDetails.total_quantity;
+    let totalAmount = rowDetails.total_amount;
     tableBody.innerHTML = '';
 
     for (let x = 0; x < rowDetails.items.length; x++) {
       let item = rowDetails.items[x];
+
       let prodVal = products.find((prod) => prod.product_id == item.product_id);
 
       let tr = document.createElement('tr');
@@ -378,6 +386,7 @@ async function handleOrderActionClick(e) {
 
     if (order && order.status == 'pending') {
       order.status = 'received';
+      console.log(order);
       const result = await editStatus(orderId, { status: 'received' });
 
       if (!result.success) {
@@ -496,9 +505,9 @@ search.addEventListener('input', () => {
   } else {
     currentDisplayOrders = orders.filter((elm) => {
       return (
-        elm.supplier_name.toLowerCase().includes(searchVal) ||
-        elm.order_number.toLowerCase().includes(searchVal) ||
-        elm.status == searchVal
+        elm.supplier_name?.toLowerCase().includes(searchVal) ||
+        elm.order_number?.toLowerCase().includes(searchVal) ||
+        elm.status.includes(searchVal)
       );
     });
   }
@@ -527,68 +536,6 @@ search.addEventListener('input', () => {
 
   updateCards(currentDisplayOrders);
 });
-
-// ========== show Order Details ==========
-
-function showDetails() {
-  // let showbtn = document.getElementsByClassName('show-btn');
-  // for (let i = 0; i < showbtn.length; i++) {
-  //   showbtn[i].addEventListener('click', async (e) => {
-  //     const row = e.target.closest('tr');
-  //     const rowDetails = (await getDataById(row.children[0].textContent)).data;
-  //     let ordNum = document.getElementsByClassName('order-number');
-  //     ordNum[0].textContent = `${rowDetails.order_number}`;
-  //     ordNum[1].textContent = `${rowDetails.order_number}`;
-  //     let statusVal = document.getElementsByClassName('status')[0];
-  //     statusVal.textContent = `${rowDetails.status}`;
-  //     if (rowDetails.status == 'received') {
-  //       statusVal.classList.add('status-received');
-  //     } else {
-  //       statusVal.classList.add('status-pending');
-  //     }
-  //     document.getElementsByClassName('creation-date')[0].textContent =
-  //       formatDate(rowDetails.creation_date);
-  //     let { supplier_name } = suppliers.find((sup) => {
-  //       if (sup.supplier_id == rowDetails.supplier_id) return sup.supplier_name;
-  //     });
-  //     document.getElementsByClassName('supplier')[0].textContent =
-  //       `${supplier_name}`;
-  //     let tableBody = document
-  //       .getElementsByClassName('product-table')[0]
-  //       .getElementsByClassName('productBody')[0];
-  //     let totalQuantity = 0;
-  //     let totalAmount = 0;
-  //     tableBody.innerHTML = '';
-  //     for (let x = 0; x < rowDetails.items.length; x++) {
-  //       let prodVal = products.find((prod) => {
-  //         if (prod.product_id == rowDetails.items[x].product_id)
-  //           return prod.product_name;
-  //       });
-  //       let tr = document.createElement('tr');
-  //       const td = document.createElement('td');
-  //       td.textContent = `${prodVal.product_name}`;
-  //       tr.appendChild(td);
-  //       const td1 = document.createElement('td');
-  //       td1.textContent = `${rowDetails.items[x].quantity}`;
-  //       tr.appendChild(td1);
-  //       const td2 = document.createElement('td');
-  //       td2.textContent = `${rowDetails.items[x].unit_price}`;
-  //       tr.appendChild(td2);
-  //       const td3 = document.createElement('td');
-  //       td3.textContent = `${Number(rowDetails.items[x].unit_price * rowDetails.items[x].quantity)} `;
-  //       tr.appendChild(td3);
-  //       totalQuantity += rowDetails.items[x].quantity;
-  //       totalAmount +=
-  //         rowDetails.items[x].unit_price * rowDetails.items[x].quantity;
-  //       tableBody.appendChild(tr);
-  //       prodVal = [];
-  //     }
-  //     document.getElementsByClassName('tq')[0].textContent = totalQuantity;
-  //     document.getElementsByClassName('ta')[0].textContent =
-  //       formatCurrency(totalAmount);
-  //   });
-  // }
-}
 
 // ========== Update Product Quantity ==========
 async function productQuantityUpdate(Items) {

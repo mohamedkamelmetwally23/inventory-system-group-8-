@@ -1,7 +1,14 @@
+import { logout } from '../pages/Session.js';
+
 const headerEl = document.querySelector('header');
 const sidebarEl = document.querySelector('aside');
 
 const loadLayout = (pageTitle) => {
+  const userRew = localStorage.getItem('loggedInUser');
+  if (!userRew) return;
+  const userData = JSON.parse(userRew);
+  const role = userData.role.split('_').join(' ');
+
   const navbar = `
         <nav class="navbar">
           <div class="container-fluid">
@@ -24,16 +31,19 @@ const loadLayout = (pageTitle) => {
             </div>
             <div class="d-flex align-items-center gap-2">
               <div class="text-end d-none d-sm-block">
-                <h5 class="fs-6 mb-0">Admin User</h5>
+                <h5 class="fs-6 mb-0 text-capitalize">${role} User</h5>
                 <p class="fs-12 mb-0 text-secondary user-role">
                   Inventory Manager
                 </p>
               </div>
               <div
-                class="user-img main-bg text-white d-flex align-items-center justify-content-center rounded-circle fs-6 fw-semibold"
+                class="user-img main-bg text-white d-flex align-items-center justify-content-center rounded-circle fs-6 fw-semibold text-uppercase"
               >
-                AU
+                ${role[0]}U
               </div>
+              <button class="btn" id="logoutButton" onclick="logout()" title="logout">
+                <i class="fa-solid fa-right-from-bracket fs-4 text-primary"></i>
+              </button>
             </div>
           </div>
         </nav>

@@ -121,7 +121,7 @@ document
 
     const data = {
       supplier_name: document.getElementById('supplierName').value.trim(),
-      contact_name: document.getElementById('categoriesFilter').value.trim(),
+      contact_name: document.getElementById('contactName').value.trim(),
       contact_email: document.getElementById('contactEmail').value.trim(),
       contact_phone: document.getElementById('contactPhone').value.trim(),
       address: document.getElementById('address').value.trim(),
