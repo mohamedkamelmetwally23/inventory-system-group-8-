@@ -18,7 +18,7 @@ export function renderTablePage(
   if (data.length === 0) {
     tableBody.innerHTML = `
         <tr>
-          <td class="text-muted text-center border-0 py-4" colspan="10">
+          <td class="text-muted text-center border-0 py-4 d-block" colspan="10" style="max-width:100%">
             <i class="fa-solid fa-circle-exclamation me-2"></i>
             No ${tableName} found matching your search.
           </td>
@@ -46,6 +46,7 @@ export function renderTablePage(
 
   // ========== HEADERS ==========
   columns.forEach((col, i) => {
+    if (col == 'statusKey') return;
     const th = document.createElement('th');
     th.classList.add('text-capitalize');
     th.textContent = col.split('_').join(' ');
@@ -68,6 +69,7 @@ export function renderTablePage(
     tr.dataset.id = item.id;
 
     columns.forEach((col) => {
+      if (col == 'statusKey') return;
       const td = document.createElement('td');
 
       if ((col === 'status' || col === 'adjustment_type') && item[col]) {
@@ -134,6 +136,7 @@ export function renderTablePage(
     Object.entries(item).forEach(([key, value]) => {
       if (key === 'status') return;
       if (key === 'id') return;
+      if (key == 'statusKey') return;
 
       cardHTML += `
       <div class="product-row">

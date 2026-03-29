@@ -15,7 +15,6 @@ loadLayout('Suppliers');
 
 // =======================
 // Variables
-const filterCategory = document.querySelector('#categoriesFilter');
 let suppliers = [];
 let editIndex = null;
 let deleteIndex = null;
@@ -28,13 +27,6 @@ async function loadSuppliers() {
   try {
     const res = await getSuppliersWithProductSupplied();
     suppliers = res?.data || [];
-    const categoriesRes = await getCategories();
-
-    categoriesRes.data.forEach((category) => {
-      filterCategory.innerHTML += `
-        <option class="text-capetalize" value="${category.id}">${category.name}</option>
-      `;
-    });
 
     updateCaption();
     renderTablePage(

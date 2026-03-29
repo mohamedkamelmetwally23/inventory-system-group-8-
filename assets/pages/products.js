@@ -322,7 +322,7 @@ const handleActionClick = function (e) {
     document.getElementById('reorderLevel').value = p.reorderLevel;
     document.getElementById('price').value = p.price;
     document.getElementById('productExpireDate').value = p.expire_date;
-    document.getElementById('productSupplierId').value = p.supplier_id;
+    document.getElementById('supplierProduct').value = p.supplier_id;
     document.getElementById('productCreatedDate').value = p.created_at;
 
     document.getElementById('addProductModalLabel').textContent =
